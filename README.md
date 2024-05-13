@@ -1,5 +1,7 @@
 # Agg-benchmarks
-Agg-Benchmarks is a benchmarking environment for Rank Aggregation (RA) algorithms. This website contains the current benchmarking results have 21 unsupervised RA methods, 6 supervised RA methods and 1 semi-supervised RA methods, these algorithms were tested on our preprocessed datasets. These datasets cover the areas of person re-identification (re-ID), recommendation system, bioinformatics and social choices. The code of tested methods includes both classical and state-of-the-art RA methods that can be funded at https://github.com/nercms-mmap.  If there is a need to test other datasets, please follow the instructions in the code comments for dataset preprocessing and necessary code modifications. 
+Agg-Benchmarks is a benchmarking environment for Rank Aggregation (RA) algorithms. This website contains the current benchmarking results have 21 unsupervised RA methods, 6 supervised RA methods and 1 semi-supervised RA methods, these algorithms were tested on our preprocessed datasets. These datasets cover the areas of person re-identification (re-ID), recommendation system, bioinformatics and social choices. The code of tested methods includes both classical and state-of-the-art RA methods that can be funded at https://github.com/nercms-mmap. As well as having all the experimental details and settings in this website. 
+
+If you want to add your own algorithm to improve the benchmarking system, please send a package of your algorithm code and a link to a published paper to waii2022@whu.edu.cn.
 
 <table align="center">
     <tbody>
@@ -59,84 +61,15 @@ Agg-Benchmarks is a benchmarking environment for Rank Aggregation (RA) algorithm
 # Directory Structure
 ```
 │  README.md
+│  plot.py
+│  dataset.py
 │  
 ├─results
-│  ├─FLAGR
-│  ├─ice-cream
-│  ├─MovieLens 1M
-│  ├─MQ2008-agg
-│  ├─NSCLC
-│  ├─Re-ID
-│  └─World University Ranking 2022
+│  ├─Movielens1m.csv
+│  ├─NSCLC.csv
+│  ├─re-ID.csv
+│  ├─social choice.csv
 │      
-└─unsupervised
-│   ├─matlab
-│   │      BordaCount.m
-│   │      CG.m
-│   │      CombANZ.m
-│   │      CombMAX.m
-│   │      CombMED.m
-│   │      CombMIN.m
-│   │      CombMNZ.m
-│   │      CombSUM.m
-│   │      Condorcet.m
-│   │      DIBRA.m
-│   │      Dowdall.m
-│   │      EnsembleRanking.m
-│   │      ER.m
-│   │      HPA.m
-│   │      hpa_func.m
-│   │      ice-cream.mat
-│   │      iRank.m
-│   │      Matrix-ice-cream.mat
-│   │      Mean.m
-│   │      Median.m
-│   │      PostNDCG.m
-│   │      RRF.m
-│   │      unsupervised RA methods.ipynb
-│   │      
-│   └─python
-│           BordaCount.py
-│           CG.py
-│           CombANZ.py
-│           CombMAX.py
-│           CombMED.py
-│           CombMIN.py
-│           CombMNZ.py
-│           CombSUM.py
-│           Comb_Family.py
-│           Dowdall.py
-│           evaluate.py
-│           MarkovChain.py
-│           Mean.py
-│           Medium.py
-│           preprocess.py
-│           RRF.py
-│           run_algorithm.py
-│           scorefunc.py
-│           unsupervised RA methods.ipynb
-│
-├─supervised
-│  ├─matlab
-│  │  │  compute_AP.m
-│  │  │  evaluation.m
-│  │  │  m_QT_IRA.m
-│  │  │  m_Rank_based_IRA.m
-│  │  │  m_Score_based_IRA.m
-│  │  │  QT_IRA.m
-│  │  │  Rank_based_IRA.m
-│  │  │  Score_based_IRA.m
-│  │  │  
-│  │  └─CSRA
-│  │          
-│  └─python
-│          AggRankDE.py
-│          CRF.py
-│          Evaluation.py
-│          WeightedBorda.py
-│          
-├─semi-supervised
-│      SSRA.py
 ```
 
 ## Get Started
