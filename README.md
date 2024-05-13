@@ -74,7 +74,11 @@ If you want to add your own algorithm to improve the benchmarking system, please
 ```
 
 ## Results
-Define the input to the method as a CSV file format. The columns in this CSV file should be organized as follows:
+
+Person re-identification (re-ID)
+-----------------
+![image](https://github.com/nercms-mmap/Agg-benchmarks/assets/112792945/6feb1181-5c79-4883-9c51-eb6b8e4af8ac)
+
 
 **Query, Voter, Item Code, Item Rank**
 
