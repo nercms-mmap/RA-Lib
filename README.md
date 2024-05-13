@@ -91,30 +91,6 @@ Social choice (University rankings)
 -----------------
 ![image](https://github.com/nercms-mmap/Agg-benchmarks/assets/112792945/80bdb710-02ed-4080-9579-3c478ae7f524)
 
-**Query, Voter, Item Code, Item Rank**
-
-where
-
-- **Query** is the topic for which the preference list is submitted.
-- **Voter** is the name of the ranker who submitted a preference list for a particular **Query**.
-- **Item Code** is a unique identifier that identifies each element of the preference lists.
-- **Item Rank** is the preference rank assigned to an item by a Voter.
-
-If you need to test our supervised or semi-supervised methods, then relevance judgments are required for the elements of the preference list in the primary input file for each query. It is organized as follows:
-
-**Query, 0, Item Code, Relevance**
-
-where
-
-- **Query** is the topic for which the preference list is submitted.
-- **0:** unused. This value must be always 0.
-- **Item Code** is a unique identifier that identifies each element of the preference lists.
-- **Relevance** is an integer value that represents the relevance of the item with respect to the mentioned Query. Typically, zero values represent irrelevant and incorrect elements and positive values represent relevant, correct and informative elements.
-
-Similarly, we define the final output of the methods as a CSV file which is organized in the following manner：**Query, Item Code, Item Rank**.
-
-We also provide a partially processed dataset in our `dataset.zip` file. You are welcome to use our code and test it here!
-
 ## Follow-up Plan
 We will be updating and adding more RA methods for shared use.
 
