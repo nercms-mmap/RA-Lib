@@ -35,22 +35,23 @@
                 <li>$\textrm{HPA}$ <a href="#HPA&postNDCG">[9]</li>
                 <li>$\textrm{PostNDCG}$ <a href="#HPA&postNDCG">[9]</li>
                 <li>$\textrm{ER}$ <a href="#ER">[10]</li>
-                <li>$\textrm{CG}$ <a href="#CG">[11]</li>
-                <li>$\textrm{DIBRA}$ <a href="#DIBRA">[12]</li>
+                <li>$\textrm{ER}$ <a href="#ER">[11]</li>
+                <li>$\textrm{CG}$ <a href="#CG">[12]</li>
+                <li>$\textrm{DIBRA}$ <a href="#DIBRA">[13]</li>
         </td>
         <td>
             <ul>
-                <li>$\textrm{wBorda}$ <a href="#wBorda">[13]</li>
-                <li>$\textrm{CRF}$ <a href="#CRF">[14]</li>
-                <li>$\textrm{CSRA}$ <a href="#CSRA">[15]</li>
-                <li>$\textrm{AggRankDE}$ <a href="#AggRankDe">[16]</li>
-                <li>$\textrm{IRA}_\textrm{R}$ <a href="#IRA">[17]</li>
-                <li>$\textrm{IRA}_\textrm{S}$ <a href="#IRA">[17]</li>
-                <li>$\textrm{QI-IRA}$ <a href="#QIIRA">[18]</li>
+                <li>$\textrm{wBorda}$ <a href="#wBorda">[14]</li>
+                <li>$\textrm{CRF}$ <a href="#CRF">[15]</li>
+                <li>$\textrm{CSRA}$ <a href="#CSRA">[16]</li>
+                <li>$\textrm{AggRankDE}$ <a href="#AggRankDe">[17]</li>
+                <li>$\textrm{IRA}_\textrm{R}$ <a href="#IRA">[18]</li>
+                <li>$\textrm{IRA}_\textrm{S}$ <a href="#IRA">[18]</li>
+                <li>$\textrm{QI-IRA}$ <a href="#QIIRA">[19]</li>
         </td>
         <td>
             <ul>
-                <li>$\textrm{SSRA}$ <a href="#semi">[19]</li>
+                <li>$\textrm{SSRA}$ <a href="#semi">[20]</li>
         </td>
     </tbody>
 </table>
@@ -59,7 +60,7 @@
 ```
 │  README.md
 │  
-├─datasets
+├─results
 │  ├─FLAGR
 │  ├─ice-cream
 │  ├─MovieLens 1M
@@ -272,23 +273,23 @@ Table 8: Normality and the overall of impartiality results for unsupervised RA m
 
 <a id="ER">[[10]](https://www.sciencedirect.com/science/article/pii/S0305048319308448) Mohammadi, M., & Rezaei, J. (2020). Ensemble ranking: Aggregation of rankings produced by different multi-criteria decision-making methods. Omega, 96, 102254.</a>
 
-<a id="CG">[[11]](https://www.tandfonline.com/doi/abs/10.1080/01605682.2019.1657365) Xiao, Y., Deng, H. Z., Lu, X., & Wu, J. (2021). Graph-based rank aggregation method for high-dimensional and partial rankings. Journal of the Operational Research Society, 72(1), 227-236.</a>
+<a id="CG">[[12]](https://www.tandfonline.com/doi/abs/10.1080/01605682.2019.1657365) Xiao, Y., Deng, H. Z., Lu, X., & Wu, J. (2021). Graph-based rank aggregation method for high-dimensional and partial rankings. Journal of the Operational Research Society, 72(1), 227-236.</a>
 
-<a id="DIBRA">[[12]](https://www.sciencedirect.com/science/article/abs/pii/S0957417422007710) Akritidis, L., Fevgas, A., Bozanis, P., & Manolopoulos, Y. (2022). An unsupervised distance-based model for weighted rank aggregation with list pruning. Expert Systems with Applications, 202, 117435.</a>
+<a id="DIBRA">[[13]](https://www.sciencedirect.com/science/article/abs/pii/S0957417422007710) Akritidis, L., Fevgas, A., Bozanis, P., & Manolopoulos, Y. (2022). An unsupervised distance-based model for weighted rank aggregation with list pruning. Expert Systems with Applications, 202, 117435.</a>
 
-<a id="wBorda">[[13]](https://ieeexplore.ieee.org/abstract/document/6495123) Pujari, M., & Kanawati, R. (2012, November). Link prediction in complex networks by supervised rank aggregation. In 2012 IEEE 24th International Conference on Tools with Artificial Intelligence (Vol. 1, pp. 782-789). IEEE.</a>
+<a id="wBorda">[[14]](https://ieeexplore.ieee.org/abstract/document/6495123) Pujari, M., & Kanawati, R. (2012, November). Link prediction in complex networks by supervised rank aggregation. In 2012 IEEE 24th International Conference on Tools with Artificial Intelligence (Vol. 1, pp. 782-789). IEEE.</a>
 
-<a id="CRF">[[14]](https://www.jmlr.org/papers/volume15/volkovs14a/volkovs14a.pdf) Volkovs, M. N., & Zemel, R. S. (2014). New learning methods for supervised and unsupervised preference aggregation. The Journal of Machine Learning Research, 15(1), 1135-1176.</a>
+<a id="CRF">[[15]](https://www.jmlr.org/papers/volume15/volkovs14a/volkovs14a.pdf) Volkovs, M. N., & Zemel, R. S. (2014). New learning methods for supervised and unsupervised preference aggregation. The Journal of Machine Learning Research, 15(1), 1135-1176.</a>
 
-<a id="CSRA">[[15]](https://ieeexplore.ieee.org/abstract/document/9053496) Yu, Y., Liang, C., Ruan, W., & Jiang, L. (2020, May). Crowdsourcing-Based Ranking Aggregation for Person Re-Identification. In ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 1933-1937). IEEE.</a>
+<a id="CSRA">[[16]](https://ieeexplore.ieee.org/abstract/document/9053496) Yu, Y., Liang, C., Ruan, W., & Jiang, L. (2020, May). Crowdsourcing-Based Ranking Aggregation for Person Re-Identification. In ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 1933-1937). IEEE.</a>
 
-<a id="AggRankDe">[[16]](https://www.mdpi.com/2079-9292/11/3/369) Bałchanowski, M., & Boryczka, U. (2022). Aggregation of Rankings Using Metaheuristics in Recommendation Systems. Electronics, 11(3), 369.</a>
+<a id="AggRankDe">[[17]](https://www.mdpi.com/2079-9292/11/3/369) Bałchanowski, M., & Boryczka, U. (2022). Aggregation of Rankings Using Metaheuristics in Recommendation Systems. Electronics, 11(3), 369.</a>
 
-<a id="IRA">[[17]](https://bmvc2022.mpi-inf.mpg.de/0386.pdf) Huang, J., Liang, C., Zhang, Y., Wang, Z., & Zhang, C. (2022). Ranking Aggregation with Interactive Feedback for Collaborative Person Re-identification.</a>
+<a id="IRA">[[18]](https://bmvc2022.mpi-inf.mpg.de/0386.pdf) Huang, J., Liang, C., Zhang, Y., Wang, Z., & Zhang, C. (2022). Ranking Aggregation with Interactive Feedback for Collaborative Person Re-identification.</a>
 
-<a id="QIIRA">[[18]](https://aaai.org/wp-content/uploads/2024/01/AAAI_Main-Track_2024-01-04.pdf) Hu, C., Zhang, H., Liang, C., & Huang, H. (2024). QI-IRA: Quantum-inspired interactive ranking aggregation for person re-identification. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 38, pp. 1-9).</a>
+<a id="QIIRA">[[19]](https://aaai.org/wp-content/uploads/2024/01/AAAI_Main-Track_2024-01-04.pdf) Hu, C., Zhang, H., Liang, C., & Huang, H. (2024). QI-IRA: Quantum-inspired interactive ranking aggregation for person re-identification. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 38, pp. 1-9).</a>
 
-<a id="semi">[[19]](https://dl.acm.org/doi/abs/10.1145/1458082.1458315) Chen, S., Wang, F., Song, Y., & Zhang, C. (2008, October). Semi-supervised ranking aggregation. In Proceedings of the 17th ACM conference on Information and knowledge management (pp. 1427-1428).</a>
+<a id="semi">[[20]](https://dl.acm.org/doi/abs/10.1145/1458082.1458315) Chen, S., Wang, F., Song, Y., & Zhang, C. (2008, October). Semi-supervised ranking aggregation. In Proceedings of the 17th ACM conference on Information and knowledge management (pp. 1427-1428).</a>
 
 <a id="BDB">[[20]](https://openaccess.thecvf.com/content_ICCV_2019/html/Dai_Batch_DropBlock_Network_for_Person_Re-Identification_and_Beyond_ICCV_2019_paper.html) Dai, Z., Chen, M., Gu, X., Zhu, S., & Tan, P. (2019). Batch dropblock network for person re-identification and beyond. In Proceedings of the IEEE/CVF international conference on computer vision (pp. 3691-3701).</a>
 
