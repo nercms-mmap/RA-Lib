@@ -1,5 +1,5 @@
 # Agg-benchmarks
-Agg-Benchmarks is a benchmarking environment for Rank Aggregation (RA) algorithms. This website contains the current benchmarking results have 21 unsupervised RA methods, 6 supervised RA methods and 1 semi-supervised RA methods, these algorithms were tested on our preprocessed datasets. These datasets cover the areas of person re-identification (re-ID), recommendation system, bioinformatics and social choices. The code of tested methods includes both classical and state-of-the-art RA methods that can be funded at https://github.com/nercms-mmap. As well as having all the experimental details and settings in this website. We also provide the corresponding .bib files for the RA researchers' quick implementation in writing their papers. 
+Agg-Benchmarks is a benchmarking environment for Rank Aggregation (RA) algorithms. This website contains the current benchmarking results have 21 unsupervised RA methods, 6 supervised RA methods and 1 semi-supervised RA methods, these algorithms were tested on our preprocessed datasets. These datasets cover the areas of person re-identification (re-ID), recommendation system, bioinformatics and social choices. The code of tested methods includes both classical and state-of-the-art RA methods that can be funded at https://github.com/nercms-mmap. As well as having all the experimental details and settings in this website. 
 
 If you want to add your own algorithm to improve the benchmarking system, please send a package of your algorithm code and a link to a published paper to waii2022@whu.edu.cn.
 
@@ -73,7 +73,7 @@ If you want to add your own algorithm to improve the benchmarking system, please
 │      
 ```
 
-## Get Started
+## Results
 Define the input to the method as a CSV file format. The columns in this CSV file should be organized as follows:
 
 **Query, Voter, Item Code, Item Rank**
