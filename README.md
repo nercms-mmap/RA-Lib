@@ -35,7 +35,7 @@
                 <li>$\textrm{HPA}$ <a href="#HPA&postNDCG">[9]</li>
                 <li>$\textrm{PostNDCG}$ <a href="#HPA&postNDCG">[9]</li>
                 <li>$\textrm{ER}$ <a href="#ER">[10]</li>
-                <li>$\textrm{ER}$ <a href="#ER">[11]</li>
+                <li>$\textrm{Mork-H}$ <a href="#Mork-H">[11]</li>
                 <li>$\textrm{CG}$ <a href="#CG">[12]</li>
                 <li>$\textrm{DIBRA}$ <a href="#DIBRA">[13]</li>
         </td>
