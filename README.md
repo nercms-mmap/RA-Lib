@@ -73,7 +73,8 @@ If you want to add your own algorithm to improve the benchmarking system, please
 │      
 ```
 
-## Results
+Results
+=======
 
 Person re-identification (re-ID)
 -----------------
