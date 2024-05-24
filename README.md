@@ -99,10 +99,12 @@ Running
 2. Run `python plot.py` or `python create_website.py` to plot results.
 3. Run `python data_export.py --out res.csv` to export all results into a csv file for additional post-processing.
 
-## Follow-up Plan
+Follow-up Plan
+=======
 We will be updating and adding more RA methods for shared use.
 
-## References
+References
+=======
 <a id="Comb">[[1]](https://books.google.com.tw/books?hl=zh-CN&lr=&id=W8MZAQAAIAAJ&oi=fnd&pg=PA243&dq=Combination+of+multiple+searches.&ots=3XwVWFAQ5n&sig=EGO4Nkeo5BIsfg0HOpiHsnNPjm4&redir_esc=y#v=onepage&q=Combination%20of%20multiple%20searches.&f=false) Fox, E., & Shaw, J. (1994). Combination of multiple searches. NIST special publication SP, 243-243.</a>
 
 <a id="MC">[[2]](https://dl.acm.org/doi/abs/10.1145/371920.372165) Dwork, C., Kumar, R., Naor, M., & Sivakumar, D. (2001, April). Rank aggregation methods for the web. In Proceedings of the 10th international conference on World Wide Web (pp. 613-622).</a>
