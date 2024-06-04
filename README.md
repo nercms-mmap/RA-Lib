@@ -78,26 +78,23 @@ Results
 
 Person re-identification (re-ID)
 -----------------
-![image](https://github.com/nercms-mmap/Agg-benchmarks/assets/112792945/6feb1181-5c79-4883-9c51-eb6b8e4af8ac)
+
 
 Movielens 1M
 -----------------
-![image](https://github.com/nercms-mmap/Agg-benchmarks/assets/112792945/3fab5223-62c3-4141-a9b5-ebd357aa18eb)
 
 Social choice (University rankings)
 -----------------
-![image](https://github.com/nercms-mmap/Agg-benchmarks/assets/112792945/80bdb710-02ed-4080-9579-3c478ae7f524)
 
 NSCLC
 -----------------
-![image](https://github.com/nercms-mmap/Agg-benchmarks/assets/112792945/cef9ce8c-39fc-4413-855f-15f017f32ae5)
+
 
 Running
 =======
 
-1. Run `python run.py` (this can take an extremely long time, potentially days)
-2. Run `python plot.py` or `python create_website.py` to plot results.
-3. Run `python data_export.py --out res.csv` to export all results into a csv file for additional post-processing.
+1. Run `python plot.py` to plot results.
+2. Run `python data_export.py --out res.csv` to export all results into a csv file for additional post-processing.
 
 Follow-up Plan
 =======
