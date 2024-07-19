@@ -1,0 +1,41 @@
+Method,Venue,MAP,s,Group,Type
+BDB,ICCV'19,,,,
+BOT,CVPR'19,,,,
+Top-DB-Net+RK,ICPR'21,,,,
+LightMBN,ICIP'21,,,,
+FPB,CVPR'21,,,,
+LUPerson,CVPR'21,,,,
+CombMIN,NIST' SP 94,82.62,2834.21,,single
+CombMAX,NIST' SP 94,81.68,2825.52,,single
+CombSUM,NIST' SP 94,84.35,2745.2,,single
+CombANZ,NIST' SP 94,79.21,2963.11,,single
+CombMNZ,NIST' SP 94,84.87,2961.37,,single
+MC1 (top-100),WWW' 01,82.38,213.82,MC1,group
+MC1 (top-500),WWW' 01,84.21,933.19,MC1,group
+MC2 (top-100),WWW' 01,83.4,254.41,MC2,group
+MC2 (top-500),WWW' 01,84.5,965.11,MC2,group
+MC3 (top-500),WWW' 01,84.46,,,
+MC4 (top-500),WWW' 01,85.58,,,
+Borda count,SIGIR' 01,84.35,2697.36,,single
+Dowdall,IPSR' 02,85.13,2700.66,,single
+Median,SIGMOD' 03,85.09,2820.31,,single
+RRF,SIGIR' 09,84.85,2737.23,,single
+iRANK,JIST' 10,86.38,,,single
+Mean,PMLR' 11,86.91,,,single
+HPA,ECIR' 20,84.52,,,single
+PostNDCG,ECIR' 20,81.92,,,single
+ER,OMEGA' 20,84.42,,,single
+Mork-H (top-100),EJOR' 20,84.37,743.87,,single
+CG,JORS' 21,84.35,3264.43,,single
+DIBRA,LSA' 22,86.91,,,single
+wBorda,WWW' 12,,,,
+CRF,CIKM' 13,,,,
+CSRA,ICASSP' 20,,,,
+AggRankDE,Electronics' 22,,,,
+"IRAR(1,1)",BMVC' 22,,,,
+"IRAR(3,1)",BMVC' 22,,,,
+"IRAs(1,1)",BMVC' 22,,,,
+"IRAs(3,1)",BMVC' 22,,,,
+"QI-IRA(1,1)",AAAI' 24,,,,
+"QI-IRA(3,1)",AAAI' 24,,,,
+SSRA,CIKM' 08,,,,
