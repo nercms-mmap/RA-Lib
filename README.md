@@ -78,6 +78,8 @@ Results
 
 Person re-identification (re-ID)
 -----------------
+![image](https://github.com/user-attachments/assets/81e8e641-ef4c-4627-9fcc-5753e6e5168c)
+
 
 
 Movielens 1M
