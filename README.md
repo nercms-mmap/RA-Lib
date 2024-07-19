@@ -78,8 +78,7 @@ Results
 
 Person re-identification (re-ID)
 -----------------
-![Uploading image.png…]()
-
+![image](https://github.com/user-attachments/assets/847600af-8c25-47ad-8151-3a603803a056)
 
 
 
