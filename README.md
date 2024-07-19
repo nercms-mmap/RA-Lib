@@ -96,7 +96,6 @@ Running
 =======
 
 1. Run `python plot.py` to plot results.
-2. Run `python data_export.py --out res.csv` to export all results into a csv file for additional post-processing.
 
 Follow-up Plan
 =======
