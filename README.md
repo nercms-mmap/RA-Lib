@@ -63,7 +63,6 @@ If you want to add your own algorithm to improve the benchmarking system, please
 │  README.md
 │  plot.py
 │  dataset.py
-│  ref.bib
 | 
 ├─results
 │  ├─Movielens1m.csv
@@ -76,21 +75,10 @@ If you want to add your own algorithm to improve the benchmarking system, please
 Results
 =======
 
+
 Person re-identification (re-ID)
 -----------------
 ![image](https://github.com/user-attachments/assets/847600af-8c25-47ad-8151-3a603803a056)
-
-
-
-Movielens 1M
------------------
-
-Social choice (University rankings)
------------------
-
-NSCLC
------------------
-
 
 Running
 =======
