@@ -62,11 +62,8 @@ If you want to add your own algorithm to improve the benchmarking system, please
 ```
 │  README.md
 │  plot.py
-│  dataset.py
 | 
 ├─results
-│  ├─Movielens1m.csv
-│  ├─NSCLC.csv
 │  ├─re-ID.csv
 │  ├─social choice.csv
 │      
