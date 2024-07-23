@@ -69,11 +69,11 @@ If you want to add your own algorithm to improve the benchmarking system, please
 │      
 ```
 
-Results
+Demo
 =======
 
 
-Person re-identification (re-ID)
+CUHK03 (detected)
 -----------------
 ![image](https://github.com/user-attachments/assets/847600af-8c25-47ad-8151-3a603803a056)
 
