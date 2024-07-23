@@ -73,7 +73,7 @@ Demo
 =======
 
 
-CUHK03 (detected)
+CUHK03 (labeled)
 -----------------
 ![image](https://github.com/user-attachments/assets/847600af-8c25-47ad-8151-3a603803a056)
 
