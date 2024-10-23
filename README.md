@@ -4,30 +4,29 @@ Agg-Benchmarks is a benchmarking environment for Rank Aggregation (RA) algorithm
 If you want to add your own algorithm to improve the benchmarking system, please send a package of your algorithm code and a link to the published paper to waii2022@whu.edu.cn.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/CombMIN-NIST SP'24-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/CombMAX-NIST SP'24-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/CombSUM-NIST SP'24-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/CombANZ-NIST SP'24-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/CombMNZ-NIST SP'24-528FAC" alt="" />
+  <img src="https://img.shields.io/badge/CombMIN-NIST SP'94-528FAC" alt="" />
+  <img src="https://img.shields.io/badge/CombMAX-NIST SP'94-528FAC" alt="" />
+  <img src="https://img.shields.io/badge/CombSUM-NIST SP'94-528FAC" alt="" />
+  <img src="https://img.shields.io/badge/CombANZ-NIST SP'94-528FAC" alt="" />
+  <img src="https://img.shields.io/badge/CombMNZ-NIST SP'94-528FAC" alt="" />
   <img src="https://img.shields.io/badge/MC1-WWW'01-F7A957" alt="" />
   <img src="https://img.shields.io/badge/MC2-WWW'01-F7A957" alt="" />
   <img src="https://img.shields.io/badge/MC3-WWW'01-F7A957" alt="" />
   <img src="https://img.shields.io/badge/MC4-WWW'01-F7A957" alt="" />
-  
+  <img src="https://img.shields.io/badge/BordaCount-SIGIR'01-FFD06E" alt="" />
+  <img src="https://img.shields.io/badge/Dowdall-IPSR'02-FFD06E" alt="" />
+  <img src="https://img.shields.io/badge/Median-SIMOD'03-FFD06E" alt="" />
+  <img src="https://img.shields.io/badge/RRF-SIMOD'09-FFD06E" alt="" />
+  <img src="https://img.shields.io/badge/iRANK-JIST'10-FFD06E" alt="" />
+  <img src="https://img.shields.io/badge/Mean-PMLR'11-FFD06E" alt="" />
+  <img src="https://img.shields.io/badge/HPA-ECIR'20-FFD06E" alt="" />
+  <img src="https://img.shields.io/badge/PostNDCG-ECIR'20-FFD06E" alt="" />
+  <img src="https://img.shields.io/badge/ER-OMEGA'20-FFD06E" alt="" />
+  <img src="https://img.shields.io/badge/Mork--H-EJOR'20-FFD06E" alt="" />
+  <img src="https://img.shields.io/badge/CG-JORS'21-FFD06E" alt="" />
+  <img src="https://img.shields.io/badge/DIBRA-LSA'22-FFD06E" alt="" />
   <img src="https://img.shields.io/badge/Borda--Score-AAAI'23-E76254" alt="" />
   <img src="https://img.shields.io/badge/QI--IRA-AAAI'24-E76254" alt="" />
-  <img src="https://img.shields.io/badge/Java-snow?logo=coffeescript&logoColor=FC4C02" alt="" />
-  <img src="https://img.shields.io/badge/C%2B%2B-snow?logo=c%2B%2B&logoColor=00599C" alt="" />
-  <img src="https://img.shields.io/badge/C-snow?logo=c&logoColor=A8B9CC" alt="" />
-  <img src="https://img.shields.io/badge/C%23-snow?logo=csharp&logoColor=512BD4" alt="" />
-  <img src="https://img.shields.io/badge/JavaScript-snow?logo=javascript&logoColor=E9CE30" alt="" />
-  <img src="https://img.shields.io/badge/Go-snow?logo=go&logoColor=00ADD8" alt="" />
-  <img src="https://img.shields.io/badge/Swift-snow?logo=swift&logoColor=F05138" alt="" />
-  <img src="https://img.shields.io/badge/Rust-snow?logo=rust&logoColor=000000" alt="" />
-  <img src="https://img.shields.io/badge/Ruby-snow?logo=ruby&logoColor=CC342D" alt="" />
-  <img src="https://img.shields.io/badge/Kotlin-snow?logo=kotlin&logoColor=7F52FF" alt="" />
-  <img src="https://img.shields.io/badge/TypeScript-snow?logo=typescript&logoColor=3178C6" alt="" />
-  <img src="https://img.shields.io/badge/Dart-snow?logo=dart&logoColor=0175C2" alt="" />
 </p>
 
 
