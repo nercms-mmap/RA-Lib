@@ -4,8 +4,17 @@ Agg-Benchmarks is a benchmarking environment for Rank Aggregation (RA) algorithm
 If you want to add your own algorithm to improve the benchmarking system, please send a package of your algorithm code and a link to the published paper to waii2022@whu.edu.cn.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/CombMIN-NIST NP'24-E76254" alt="" />
-  <img src="https://img.shields.io/badge/QI--IRA-AAAI'24-E76254" alt="" />
+  <img src="https://img.shields.io/badge/CombMIN-NIST SP'24-528FAC" alt="" />
+  <img src="https://img.shields.io/badge/CombMAX-NIST SP'24-528FAC" alt="" />
+  <img src="https://img.shields.io/badge/CombSUM-NIST SP'24-528FAC" alt="" />
+  <img src="https://img.shields.io/badge/CombANZ-NIST SP'24-528FAC" alt="" />
+  <img src="https://img.shields.io/badge/CombMNZ-NIST SP'24-528FAC" alt="" />
+  <img src="https://img.shields.io/badge/MC1-WWW'01-F7A957" alt="" />
+  <img src="https://img.shields.io/badge/MC2-WWW'01-F7A957" alt="" />
+  <img src="https://img.shields.io/badge/MC3-WWW'01-F7A957" alt="" />
+  <img src="https://img.shields.io/badge/MC4-WWW'01-F7A957" alt="" />
+  
+  <img src="https://img.shields.io/badge/Borda--Score-AAAI'23-E76254" alt="" />
   <img src="https://img.shields.io/badge/QI--IRA-AAAI'24-E76254" alt="" />
   <img src="https://img.shields.io/badge/Java-snow?logo=coffeescript&logoColor=FC4C02" alt="" />
   <img src="https://img.shields.io/badge/C%2B%2B-snow?logo=c%2B%2B&logoColor=00599C" alt="" />
