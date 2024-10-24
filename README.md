@@ -3,12 +3,6 @@ Agg-Benchmarks is a benchmarking environment for Rank Aggregation (RA) algorithm
 
 If you want to add your own algorithm to improve the benchmarking system, please send a package of your algorithm code and a link to the published paper to waii2022@whu.edu.cn.
 
-<p align="center">
-  <a href="https://github.com/nercms-mmap/Agg-Benchmarks/">
-    <img src="https://www.hello-algo.com/index.assets/btn_read_online_dark.svg" width="145"></a>
-  <a href="https://github.com/nercms-mmap/Agg-Benchmarks">
-    <img src="https://www.hello-algo.com/index.assets/btn_download_pdf_dark.svg" width="145"></a>
-</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/CombMIN-NIST SP'94-528FAC" alt="" />
