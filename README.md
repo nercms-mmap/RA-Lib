@@ -14,23 +14,23 @@ If you want to add your own algorithm to improve the benchmarking system, please
   <img src="https://img.shields.io/badge/MC3-WWW'01-F7A957" alt="" />
   <img src="https://img.shields.io/badge/MC4-WWW'01-F7A957" alt="" />
   <img src="https://img.shields.io/badge/BordaCount-SIGIR'01-FFD06E" alt="" />
-  <img src="https://img.shields.io/badge/Dowdall-IPSR'02-FFD06E" alt="" />
+  <img src="https://img.shields.io/badge/Dowdall-IPSR'02-FAE2C1" alt="" />
   <img src="https://img.shields.io/badge/Median-SIMOD'03-1F456F" alt="" />
   <img src="https://img.shields.io/badge/RRF-SIMOD'09-1F456F" alt="" />
-  <img src="https://img.shields.io/badge/iRANK-JIST'10-FFD06E" alt="" />
-  <img src="https://img.shields.io/badge/Mean-PMLR'11-FFD06E" alt="" />
-  <img src="https://img.shields.io/badge/HPA-ECIR'20-FFD06E" alt="" />
-  <img src="https://img.shields.io/badge/PostNDCG-ECIR'20-FFD06E" alt="" />
-  <img src="https://img.shields.io/badge/ER-OMEGA'20-FFD06E" alt="" />
-  <img src="https://img.shields.io/badge/Mork--H-EJOR'20-FFD06E" alt="" />
-  <img src="https://img.shields.io/badge/CG-JORS'21-FFD06E" alt="" />
-  <img src="https://img.shields.io/badge/DIBRA-LSA'22-FFD06E" alt="" />
+  <img src="https://img.shields.io/badge/iRANK-JIST'10-5C3C0D" alt="" />
+  <img src="https://img.shields.io/badge/Mean-PMLR'11-C79DC9" alt="" />
+  <img src="https://img.shields.io/badge/HPA-ECIR'20-6BBC47" alt="" />
+  <img src="https://img.shields.io/badge/PostNDCG-ECIR'20-6BBC47" alt="" />
+  <img src="https://img.shields.io/badge/ER-OMEGA'20-8A352E" alt="" />
+  <img src="https://img.shields.io/badge/Mork--H-EJOR'20-C9C780" alt="" />
+  <img src="https://img.shields.io/badge/CG-JORS'21-37939A" alt="" />
+  <img src="https://img.shields.io/badge/DIBRA-LSA'22-D2D6F5" alt="" />
   <img src="https://img.shields.io/badge/Borda--Score-AAAI'23-E76254" alt="" />
   <img src="https://img.shields.io/badge/wBorada-WWW'12-F7A957" alt="" />
   <img src="https://img.shields.io/badge/CRF-CIKM'13-ABDCE0" alt="" />
-  <img src="https://img.shields.io/badge/CSRA-ICASSP'20-F7A957" alt="" />
-  <img src="https://img.shields.io/badge/AggRankDE-Electronics'22-F7A957" alt="" />
-  <img src="https://img.shields.io/badge/IRA-BMVC'22-F7A957" alt="" />
+  <img src="https://img.shields.io/badge/CSRA-ICASSP'20-1F4527" alt="" />
+  <img src="https://img.shields.io/badge/AggRankDE-Electronics'22-F8C9C9" alt="" />
+  <img src="https://img.shields.io/badge/IRA-BMVC'22-9DD0C7" alt="" />
   <img src="https://img.shields.io/badge/QI--IRA-AAAI'24-E76254" alt="" />
   <img src="https://img.shields.io/badge/SSRA-CIKM'08-ABDCE0" alt="" />
 </p>
