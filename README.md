@@ -15,8 +15,8 @@ If you want to add your own algorithm to improve the benchmarking system, please
   <img src="https://img.shields.io/badge/MC4-WWW'01-F7A957" alt="" />
   <img src="https://img.shields.io/badge/BordaCount-SIGIR'01-FFD06E" alt="" />
   <img src="https://img.shields.io/badge/Dowdall-IPSR'02-FFD06E" alt="" />
-  <img src="https://img.shields.io/badge/Median-SIMOD'03-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/RRF-SIMOD'09-528FAC" alt="" />
+  <img src="https://img.shields.io/badge/Median-SIMOD'03-1F456F" alt="" />
+  <img src="https://img.shields.io/badge/RRF-SIMOD'09-1F456F" alt="" />
   <img src="https://img.shields.io/badge/iRANK-JIST'10-FFD06E" alt="" />
   <img src="https://img.shields.io/badge/Mean-PMLR'11-FFD06E" alt="" />
   <img src="https://img.shields.io/badge/HPA-ECIR'20-FFD06E" alt="" />
