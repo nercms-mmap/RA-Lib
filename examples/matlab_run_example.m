@@ -5,7 +5,6 @@ function matlab_run_example()
     init_python(PYTHON_PATH);
     add_envpath();
 
-
     input_file_path = '..\\test\\full_lists\\data\\simulation_test.csv';
     output_base_path = 'results';  % 输出基础路径
 

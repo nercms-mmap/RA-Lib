@@ -249,7 +249,7 @@ def get_mc4_transfer_matrix(input_list):
     return pmatrix  # Return the transition matrix
 
 
-def mc(input_list, mc_type, max_iteration=50):
+def mc(input_list, mc_type: McType, max_iteration=50):
     """
     Perform Markov Chain ranking based on the specified method.
 
