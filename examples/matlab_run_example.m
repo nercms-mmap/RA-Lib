@@ -4,7 +4,7 @@ function matlab_run_example()
 
     init_python(PYTHON_PATH);
     add_envpath();
-    
+
 
     input_file_path = '..\\test\\full_lists\\data\\simulation_test.csv';
     output_base_path = 'results';  % 输出基础路径
@@ -16,8 +16,11 @@ function matlab_run_example()
 
 
     call_unsupervised_methods(input_file_path, output_base_path);
+    call_supervised_methods(input_file_path, output_base_path)
     
-    
+end
+
+function call_supervised_methods(input_file_path, output_base_path)
 end
 
 function call_unsupervised_methods(input_file_path, output_base_path)
@@ -25,10 +28,10 @@ function call_unsupervised_methods(input_file_path, output_base_path)
     
     % 定义方法名和文件名
     methods = {
-        'bordacount', 'borda_score', 'cg', 'combanz', ...
+        'markovchainmethod', 'borda_score', 'cg', 'combanz', ...
         'combmax', 'combmed', 'combmin', 'combsum', ...
         'dibra', 'dowdall', 'er', 'hpa', ...
-        'irank', 'markovchainmethod', 'mean', ...
+        'irank', 'bordacount', 'mean', ...
         'median', 'mork_heuristic', 'postndcg', 'rrf'
     };
     
@@ -56,7 +59,7 @@ function call_unsupervised_methods(input_file_path, output_base_path)
             case 'combsum'
                 combsum(input_file_path, output_file_path);
             case 'dibra'
-                dibra(input_file_path, output_file_path, InputType.RANK); % 输入类型假设为 'RANK'
+                dibra(input_file_path, output_file_path, InputType.RANK); 
             case 'dowdall'
                 dowdall(input_file_path, output_file_path);
             case 'er'
@@ -74,7 +77,7 @@ function call_unsupervised_methods(input_file_path, output_base_path)
             case 'mork_heuristic'
                 mork_heuristic_maximum(input_file_path, output_file_path);
             case 'postndcg'
-                postndcg(input_file_path, output_file_path, InputType.RANK); % 输入类型假设为 'RANK'
+                postndcg(input_file_path, output_file_path, InputType.RANK); 
             case 'rrf'
                 rrf(input_file_path, output_file_path);
             otherwise
@@ -85,8 +88,6 @@ function call_unsupervised_methods(input_file_path, output_base_path)
 
     fprintf('All functions processed successfully!\n');
 end
-
-
 
 function init_python(PYTHON_PATH)
 

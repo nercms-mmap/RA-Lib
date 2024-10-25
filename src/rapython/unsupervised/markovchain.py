@@ -267,7 +267,6 @@ def mc(input_list, mc_type, max_iteration=50):
     result : ndarray
         A 1D numpy array representing the rank of each item.
     """
-    transfer_matrix = None
     # Obtain the transfer matrix based on the specified MC type
     if mc_type == McType.MC1:
         transfer_matrix = get_mc1_transfer_matrix(input_list)
@@ -277,6 +276,8 @@ def mc(input_list, mc_type, max_iteration=50):
         transfer_matrix = get_mc3_transfer_matrix(input_list)
     elif mc_type == McType.MC4:
         transfer_matrix = get_mc4_transfer_matrix(input_list)
+    else:
+        raise ValueError(f"Invalid mc_type: {mc_type}. Must be one of {list(McType)}.")
 
     # Initialize the array for power iteration
     num_items = input_list.shape[1]
@@ -316,6 +317,7 @@ def markovchainmethod(input_file_path, output_file_path, mc_type: McType = McTyp
     max_iteration : int, optional
         The maximum number of iterations for the power method (default is 50).
     """
+
     df, unique_queries = csv_load(input_file_path, InputType.RANK)  # Load data from the CSV file
     result = []  # Initialize an empty list to store results
 
