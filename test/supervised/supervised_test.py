@@ -2,11 +2,11 @@ import unittest
 
 import pandas as pd
 
-from common.constant import InputType
-from evaluation import Evaluation
+from src.rapython.common.constant import InputType
+from src.rapython.evaluation import Evaluation
 from scipy.io import loadmat
 
-from supervised import MethodType
+from src.rapython.supervised import MethodType
 
 
 class SupervisedTestCase(unittest.TestCase):
@@ -39,7 +39,7 @@ class SupervisedTestCase(unittest.TestCase):
         self.assertEqual(ans_rank, my_rank)
 
     def test_ira_r(self):
-        from supervised import ira
+        from src.rapython.supervised import ira
         output_file_path = "my_results\\my_ira_r.csv"
         ira(self.input_file_path, output_file_path, self.csv_rel_test_path, 3, 2, 0.02, MethodType.IRA_RANK,
             InputType.RANK)
@@ -48,7 +48,7 @@ class SupervisedTestCase(unittest.TestCase):
         self.processtest(ans_file_path, test_data, InputType.SCORE)
 
     def test_ira_s(self):
-        from supervised import ira
+        from src.rapython.supervised import ira
         output_file_path = "my_results\\my_ira_s.csv"
         ira(self.input_file_path, output_file_path, self.csv_rel_test_path, 3, 2, 0.02, MethodType.IRA_SCORE,
             InputType.RANK)
@@ -57,7 +57,7 @@ class SupervisedTestCase(unittest.TestCase):
         self.processtest(ans_file_path, test_data, InputType.SCORE)
 
     def test_qi_ira(self):
-        from supervised import qi_ira
+        from src.rapython.supervised import qi_ira
         output_file_path = "my_results\\my_ira_s.csv"
         qi_ira(self.input_file_path, output_file_path, self.csv_rel_test_path, 3, 2, 0.02,
                InputType.RANK)

@@ -54,7 +54,7 @@ import numpy as np
 from scipy.stats import kendalltau
 from tqdm import tqdm
 from src.rapython.datatools import csv_load
-from common.constant import InputType
+from src.rapython.common.constant import InputType
 
 __all__ = ['SSRA']
 

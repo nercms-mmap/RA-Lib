@@ -61,7 +61,7 @@ import random
 import numpy as np
 from tqdm import tqdm
 
-from common.constant import InputType
+from src.rapython.common.constant import InputType
 from src.rapython.evaluation import Evaluation
 from src.rapython.datatools import csv_load
 

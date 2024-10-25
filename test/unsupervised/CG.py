@@ -10,7 +10,6 @@ import numpy as np
 import pandas as pd
 import csv
 
-from unsupervised.cg import cgagg
 
 
 def CGgg(input_list):

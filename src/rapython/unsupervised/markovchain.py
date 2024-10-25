@@ -39,7 +39,7 @@ from enum import Enum, auto
 
 import numpy as np
 
-from common.constant import InputType
+from src.rapython.common.constant import InputType
 from src.rapython.datatools import *
 
 __all__ = ['markovchainmethod', 'McType']
@@ -301,7 +301,7 @@ def mc(input_list, mc_type, max_iteration=50):
     return result  # Return the array containing ranking information
 
 
-def markovchainmethod(input_file_path, output_file_path, mc_type=McType.MC1, max_iteration=50):
+def markovchainmethod(input_file_path, output_file_path, mc_type: McType = McType.MC1, max_iteration: int = 50):
     """
     Load input data, process it using the Markov Chain method, and save the results.
 

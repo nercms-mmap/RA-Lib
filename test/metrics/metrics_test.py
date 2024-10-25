@@ -6,8 +6,8 @@ import unittest
 
 import pandas as pd
 
-from common.constant import InputType
-from evaluation import Evaluation
+from src.rapython.common.constant import InputType
+from src.rapython.evaluation import Evaluation
 from scipy.io import loadmat
 
 

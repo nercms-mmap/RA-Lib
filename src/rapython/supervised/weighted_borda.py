@@ -58,7 +58,7 @@ import csv
 import numpy as np
 from tqdm import tqdm
 
-from common.constant import InputType
+from src.rapython.common.constant import InputType
 from src.rapython.datatools import csv_load
 from src.rapython.evaluation.evaluation import Evaluation
 

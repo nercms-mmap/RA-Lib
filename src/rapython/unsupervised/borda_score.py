@@ -34,7 +34,7 @@ from functools import cmp_to_key
 
 import numpy as np
 
-from common.constant import InputType
+from src.rapython.common.constant import InputType
 from src.rapython.datatools import *
 
 __all__ = ['borda_score']

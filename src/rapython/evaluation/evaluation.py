@@ -17,7 +17,7 @@ import pandas as pd
 from scipy.io import loadmat
 from multipledispatch import dispatch
 
-from common.constant import InputType
+from src.rapython.common.constant import InputType
 from src.rapython.datatools import *
 
 

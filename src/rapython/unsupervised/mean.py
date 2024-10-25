@@ -32,9 +32,9 @@ The final output of the algorithm will be in CSV file format with the following 
 
 import numpy as np
 
-from . import scorefunc as sc
+from src.rapython.unsupervised import scorefunc as sc
 from src.rapython.datatools import *
-from common.constant import InputType
+from src.rapython.common.constant import InputType
 
 __all__ = ['mean']
 
