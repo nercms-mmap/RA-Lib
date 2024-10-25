@@ -17,7 +17,7 @@ Date:
 import numpy as np
 
 from src.rapython.datatools import *
-from common.constant import InputType
+from src.rapython.common.constant import InputType
 
 __all__ = ['rrf']
 

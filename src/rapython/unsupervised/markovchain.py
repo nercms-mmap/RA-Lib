@@ -39,7 +39,7 @@ from enum import Enum, auto
 
 import numpy as np
 
-from common.constant import InputType
+from src.rapython.common.constant import InputType
 from src.rapython.datatools import *
 
 __all__ = ['markovchainmethod', 'McType']
@@ -249,7 +249,7 @@ def get_mc4_transfer_matrix(input_list):
     return pmatrix  # Return the transition matrix
 
 
-def mc(input_list, mc_type, max_iteration=50):
+def mc(input_list, mc_type: McType, max_iteration=50):
     """
     Perform Markov Chain ranking based on the specified method.
 
@@ -267,7 +267,6 @@ def mc(input_list, mc_type, max_iteration=50):
     result : ndarray
         A 1D numpy array representing the rank of each item.
     """
-    transfer_matrix = None
     # Obtain the transfer matrix based on the specified MC type
     if mc_type == McType.MC1:
         transfer_matrix = get_mc1_transfer_matrix(input_list)
@@ -277,6 +276,8 @@ def mc(input_list, mc_type, max_iteration=50):
         transfer_matrix = get_mc3_transfer_matrix(input_list)
     elif mc_type == McType.MC4:
         transfer_matrix = get_mc4_transfer_matrix(input_list)
+    else:
+        raise ValueError(f"Invalid mc_type: {mc_type}. Must be one of {list(McType)}.")
 
     # Initialize the array for power iteration
     num_items = input_list.shape[1]
@@ -301,7 +302,7 @@ def mc(input_list, mc_type, max_iteration=50):
     return result  # Return the array containing ranking information
 
 
-def markovchainmethod(input_file_path, output_file_path, mc_type=McType.MC1, max_iteration=50):
+def markovchainmethod(input_file_path, output_file_path, mc_type: McType = McType.MC1, max_iteration: int = 50):
     """
     Load input data, process it using the Markov Chain method, and save the results.
 
@@ -316,6 +317,7 @@ def markovchainmethod(input_file_path, output_file_path, mc_type=McType.MC1, max
     max_iteration : int, optional
         The maximum number of iterations for the power method (default is 50).
     """
+
     df, unique_queries = csv_load(input_file_path, InputType.RANK)  # Load data from the CSV file
     result = []  # Initialize an empty list to store results
 

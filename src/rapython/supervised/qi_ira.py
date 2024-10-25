@@ -16,7 +16,7 @@ Date:
 """
 import numpy as np
 
-from common.constant import InputType
+from src.rapython.common.constant import InputType
 from src.rapython.datatools import *
 
 __all__ = ['qi_ira']

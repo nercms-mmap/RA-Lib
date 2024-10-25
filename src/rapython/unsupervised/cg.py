@@ -32,7 +32,7 @@ The final output of the algorithm will be in CSV file format with the following 
 
 import numpy as np
 
-from common.constant import InputType
+from src.rapython.common.constant import InputType
 from src.rapython.datatools import *
 
 __all__ = ['cg']

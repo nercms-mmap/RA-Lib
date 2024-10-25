@@ -63,7 +63,7 @@ from tqdm import tqdm
 
 from src.rapython.datatools import csv_load
 from src.rapython.evaluation import Evaluation
-from common.constant import InputType
+from src.rapython.common.constant import InputType
 
 __all__ = ['CRF']
 

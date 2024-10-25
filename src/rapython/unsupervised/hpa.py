@@ -15,7 +15,7 @@ Date:
 import numpy as np
 
 from src.rapython.datatools import *
-from common.constant import InputType
+
 
 __all__ = ['hpa']
 
