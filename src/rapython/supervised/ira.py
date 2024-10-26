@@ -23,17 +23,59 @@ from src.rapython.datatools import *
 
 __all__ = ['ira', 'MethodType']
 
+from enum import Enum, auto
+
 
 class MethodType(Enum):
     """
-    MethodType enum class representing different IRA  methods.
+    MethodType enum class representing different IRA methods.
 
-    Attributes:
-    - RANK: Uses the rank-based IRA method.
-    - SCORE: Uses the score-based IRA method.
+    Attributes
+    ----------
+    IRA_RANK : auto()
+        Uses the rank-based IRA method.
+    IRA_SCORE : auto()
+        Uses the score-based IRA method.
     """
     IRA_RANK = auto()
     IRA_SCORE = auto()
+
+    @staticmethod
+    def check_method_type(method_type):
+        """
+        Validate and convert the input parameter to the MethodType enum.
+
+        Parameters
+        ----------
+        method_type : MethodType or other
+            An input parameter that should be of type MethodType. If it is not,
+            the function will attempt to convert it based on the name attribute.
+
+        Returns
+        -------
+        MethodType
+            A valid MethodType enum member.
+
+        Raises
+        ------
+        ValueError
+            If method_type cannot be converted to a valid MethodType enum member.
+        """
+
+        # Check if method_type is already a MethodType instance
+        if isinstance(method_type, MethodType):
+            return method_type  # Return it directly if it is a valid MethodType enum
+
+        # Try to convert method_type to MethodType if it has a 'name' attribute
+        try:
+            param = MethodType[method_type.name]
+        except (KeyError, AttributeError):
+            # Raise a ValueError with a descriptive message if conversion fails
+            raise ValueError(
+                f"Invalid method_type: {method_type}. Must be one of {[m.name for m in MethodType]}"
+            )
+
+        return param
 
 
 def rank_based_ira(sim, rel_label, k_set, iteration, error_rate=0.02):
@@ -312,6 +354,8 @@ def ira(input_file_path, output_file_path, input_rel_path, k_set, iteration, err
     None
         The function saves the ranked results directly to the specified output file path.
     """
+    input_type = InputType.check_input_type(input_type)
+    mode = MethodType.check_method_type(mode)
     # Load input data and relevance data from CSV files
     input_data, input_rel_data, unique_queries = csv_load(input_file_path, input_rel_path, input_type)
 

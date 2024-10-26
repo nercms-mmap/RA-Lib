@@ -381,6 +381,7 @@ class AggRankDE:
             - The function does not return a value, but it trains the model and stores the
               resulting weights in `self.weights` and `self.average_weight`.
         """
+        input_type = InputType.check_input_type(input_type)
 
         train_base_data, train_rel_data, unique_queries = csv_load(train_file_path, train_rel_path, input_type)
         # Rename columns in the training base data for consistency

@@ -14,8 +14,8 @@ Date:
 """
 import numpy as np
 
+from src.rapython.common import InputType
 from src.rapython.datatools import *
-
 
 __all__ = ['hpa']
 
@@ -94,6 +94,7 @@ def hpa(input_file_path, output_file_path, input_type, topk=10):
         Only the top `k` items from the ranker are included in the evaluation, where `k` is specified by this parameter.
         Defaults to 10.
     """
+    input_type = InputType.check_input_type(input_type)
     df, unique_queries = csv_load(input_file_path, input_type)
     numpy_data, queries_mapping_dict = df_to_numpy(df, input_type)
     save_as_csv(output_file_path, hpa_agg(numpy_data, topk), queries_mapping_dict)

@@ -46,10 +46,61 @@ __all__ = ['markovchainmethod', 'McType']
 
 
 class McType(Enum):
+    """
+    McType enum class representing different Markov chain types.
+
+    Attributes
+    ----------
+    MC1 : auto()
+        Represents the first type of Markov chain.
+    MC2 : auto()
+        Represents the second type of Markov chain.
+    MC3 : auto()
+        Represents the third type of Markov chain.
+    MC4 : auto()
+        Represents the fourth type of Markov chain.
+    """
     MC1 = auto()
     MC2 = auto()
     MC3 = auto()
     MC4 = auto()
+
+    @staticmethod
+    def check_mc_type(mc_type):
+        """
+        Validate and convert the input parameter to the McType enum.
+
+        Parameters
+        ----------
+        mc_type : McType or other
+            An input parameter that should be of type McType. If it is not,
+            the function will attempt to convert it based on the name attribute.
+
+        Returns
+        -------
+        McType
+            A valid McType enum member.
+
+        Raises
+        ------
+        ValueError
+            If mc_type cannot be converted to a valid McType enum member.
+        """
+
+        # Check if mc_type is already a McType instance
+        if isinstance(mc_type, McType):
+            return mc_type  # Return it directly if it is a valid McType enum
+
+        # Try to convert mc_type to McType if it has a 'name' attribute
+        try:
+            param = McType[mc_type.name]
+        except (KeyError, AttributeError):
+            # Raise a ValueError with a descriptive message if conversion fails
+            raise ValueError(
+                f"Invalid mc_type: {mc_type}. Must be one of {[m.name for m in McType]}"
+            )
+
+        return param
 
 
 def get_mc1_transfer_matrix(input_list):
@@ -317,6 +368,8 @@ def markovchainmethod(input_file_path, output_file_path, mc_type: McType = McTyp
     max_iteration : int, optional
         The maximum number of iterations for the power method (default is 50).
     """
+
+    mc_type = McType.check_mc_type(mc_type)
 
     df, unique_queries = csv_load(input_file_path, InputType.RANK)  # Load data from the CSV file
     result = []  # Initialize an empty list to store results

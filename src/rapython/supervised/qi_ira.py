@@ -170,6 +170,7 @@ def qi_ira(input_file_path, output_file_path, input_rel_path, k_set, iteration, 
     None
         The function saves the ranked results directly to the specified output file path.
     """
+    input_type = InputType.check_input_type(input_type)
     # Load input data and relevance data from CSV files
     input_data, input_rel_data, unique_queries = csv_load(input_file_path, input_rel_path, input_type)
 

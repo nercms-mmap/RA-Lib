@@ -72,6 +72,7 @@ def postndcg(input_file_path, output_file_path, input_type=InputType.SCORE):
         the naming of the fourth column, which will either be 'Item Rank'
         or 'Item Score' based on this value.
     """
+    input_type = InputType.check_input_type(input_type)
     df, unique_queries = csv_load(input_file_path, InputType.RANK)
     numpy_data, queries_mapping_dict = df_to_numpy(df, input_type)
     save_as_csv(output_file_path, postndcg_agg(numpy_data), queries_mapping_dict)

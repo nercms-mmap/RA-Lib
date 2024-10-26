@@ -349,6 +349,7 @@ class CRF:
         - The loss is computed based on the rankings of items, and gradients are calculated for updating weights.
         - The function uses permutations of item rankings to explore all possible arrangements, impacting the objective function.
         """
+        input_type = InputType.check_input_type(input_type)
         train_base_data, train_rel_data, unique_queries = csv_load(train_file_path, train_rel_path, input_type)
         train_base_data.columns = ['Query', 'Voter Name', 'Item Code', 'Item Rank']
         train_rel_data.columns = ['Query', '0', 'Item Code', 'Relevance']
