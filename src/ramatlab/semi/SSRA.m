@@ -7,7 +7,7 @@ classdef SSRA
         % 构造函数
         function obj = SSRA()
             % 创建 Python 类的实例
-            obj.pyObj = py.rapython.SSRA();
+            obj.pyObj = py.importlib.import_module('src.rapython.semi.ssra').SSRA();
         end
         
         % 调用 Python 类的 train 方法

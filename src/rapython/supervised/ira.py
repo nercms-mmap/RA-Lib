@@ -23,8 +23,6 @@ from src.rapython.datatools import *
 
 __all__ = ['ira', 'MethodType']
 
-from enum import Enum, auto
-
 
 class MethodType(Enum):
     """

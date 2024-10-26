@@ -1,0 +1,8 @@
+cvxpy==1.5.3
+h5py==3.12.1
+multipledispatch==1.0.0
+numpy==2.1.2
+pandas==2.2.3
+scipy==1.14.1
+tensorflow==2.18.0
+tqdm==4.66.4

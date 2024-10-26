@@ -1,17 +1,9 @@
 classdef IRA
     methods(Static)
-        function ira(input_file_path, output_file_path, input_rel_path, mode, input_type)
-            % MATLAB 封装 Python 的 ira 函数
-            
-            if nargin < 5
-                input_type = py.rapython.InputType.SCORE;  % 使用默认 InputType.SCORE
-            end
-            if nargin < 4
-                mode = py.rapython.MethodType.RANK;  % 使用默认 MethodType.RANK
-            end
+        function ira(input_file_path, output_file_path, input_rel_path, k_set, iteration, error_rate, mode, input_type)
             
             % 调用 Python 的 ira 函数
-            py.ira(input_file_path, output_file_path, input_rel_path, mode, input_type);
+            py.importlib.import_module('src.rapython.supervised.ira').ira(input_file_path, output_file_path, input_rel_path, py.int(k_set), py.int(iteration), error_rate, mode, input_type);
         end
     end
 end

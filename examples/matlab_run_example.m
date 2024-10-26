@@ -15,11 +15,49 @@ function matlab_run_example()
 
 
     call_unsupervised_methods(input_file_path, output_base_path);
-    call_supervised_methods(input_file_path, output_base_path)
-    
+
+    train_file_path = '..\\test\\full_lists\\data\\simulation_train.csv';
+    train_rel_path = '..\\test\\full_lists\\data\\simulation_train_rel.csv';
+    call_supervised_methods(train_file_path, train_rel_path, input_file_path, output_base_path);
+    call_semi_methods(train_file_path, train_rel_path, input_file_path, output_base_path);
+
+    input_rel_path = '..\\test\\full_lists\\data\\simulation_test_rel.csv';
+    call_ira_methods(input_file_path, output_base_path, input_rel_path);
 end
 
-function call_supervised_methods(input_file_path, output_base_path)
+function call_semi_methods(train_file_path, train_rel_path, test_file_path, output_base_path)
+    ssra = SSRA();
+    ssra.train(train_file_path, train_rel_path, InputType.RANK);
+    test_output_path = fullfile(output_base_path, 'ssra.csv');
+    ssra.test(test_file_path, test_output_path);
+end
+
+function call_ira_methods(input_file_path, output_base_path, input_rel_path)
+    output_path = fullfile(output_base_path, 'qi_ira.csv');
+    QI_IRA.qi_ira(input_file_path, output_path, input_rel_path, 3, 2, 0.02, InputType.RANK);
+    
+    output_path = fullfile(output_base_path, 'ira_r.csv');
+    IRA.ira(input_file_path, output_path, input_rel_path, 3, 2, 0.02, IRAType.IRA_RANK, InputType.RANK);
+
+    output_path = fullfile(output_base_path, 'ira_s.csv');
+    IRA.ira(input_file_path, output_path, input_rel_path, 3, 2, 0.02, IRAType.IRA_SCORE, InputType.RANK);
+end
+
+function call_supervised_methods(train_file_path, train_rel_path, test_file_path, output_base_path)
+    aggRankDE = AggRankDE();
+    aggRankDE.train(train_file_path, train_rel_path, InputType.RANK);
+    test_output_path = fullfile(output_base_path, 'aggrankde.csv');
+    aggRankDE.test(test_file_path, test_output_path);
+
+    crf = CRF();
+    crf.train(train_file_path, train_rel_path, InputType.RANK, 0.01, 5, 2)
+    test_output_path = fullfile(output_base_path, 'crf.csv');
+    crf.test(test_file_path, test_output_path);
+
+    weightedBorda = WeightedBorda();
+    weightedBorda.train(train_file_path, train_rel_path);
+    test_output_path = fullfile(output_base_path, 'weighted_borda.csv');
+    weightedBorda.test(test_file_path, test_output_path);
 end
 
 function call_unsupervised_methods(input_file_path, output_base_path)
@@ -118,8 +156,22 @@ function init_python(PYTHON_PATH)
         end
 
     end
-
+    % 安装所需的 Python 包
+    install_requirements();  % 调用安装依赖的函数
 end
+
+
+function install_requirements()
+    % install_requirements - 使用 pip 安装项目依赖
+    try
+        % 使用 pip 安装 requirements.txt 中的依赖
+        system('pip install -r requirements.txt');  % 确保在项目根目录中有这个文件
+        disp('All dependencies installed successfully.');
+    catch ME
+        warning(E.identify, 'Error occurred while installing dependencies: %s', ME.message);
+    end
+end
+
 function add_envpath()
     % 获取当前脚本所在的目录路径
     currentDir = fileparts(mfilename('fullpath'));

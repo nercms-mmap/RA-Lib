@@ -14,7 +14,7 @@ classdef WeightedBorda
                 topk = py.None;  % 如果未提供 topk，则使用 None
             end
             % 创建 Python 类的实例
-            obj.pyObj = py.WeightedBorda(topk, is_partial_list);
+            obj.pyObj = py.importlib.import_module('src.rapython.supervised.weighted_borda').WeightedBorda(topk, is_partial_list);
         end
         
         % 调用 Python 的 train 方法

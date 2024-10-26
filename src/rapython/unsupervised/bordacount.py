@@ -9,7 +9,7 @@ Reference:
 - Borda, J. D. (1781). M'emoire sur les' elections au scrutin. Histoire de l'Acad'emie Royale des Sciences.
 
 Authors:
-    Shiwei Feng, Qi Deng
+    Qi Deng, Shiwei Feng
 Date:
     2024-7-25
 

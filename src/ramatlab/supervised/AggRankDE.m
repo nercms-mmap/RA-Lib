@@ -10,7 +10,7 @@ classdef AggRankDE
                 n = py.None;
             end
             if nargin < 5
-                input_type = py.None;
+                input_type = InputType.RANK;
             end
             if nargin < 4
                 f = 0.5;
@@ -25,14 +25,17 @@ classdef AggRankDE
                 np_val = 50;
             end
             
+            if isnumeric(n)
+                n = py.int(n);  % 转换为 py.int
+            end
             % 创建 Python 类的实例
-            obj.pyObj = py.rapython.aggrankde.AggRankDE(np_val, max_iteration, cr, f, input_type, n);
+            obj.pyObj = py.importlib.import_module('src.rapython.supervised.aggrankde').AggRankDE(py.int(np_val), py.int(max_iteration), cr, f, input_type, n);
         end
         
         % 调用 Python 类的 train 方法
         function train(obj, train_file_path, train_rel_path, input_type)
             if nargin < 4
-                input_type = py.None;
+                input_type = InputType.RANK;
             end
             obj.pyObj.train(train_file_path, train_rel_path, input_type);
         end

@@ -47,14 +47,14 @@ Additional Details:
 """
 
 import csv
-import warnings
 
 import cvxpy as cp
 import numpy as np
 from scipy.stats import kendalltau
 from tqdm import tqdm
-from src.rapython.datatools import csv_load
+
 from src.rapython.common.constant import InputType
+from src.rapython.datatools import csv_load
 
 __all__ = ['SSRA']
 
@@ -240,9 +240,10 @@ class SSRA:
             - The method modifies the model's internal state by calculating and storing the weights based on the training data.
         """
         # Set column names for base and relevance data
+        input_type = InputType.check_input_type(input_type)
         if input_type == InputType.SCORE:
-            # Pop up warning, prompting recommendation to use input_type=InputType RANK
-            warnings.warn("Recommend using input_type=InputType.RANK", UserWarning)
+            # Raise a warning as an exception, prompting recommendation to use input_type=InputType.RANK
+            raise ValueError("Invalid input_type: InputType.SCORE. Recommend using input_type=InputType.RANK")
 
         train_base_data, train_rel_data, unique_queries = csv_load(train_file_path, train_rel_path, input_type)
         train_base_data.columns = ['Query', 'Voter Name', 'Item Code', 'Item Rank']

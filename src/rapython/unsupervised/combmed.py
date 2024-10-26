@@ -9,7 +9,7 @@ Reference:
 - Fox, E., & Shaw, J. (1994). Combination of multiple searches. NIST special publication SP, 243-243.
 
 Authors:
-    Shiwei Feng, Qi Deng
+    Qi Deng, Shiwei Feng
 Date:
     2023-10-18
 """

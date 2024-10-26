@@ -12,7 +12,7 @@ offers four types of aggregation:
 - Logarithmic Aggregation: Uses logarithmic transformation of ranks.
 
 Authors:
-    Shiwei Feng
+    Shiwei Feng, Qi Deng
 Date:
     2023-10-19
 """

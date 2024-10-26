@@ -9,7 +9,7 @@ Reference:
 - Xiao, Y., Deng, H. Z., Lu, X., & Wu, J. (2021). Graph-based rank aggregation method for high-dimensional and partial rankings. Journal of the Operational Research Society, 72(1), 227-236.
 
 Authors:
-    Shiwei Feng, Qi Deng
+    Qi Deng, Shiwei Feng
 Date:
     2023-10-20
 

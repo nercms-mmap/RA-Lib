@@ -8,7 +8,7 @@ Reference:
 - Azzini, I., & Munda, G. (2020). A new approach for identifying the Kemeny median ranking. European Journal of Operational Research, 281(2), 388-401.
 
 Authors:
-    Qi Deng, Shiwei Feng
+    Shiwei Feng, Qi Deng
 Date:
     2024-9-18
 """
