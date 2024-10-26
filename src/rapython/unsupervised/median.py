@@ -1,5 +1,5 @@
 """
-Medium Algorithm
+Median Algorithm
 
 This module implements the Medium method for rank aggregation.
 This implementation is based on the following reference:

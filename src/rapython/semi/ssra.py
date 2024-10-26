@@ -8,7 +8,7 @@ Reference:
 - Chen, S., Wang, F., Song, Y., & Zhang, C. (2008, October). Semi-supervised ranking aggregation. In Proceedings of the 17th ACM conference on Information and knowledge management (pp. 1427-1428).
 
 Authors:
-    tancilon
+    Qi Deng
 Date:
     2024-01-18
 

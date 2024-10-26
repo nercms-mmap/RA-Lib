@@ -1,4 +1,4 @@
-function matlab_run_example()
+function matlab_run_examples()
     PYTHON_PATH = "C:\Users\2021\.conda\envs\pymatlab\python.exe";
     
 
