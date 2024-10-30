@@ -51,46 +51,13 @@ def cgagg(input_list):
     numpy.ndarray
         An array containing the final ranks of the items after aggregation.
     """
-    num_voters = input_list.shape[0]
-    num_items = input_list.shape[1]
-    indegree = np.zeros((num_voters, num_items))
-    outdegree = np.zeros((num_voters, num_items))
-    one = np.ones((num_voters, num_items))
-    score = np.zeros((num_voters, num_items))
-    score_sum = np.zeros(num_items)
-
-    # Calculate indegree and outdegree for each voter-item pair
-    for k in range(num_voters):
-        for i in range(num_items):
-            indegree[k, i] = indegree[k, i] + input_list[k, i] - 1
-            outdegree[k, i] = num_items * num_voters - indegree[k, i]
-
-    indegree += one
-    outdegree += one
-
-    # Compute scores based on outdegree and indegree
-    for k in range(num_voters):
-        for i in range(num_items):
-            score[k, i] = outdegree[k, i] / indegree[k, i]
-
-    # Sum scores across all voters for each item
-    for i in range(num_items):
-        item_sum_score = np.zeros(num_voters)
-        for k in range(num_voters):
-            item_sum_score[k] = score[k, i]
-        score_sum[i] = sum(item_sum_score)
-
-    first_row = score_sum
-    # Sort indices based on aggregated scores
-    sorted_indices = np.argsort(first_row)[::-1]
-
-    currrent_rank = 1
-    result = np.zeros(num_items)
-    for index in sorted_indices:
-        result[index] = currrent_rank
-        currrent_rank += 1
-
-    return result
+    indegree = np.sum(input_list, axis=0) - input_list.shape[0]
+    outdegree = input_list.shape[0] * input_list.shape[1] - indegree
+    indegree += 1
+    outdegree += 1
+    score = outdegree / indegree
+    rank = np.argsort(np.argsort(score)[::-1]) + 1
+    return rank
 
 
 def cg(input_file_path, output_file_path):

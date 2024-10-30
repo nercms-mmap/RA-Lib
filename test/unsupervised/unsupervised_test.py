@@ -201,9 +201,11 @@ class UnsupervisedTestVsMatlabCase(unittest.TestCase):
         self.assertEqual(ans_rank, my_rank)
 
     def test_cg(self):
-        ans_file_path = "..\\full_lists\\ans\\rank-result-simulation-dataset-CG.mat"
-        test_data = pd.read_csv("..\\full_lists\\results\\cg.csv", header=None)
-        self.processtest(ans_file_path, test_data, InputType.RANK)
+        ans_file_path = "..\\full_lists\\ans\\result-simulation-dataset-CG.mat"
+        from src.rapython.unsupervised.cg import cg
+        cg(self.input_file_path, "my_results\\my_cg.csv")
+        test_data = pd.read_csv("my_results\\my_cg.csv", header=None)
+        self.processtest(ans_file_path, test_data, InputType.SCORE)
 
     def test_combmax(self):
         from src.rapython.unsupervised import combmax

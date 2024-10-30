@@ -23,6 +23,36 @@ from src.rapython.common.constant import InputType
 __all__ = ['combmax']
 
 
+# def combmax_agg(input_list):
+#     """
+#     Aggregate scores for items based on rankings provided by voters.
+#     Parameters
+#     ----------
+#     input_list : numpy.ndarray
+#         A 2D array where each row represents a voter's ranking of items.
+#
+#     Returns
+#     -------
+#     numpy.ndarray
+#         An array containing the final ranks of the items after aggregation.
+#     """
+#     num_voters = input_list.shape[0]
+#     num_items = input_list.shape[1]
+#     item_comb_score = np.zeros(num_items)
+#     # Convert ranks to scores using different methods
+#     item_score = sc.linearagg(input_list)  # voter * item
+#
+#     for i in range(num_items):
+#         item_min_score = np.zeros(num_voters)
+#         for k in range(num_voters):
+#             item_min_score[k] = item_score[k, i]
+#         item_comb_score[i] = np.max(item_min_score)
+#
+#     result = np.argsort(np.argsort(item_comb_score)) + 1
+#
+#     return result
+
+
 def combmax_agg(input_list):
     """
     Aggregate scores for items based on rankings provided by voters.
@@ -36,21 +66,15 @@ def combmax_agg(input_list):
     numpy.ndarray
         An array containing the final ranks of the items after aggregation.
     """
-    num_voters = input_list.shape[0]
-    num_items = input_list.shape[1]
-    item_comb_score = np.zeros(num_items)
+
     # Convert ranks to scores using different methods
     item_score = sc.linearagg(input_list)  # voter * item
 
-    for i in range(num_items):
-        item_min_score = np.zeros(num_voters)
-        for k in range(num_voters):
-            item_min_score[k] = item_score[k, i]
-        item_comb_score[i] = np.max(item_min_score)
+    combmax_score = np.max(item_score, axis=0)
 
-    result = np.argsort(np.argsort(item_comb_score)) + 1
+    rank = np.argsort(np.argsort(combmax_score)[::-1]) + 1
 
-    return result
+    return rank
 
 
 def combmax(input_file_path, output_file_path):
