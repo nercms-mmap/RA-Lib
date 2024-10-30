@@ -36,29 +36,13 @@ def combmin_agg(input_list):
     numpy.ndarray
         An array containing the final ranks of the items after aggregation.
     """
-    num_voters = input_list.shape[0]
-    num_items = input_list.shape[1]
-    item_comb_score = np.zeros(num_items)
-    # Convert ranks to scores using different methods
-    item_score = sc.linearagg(input_list)
+    item_score = sc.linearagg(input_list)  # voter * item
 
-    for i in range(num_items):
-        item_min_score = np.zeros(num_voters)
-        for k in range(num_voters):
-            item_min_score[k] = item_score[k, i]
-        item_comb_score[i] = min(item_min_score)
+    combmax_score = np.min(item_score, axis=0)
 
-    first_row = item_comb_score
-    # Sort and return indices of sorted elements
-    sorted_indices = np.argsort(first_row)[::-1]
+    rank = np.argsort(np.argsort(combmax_score)[::-1]) + 1
 
-    currrent_rank = 1
-    result = np.zeros(num_items)
-    for index in sorted_indices:
-        result[index] = currrent_rank
-        currrent_rank += 1
-
-    return result
+    return rank
 
 
 def combmin(input_file_path, output_file_path):

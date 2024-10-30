@@ -215,9 +215,11 @@ class UnsupervisedTestVsMatlabCase(unittest.TestCase):
         self.processtest(ans_file_path, test_data, InputType.SCORE)
 
     def test_combmin(self):
-        ans_file_path = "..\\full_lists\\ans\\rank-result-simulation-dataset-CombMIN.mat"
-        test_data = pd.read_csv("..\\full_lists\\results\\combmin.csv", header=None)
-        self.processtest(ans_file_path, test_data, InputType.RANK)
+        ans_file_path = "..\\full_lists\\ans\\result-simulation-dataset-CombMIN.mat"
+        from src.rapython.unsupervised import combmin
+        combmin(self.input_file_path, "my_results\\my_combmin.csv")
+        test_data = pd.read_csv("my_results\\my_combmin.csv", header=None)
+        self.processtest(ans_file_path, test_data, InputType.SCORE)
 
     def test_dowdall(self):
         ans_file_path = "..\\full_lists\\ans\\rank-result-simulation-dataset-Dowdall.mat"
@@ -237,9 +239,9 @@ class UnsupervisedTestVsMatlabCase(unittest.TestCase):
         self.processtest(ans_file_path, test_data, InputType.RANK)
 
     def test_irank(self):
-        ans_file_path = "..\\full_lists\\ans\\rank-result-simulation-dataset-iRANK.mat"
+        ans_file_path = "..\\full_lists\\ans\\result-simulation-dataset-iRANK.mat"
         test_data = pd.read_csv("..\\full_lists\\results\\irank.csv", header=None)
-        self.processtest(ans_file_path, test_data, InputType.RANK)
+        self.processtest(ans_file_path, test_data, InputType.SCORE)
 
     def test_mean(self):
         from src.rapython.unsupervised import mean
@@ -260,12 +262,16 @@ class UnsupervisedTestVsMatlabCase(unittest.TestCase):
 
     def test_comanz(self):
         ans_file_path = "..\\full_lists\\ans\\result-simulation-dataset-CombANZ.mat"
-        test_data = pd.read_csv("..\\full_lists\\results\\combanz.csv", header=None)
+        from src.rapython.unsupervised import combanz
+        combanz(self.input_file_path, "my_results\\my_combanz.csv")
+        test_data = pd.read_csv("my_results\\my_combanz.csv", header=None)
         self.processtest(ans_file_path, test_data, InputType.SCORE)
 
     def test_combmed(self):
         ans_file_path = "..\\full_lists\\ans\\result-simulation-dataset-CombMED.mat"
-        test_data = pd.read_csv("..\\full_lists\\results\\combmed.csv", header=None)
+        from src.rapython.unsupervised import combmed
+        combmed(self.input_file_path, "my_results\\my_combmed.csv")
+        test_data = pd.read_csv("my_results\\my_combmed.csv", header=None)
         self.processtest(ans_file_path, test_data, InputType.SCORE)
 
     def test_combmnz(self):

@@ -23,6 +23,45 @@ from src.rapython.common.constant import InputType
 __all__ = ['combmed']
 
 
+# def combmed_agg(input_list):
+#     """
+#     Aggregate scores for items based on rankings provided by voters.
+#     Parameters
+#     ----------
+#     input_list : numpy.ndarray
+#         A 2D array where each row represents a voter's ranking of items.
+#
+#     Returns
+#     -------
+#     numpy.ndarray
+#         An array containing the final ranks of the items after aggregation.
+#     """
+#     num_voters = input_list.shape[0]
+#     num_items = input_list.shape[1]
+#     item_comb_score = np.zeros(num_items)
+#
+#     # Convert rankings to scores using different methods
+#     item_score = sc.linearagg(input_list)
+#
+#     for i in range(num_items):
+#         item_min_score = np.zeros(num_voters)
+#         for k in range(num_voters):
+#             item_min_score[k] = item_score[k, i]
+#         item_comb_score[i] = (1 / num_voters) * sum(item_min_score)
+#
+#     first_row = item_comb_score
+#     # Sort the scores and get the sorted indices
+#     sorted_indices = np.argsort(first_row)[::-1]
+#
+#     currrent_rank = 1
+#     result = np.zeros(num_items)
+#     for index in sorted_indices:
+#         result[index] = currrent_rank
+#         currrent_rank += 1
+#
+#     return result
+
+
 def combmed_agg(input_list):
     """
     Aggregate scores for items based on rankings provided by voters.
@@ -36,30 +75,10 @@ def combmed_agg(input_list):
     numpy.ndarray
         An array containing the final ranks of the items after aggregation.
     """
-    num_voters = input_list.shape[0]
-    num_items = input_list.shape[1]
-    item_comb_score = np.zeros(num_items)
-
-    # Convert rankings to scores using different methods
-    item_score = sc.linearagg(input_list)
-
-    for i in range(num_items):
-        item_min_score = np.zeros(num_voters)
-        for k in range(num_voters):
-            item_min_score[k] = item_score[k, i]
-        item_comb_score[i] = (1 / num_voters) * sum(item_min_score)
-
-    first_row = item_comb_score
-    # Sort the scores and get the sorted indices
-    sorted_indices = np.argsort(first_row)[::-1]
-
-    currrent_rank = 1
-    result = np.zeros(num_items)
-    for index in sorted_indices:
-        result[index] = currrent_rank
-        currrent_rank += 1
-
-    return result
+    comb_score = 1 - (input_list - 1) / input_list.shape[1]
+    combmed_score = np.mean(comb_score, axis=0)
+    rank = np.argsort(np.argsort(combmed_score)[::-1]) + 1
+    return rank
 
 
 def combmed(input_file_path, output_file_path):
