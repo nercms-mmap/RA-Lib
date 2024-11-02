@@ -243,6 +243,7 @@ function add_envpath()
     supervisedDir = fullfile(targetDir, 'supervised');
     semiDir = fullfile(targetDir, 'semi');
     commonDir = fullfile(targetDir, 'common');
+    evaluationDir = fullfile(targetDir, 'evaluation');
 
     % Check and add paths if they are not already present.
     if ~any(strcmp(path, unsupervisedDir))
@@ -259,5 +260,9 @@ function add_envpath()
 
     if ~any(strcmp(path, commonDir))
         addpath(commonDir);  % Add common path.
+    end
+    
+    if ~any(strcmp(path, evaluationDir))
+        addpath(evaluationDir);  % Add common path.
     end
 end
