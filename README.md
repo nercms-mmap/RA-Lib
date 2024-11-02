@@ -9,15 +9,8 @@ If you want to add your own algorithm to improve the benchmarking system, please
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/CombMIN-NIST SP'94-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/CombMAX-NIST SP'94-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/CombSUM-NIST SP'94-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/CombANZ-NIST SP'94-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/CombMNZ-NIST SP'94-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/MC1-WWW'01-F7A957" alt="" />
-  <img src="https://img.shields.io/badge/MC2-WWW'01-F7A957" alt="" />
-  <img src="https://img.shields.io/badge/MC3-WWW'01-F7A957" alt="" />
-  <img src="https://img.shields.io/badge/MC4-WWW'01-F7A957" alt="" />
+  <img src="https://img.shields.io/badge/Comb family-NIST SP'94-528FAC" alt="" />
+  <img src="https://img.shields.io/badge/MC1--4-WWW'01-F7A957" alt="" />
   <img src="https://img.shields.io/badge/BordaCount-SIGIR'01-FFD06E" alt="" />
   <img src="https://img.shields.io/badge/Dowdall-IPSR'02-FAE2C1" alt="" />
   <img src="https://img.shields.io/badge/Median-SIMOD'03-1F456F" alt="" />
