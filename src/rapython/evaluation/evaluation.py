@@ -34,6 +34,56 @@ class Evaluation:
         pass
 
     @staticmethod
+    def compute_recall(data_list, rel_list, topk, input_type):
+        """
+        Compute Recall @ k
+
+        This function calculates the recall at a specified cut-off rank k. Recall is
+        defined as the proportion of relevant items retrieved out of the total relevant items.
+
+        Parameters:
+        -----------
+        data_list : np.ndarray
+            1D array of data values representing either scores or ranks for the items.
+
+        rel_list : np.ndarray
+            1D array indicating the relevance of each item (relevant if > 0, irrelevant otherwise).
+
+        topk : int
+            The cut-off rank for computing recall. If it exceeds the length of rel_list or is non-positive,
+            it will default to the total length of rel_list.
+
+        input_type : InputType
+            Type of input data, either 'SCORE' (higher values are prioritized) or 'RANK' (lower ranks are prioritized).
+
+        Returns:
+        --------
+        float
+            The recall value at top-k, which is the ratio of relevant items retrieved to the total relevant items.
+        """
+        rank_list = None
+        if input_type == InputType.RANK:
+            rank_list = np.argsort(data_list)
+        elif input_type == InputType.SCORE:
+            rank_list = np.argsort(data_list)[::-1]
+
+        if topk <= 0 or topk > len(rel_list):
+            topk = len(rel_list)
+
+        total_r = np.sum(rel_list > 0)
+
+        if total_r == 0:
+            return 0
+
+        retrieved_r = 0.0
+        for k in range(topk):
+            item_idx = rank_list[k]
+            if rel_list[item_idx] > 0:
+                retrieved_r += 1
+
+        return retrieved_r / total_r
+
+    @staticmethod
     def compute_precision(score_list, rel_list, topk, input_type):
         """
         Compute Precision @ k
@@ -276,6 +326,89 @@ class Evaluation:
             sum_r += self.compute_rank(ra_list, rel_list, topk, InputType.RANK)
 
         return sum_r / len(unique_queries)
+
+    @dispatch(pd.DataFrame, pd.DataFrame, int)
+    def eval_recall(self, test_data, rel_data, topk):
+        """
+        Evaluate Recall @ k for DataFrames
+
+        This method evaluates the recall at a specified cut-off rank k using
+        test and relevance data provided as DataFrames. It computes recall for each
+        unique query in the test data and averages the recall across all queries.
+
+        Parameters:
+        -----------
+        test_data : pd.DataFrame
+            DataFrame containing test data with columns representing 'Query', 'Item Code', and 'Item Rank'.
+
+        rel_data : pd.DataFrame
+            DataFrame containing relevance data with columns representing 'Query', '0', 'Item Code', and 'Relevance'.
+
+        topk : int
+            The cut-off rank for computing recall.
+
+        Returns:
+        --------
+        float
+            The average recall value at top-k across all queries.
+        """
+        test_data.columns = ['Query', 'Item Code', 'Item Rank']
+        rel_data.columns = ['Query', '0', 'Item Code', 'Relevance']
+        unique_queries = test_data['Query'].unique()
+        sum_r = 0.0
+        for query in unique_queries:
+            query_test_data = test_data[test_data['Query'] == query]
+            query_rel_data = rel_data[rel_data['Query'] == query]
+            ra_list, rel_list = covert_pd_to_csv(query_test_data, query_rel_data)
+            sum_r += self.compute_recall(ra_list, rel_list, topk, InputType.RANK)
+
+        return sum_r / len(unique_queries)
+
+    @dispatch(str, str, str, str, InputType, int)
+    def eval_recall(self, test_path, rel_path, test_data_name, test_rel_name, data_type, topk):
+        """
+        Evaluate Recall @ k for .mat Files
+
+        This method evaluates the recall at a specified cut-off rank k using test and
+        relevance data loaded from .mat files. It computes recall for each query and
+        averages the recall across all queries.
+
+        Parameters:
+        -----------
+        test_path : str
+            Path to the .mat file containing the test data.
+
+        rel_path : str
+            Path to the .mat file containing the relevance data.
+
+        test_data_name : str
+            Variable name for the test data within the .mat file.
+
+        test_rel_name : str
+            Variable name for the relevance data within the .mat file.
+
+        data_type : InputType
+            Specifies whether the input data represents 'SCORE' or 'RANK'.
+
+        topk : int
+            The cut-off rank for computing recall.
+
+        Returns:
+        --------
+        float
+            The average recall value at top-k across all queries.
+        """
+        test_mat = loadmat(test_path)
+        rel_mat = loadmat(rel_path)
+
+        test_data = test_mat[test_data_name]
+        rel_data = rel_mat[test_rel_name]
+
+        sum_r = 0.0
+        for query in range(test_data.shape[0]):
+            sum_r += self.compute_recall(test_data[query, :], rel_data[query, :], topk, data_type)
+
+        return sum_r / test_data.shape[0]
 
     @dispatch(pd.DataFrame, pd.DataFrame, int)
     def eval_precision(self, test_data, rel_data, topk):

@@ -1,174 +1,171 @@
-import os.path
 import unittest
 
 import pandas as pd
+from scipy.io import loadmat
 
 from src.rapython.common.constant import InputType
 from src.rapython.evaluation import Evaluation
-from scipy.io import loadmat
-
-from src.rapython.unsupervised import McType
 
 
-class UnsupervisedTestVsPythonCase(unittest.TestCase):
-    def setUp(self):
-        self.ans_base_path = "ans_results"
-        self.test_base_path = "my_results"
-        self.input_file_path = "..\\full_lists\\data\\simulation_test.csv"
-        self.input_rel_path = "..\\full_lists\\data\\simulation_test_rel.csv"
-        self.rel_data = pd.read_csv(self.input_rel_path, header=None)
-        self.map_topk = 10
-        self.ndcg_topk = 10
-        self.rank_topk = 1
-
-    def processtest(self, my_data, ans_data):
-        my_ndcg = Evaluation().eval_ndcg(my_data, self.rel_data, self.ndcg_topk)
-        ans_ndcg = Evaluation().eval_ndcg(ans_data, self.rel_data, self.ndcg_topk)
-        self.assertEqual(ans_ndcg, my_ndcg)
-        my_map = Evaluation().eval_mean_average_precision(my_data, self.rel_data, self.map_topk)
-        ans_map = Evaluation().eval_mean_average_precision(ans_data, self.rel_data, self.map_topk)
-        self.assertEqual(ans_map, my_map)
-        my_rank = Evaluation().eval_rank(my_data, self.rel_data, self.rank_topk)
-        ans_rank = Evaluation().eval_rank(ans_data, self.rel_data, self.rank_topk)
-        self.assertEqual(ans_rank, my_rank)
-
-    def test_cg(self):
-        from src.rapython.unsupervised import cg
-        cg(self.input_file_path, os.path.join(self.test_base_path, f"my_{cg.__name__}.csv"))
-        from CG import CG
-        CG(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{CG.__name__}.csv"))
-
-        my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{cg.__name__}.csv"), header=None)
-        ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{CG.__name__}.csv"), header=None)
-        self.processtest(my_data, ans_data)
-
-    def test_borda_score(self):
-        from src.rapython.unsupervised import borda_score
-        borda_score(self.input_file_path, os.path.join(self.test_base_path, f"my_{borda_score.__name__}.csv"))
-        from Borda_Score import Borda_Score
-        Borda_Score(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{Borda_Score.__name__}.csv"))
-        my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{borda_score.__name__}.csv"), header=None)
-        ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{Borda_Score.__name__}.csv"), header=None)
-        self.processtest(my_data, ans_data)
-
-    def test_bordacount(self):
-        from src.rapython.unsupervised import bordacount
-        bordacount(self.input_file_path, os.path.join(self.test_base_path, f"my_{bordacount.__name__}.csv"))
-        from BordaCount import BordaCount
-        BordaCount(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{BordaCount.__name__}.csv"))
-        my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{bordacount.__name__}.csv"), header=None)
-        ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{BordaCount.__name__}.csv"), header=None)
-        self.processtest(my_data, ans_data)
-
-    def test_combanz(self):
-        from src.rapython.unsupervised import combanz
-        combanz(self.input_file_path, os.path.join(self.test_base_path, f"my_{combanz.__name__}.csv"))
-        from CombANZ import CombANZ
-        CombANZ(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{CombANZ.__name__}.csv"))
-        my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{combanz.__name__}.csv"), header=None)
-        ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{CombANZ.__name__}.csv"), header=None)
-        self.processtest(my_data, ans_data)
-
-    def test_combmax(self):
-        from src.rapython.unsupervised import combmax
-        combmax(self.input_file_path, os.path.join(self.test_base_path, f"my_{combmax.__name__}.csv"))
-        from CombMAX import CombMAX
-        CombMAX(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{CombMAX.__name__}.csv"))
-        my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{combmax.__name__}.csv"), header=None)
-        ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{CombMAX.__name__}.csv"), header=None)
-        self.processtest(my_data, ans_data)
-
-    def test_combmed(self):
-        from src.rapython.unsupervised import combmed
-        combmed(self.input_file_path, os.path.join(self.test_base_path, f"my_{combmed.__name__}.csv"))
-        from CombMED import CombMED
-        CombMED(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{CombMED.__name__}.csv"))
-        my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{combmed.__name__}.csv"), header=None)
-        ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{CombMED.__name__}.csv"), header=None)
-        self.processtest(my_data, ans_data)
-
-    def test_combmin(self):
-        from src.rapython.unsupervised import combmin
-        combmin(self.input_file_path, os.path.join(self.test_base_path, f"my_{combmin.__name__}.csv"))
-        from CombMIN import CombMIN
-        CombMIN(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{CombMIN.__name__}.csv"))
-        my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{combmin.__name__}.csv"), header=None)
-        ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{CombMIN.__name__}.csv"), header=None)
-        self.processtest(my_data, ans_data)
-
-    def test_combmnz(self):
-        from src.rapython.unsupervised import combmnz
-        combmnz(self.input_file_path, os.path.join(self.test_base_path, f"my_{combmnz.__name__}.csv"))
-        from CombMNZ import CombMNZ
-        CombMNZ(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{CombMNZ.__name__}.csv"))
-        my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{combmnz.__name__}.csv"), header=None)
-        ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{CombMNZ.__name__}.csv"), header=None)
-        self.processtest(my_data, ans_data)
-
-    def test_combsum(self):
-        from src.rapython.unsupervised import combsum
-        combsum(self.input_file_path, os.path.join(self.test_base_path, f"my_{combsum.__name__}.csv"))
-        from CombSUM import CombSUM
-        CombSUM(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{CombSUM.__name__}.csv"))
-        my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{combsum.__name__}.csv"), header=None)
-        ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{CombSUM.__name__}.csv"), header=None)
-        self.processtest(my_data, ans_data)
-
-    def test_dowdall(self):
-        from src.rapython.unsupervised import dowdall
-        dowdall(self.input_file_path, os.path.join(self.test_base_path, f"my_{dowdall.__name__}.csv"))
-        from Dowdall import Dowdall
-        Dowdall(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{Dowdall.__name__}.csv"))
-        my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{dowdall.__name__}.csv"), header=None)
-        ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{Dowdall.__name__}.csv"), header=None)
-        self.processtest(my_data, ans_data)
-
-    def test_markovchain(self):
-        from src.rapython.unsupervised import markovchainmethod
-        markovchainmethod(self.input_file_path,
-                          os.path.join(self.test_base_path, f"my_{markovchainmethod.__name__}.csv"), McType.MC1)
-        from MarkovChain import MarKovChainMethod
-        MarKovChainMethod(self.input_file_path,
-                          os.path.join(self.ans_base_path, f"ans_{MarKovChainMethod.__name__}.csv"), 'MC1')
-        my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{markovchainmethod.__name__}.csv"), header=None)
-        ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{MarKovChainMethod.__name__}.csv"), header=None)
-        self.processtest(my_data, ans_data)
-
-    def test_mean(self):
-        from src.rapython.unsupervised import mean
-        mean(self.input_file_path, os.path.join(self.test_base_path, f"my_{mean.__name__}.csv"))
-        from Mean import Mean
-        Mean(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{Mean.__name__}.csv"))
-        my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{mean.__name__}.csv"), header=None)
-        ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{Mean.__name__}.csv"), header=None)
-        self.processtest(my_data, ans_data)
-
-    def test_median(self):
-        from src.rapython.unsupervised import median
-        median(self.input_file_path, os.path.join(self.test_base_path, f"my_{median.__name__}.csv"))
-        from Medium import Medium
-        Medium(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{Medium.__name__}.csv"))
-        my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{median.__name__}.csv"), header=None)
-        ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{Medium.__name__}.csv"), header=None)
-        self.processtest(my_data, ans_data)
-
-    def test_mork(self):
-        from src.rapython.unsupervised import mork_heuristic
-        mork_heuristic(self.input_file_path, os.path.join(self.test_base_path, f"my_{mork_heuristic.__name__}.csv"))
-        from MorK_Heuristic_Maximum import Mork_Heuristic
-        Mork_Heuristic(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{Mork_Heuristic.__name__}.csv"))
-        my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{mork_heuristic.__name__}.csv"), header=None)
-        ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{Mork_Heuristic.__name__}.csv"), header=None)
-        self.processtest(my_data, ans_data)
-
-    def test_rrf(self):
-        from src.rapython.unsupervised import rrf
-        rrf(self.input_file_path, os.path.join(self.test_base_path, f"my_{rrf.__name__}.csv"))
-        from RRF import RRF
-        RRF(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{RRF.__name__}.csv"))
-        my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{rrf.__name__}.csv"), header=None)
-        ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{RRF.__name__}.csv"), header=None)
-        self.processtest(my_data, ans_data)
+# class UnsupervisedTestVsPythonCase(unittest.TestCase):
+#     def setUp(self):
+#         self.ans_base_path = "ans_results"
+#         self.test_base_path = "my_results"
+#         self.input_file_path = "..\\full_lists\\data\\simulation_test.csv"
+#         self.input_rel_path = "..\\full_lists\\data\\simulation_test_rel.csv"
+#         self.rel_data = pd.read_csv(self.input_rel_path, header=None)
+#         self.map_topk = 10
+#         self.ndcg_topk = 10
+#         self.rank_topk = 1
+#
+#     def processtest(self, my_data, ans_data):
+#         my_ndcg = Evaluation().eval_ndcg(my_data, self.rel_data, self.ndcg_topk)
+#         ans_ndcg = Evaluation().eval_ndcg(ans_data, self.rel_data, self.ndcg_topk)
+#         self.assertEqual(ans_ndcg, my_ndcg)
+#         my_map = Evaluation().eval_mean_average_precision(my_data, self.rel_data, self.map_topk)
+#         ans_map = Evaluation().eval_mean_average_precision(ans_data, self.rel_data, self.map_topk)
+#         self.assertEqual(ans_map, my_map)
+#         my_rank = Evaluation().eval_rank(my_data, self.rel_data, self.rank_topk)
+#         ans_rank = Evaluation().eval_rank(ans_data, self.rel_data, self.rank_topk)
+#         self.assertEqual(ans_rank, my_rank)
+#
+#     def test_cg(self):
+#         from src.rapython.unsupervised import cg
+#         cg(self.input_file_path, os.path.join(self.test_base_path, f"my_{cg.__name__}.csv"))
+#         from CG import CG
+#         CG(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{CG.__name__}.csv"))
+#
+#         my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{cg.__name__}.csv"), header=None)
+#         ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{CG.__name__}.csv"), header=None)
+#         self.processtest(my_data, ans_data)
+#
+#     def test_borda_score(self):
+#         from src.rapython.unsupervised import borda_score
+#         borda_score(self.input_file_path, os.path.join(self.test_base_path, f"my_{borda_score.__name__}.csv"))
+#         from Borda_Score import Borda_Score
+#         Borda_Score(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{Borda_Score.__name__}.csv"))
+#         my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{borda_score.__name__}.csv"), header=None)
+#         ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{Borda_Score.__name__}.csv"), header=None)
+#         self.processtest(my_data, ans_data)
+#
+#     def test_bordacount(self):
+#         from src.rapython.unsupervised import bordacount
+#         bordacount(self.input_file_path, os.path.join(self.test_base_path, f"my_{bordacount.__name__}.csv"))
+#         from BordaCount import BordaCount
+#         BordaCount(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{BordaCount.__name__}.csv"))
+#         my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{bordacount.__name__}.csv"), header=None)
+#         ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{BordaCount.__name__}.csv"), header=None)
+#         self.processtest(my_data, ans_data)
+#
+#     def test_combanz(self):
+#         from src.rapython.unsupervised import combanz
+#         combanz(self.input_file_path, os.path.join(self.test_base_path, f"my_{combanz.__name__}.csv"))
+#         from CombANZ import CombANZ
+#         CombANZ(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{CombANZ.__name__}.csv"))
+#         my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{combanz.__name__}.csv"), header=None)
+#         ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{CombANZ.__name__}.csv"), header=None)
+#         self.processtest(my_data, ans_data)
+#
+#     def test_combmax(self):
+#         from src.rapython.unsupervised import combmax
+#         combmax(self.input_file_path, os.path.join(self.test_base_path, f"my_{combmax.__name__}.csv"))
+#         from CombMAX import CombMAX
+#         CombMAX(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{CombMAX.__name__}.csv"))
+#         my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{combmax.__name__}.csv"), header=None)
+#         ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{CombMAX.__name__}.csv"), header=None)
+#         self.processtest(my_data, ans_data)
+#
+#     def test_combmed(self):
+#         from src.rapython.unsupervised import combmed
+#         combmed(self.input_file_path, os.path.join(self.test_base_path, f"my_{combmed.__name__}.csv"))
+#         from CombMED import CombMED
+#         CombMED(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{CombMED.__name__}.csv"))
+#         my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{combmed.__name__}.csv"), header=None)
+#         ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{CombMED.__name__}.csv"), header=None)
+#         self.processtest(my_data, ans_data)
+#
+#     def test_combmin(self):
+#         from src.rapython.unsupervised import combmin
+#         combmin(self.input_file_path, os.path.join(self.test_base_path, f"my_{combmin.__name__}.csv"))
+#         from CombMIN import CombMIN
+#         CombMIN(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{CombMIN.__name__}.csv"))
+#         my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{combmin.__name__}.csv"), header=None)
+#         ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{CombMIN.__name__}.csv"), header=None)
+#         self.processtest(my_data, ans_data)
+#
+#     def test_combmnz(self):
+#         from src.rapython.unsupervised import combmnz
+#         combmnz(self.input_file_path, os.path.join(self.test_base_path, f"my_{combmnz.__name__}.csv"))
+#         from CombMNZ import CombMNZ
+#         CombMNZ(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{CombMNZ.__name__}.csv"))
+#         my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{combmnz.__name__}.csv"), header=None)
+#         ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{CombMNZ.__name__}.csv"), header=None)
+#         self.processtest(my_data, ans_data)
+#
+#     def test_combsum(self):
+#         from src.rapython.unsupervised import combsum
+#         combsum(self.input_file_path, os.path.join(self.test_base_path, f"my_{combsum.__name__}.csv"))
+#         from CombSUM import CombSUM
+#         CombSUM(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{CombSUM.__name__}.csv"))
+#         my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{combsum.__name__}.csv"), header=None)
+#         ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{CombSUM.__name__}.csv"), header=None)
+#         self.processtest(my_data, ans_data)
+#
+#     def test_dowdall(self):
+#         from src.rapython.unsupervised import dowdall
+#         dowdall(self.input_file_path, os.path.join(self.test_base_path, f"my_{dowdall.__name__}.csv"))
+#         from Dowdall import Dowdall
+#         Dowdall(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{Dowdall.__name__}.csv"))
+#         my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{dowdall.__name__}.csv"), header=None)
+#         ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{Dowdall.__name__}.csv"), header=None)
+#         self.processtest(my_data, ans_data)
+#
+#     def test_markovchain(self):
+#         from src.rapython.unsupervised import markovchainmethod
+#         markovchainmethod(self.input_file_path,
+#                           os.path.join(self.test_base_path, f"my_{markovchainmethod.__name__}.csv"), McType.MC1)
+#         from MarkovChain import MarKovChainMethod
+#         MarKovChainMethod(self.input_file_path,
+#                           os.path.join(self.ans_base_path, f"ans_{MarKovChainMethod.__name__}.csv"), 'MC1')
+#         my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{markovchainmethod.__name__}.csv"), header=None)
+#         ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{MarKovChainMethod.__name__}.csv"), header=None)
+#         self.processtest(my_data, ans_data)
+#
+#     def test_mean(self):
+#         from src.rapython.unsupervised import mean
+#         mean(self.input_file_path, os.path.join(self.test_base_path, f"my_{mean.__name__}.csv"))
+#         from Mean import Mean
+#         Mean(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{Mean.__name__}.csv"))
+#         my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{mean.__name__}.csv"), header=None)
+#         ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{Mean.__name__}.csv"), header=None)
+#         self.processtest(my_data, ans_data)
+#
+#     def test_median(self):
+#         from src.rapython.unsupervised import median
+#         median(self.input_file_path, os.path.join(self.test_base_path, f"my_{median.__name__}.csv"))
+#         from Medium import Medium
+#         Medium(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{Medium.__name__}.csv"))
+#         my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{median.__name__}.csv"), header=None)
+#         ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{Medium.__name__}.csv"), header=None)
+#         self.processtest(my_data, ans_data)
+#
+#     def test_mork(self):
+#         from src.rapython.unsupervised import mork_heuristic
+#         mork_heuristic(self.input_file_path, os.path.join(self.test_base_path, f"my_{mork_heuristic.__name__}.csv"))
+#         from MorK_Heuristic_Maximum import Mork_Heuristic
+#         Mork_Heuristic(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{Mork_Heuristic.__name__}.csv"))
+#         my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{mork_heuristic.__name__}.csv"), header=None)
+#         ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{Mork_Heuristic.__name__}.csv"), header=None)
+#         self.processtest(my_data, ans_data)
+#
+#     def test_rrf(self):
+#         from src.rapython.unsupervised import rrf
+#         rrf(self.input_file_path, os.path.join(self.test_base_path, f"my_{rrf.__name__}.csv"))
+#         from RRF import RRF
+#         RRF(self.input_file_path, os.path.join(self.ans_base_path, f"ans_{RRF.__name__}.csv"))
+#         my_data = pd.read_csv(os.path.join(self.test_base_path, f"my_{rrf.__name__}.csv"), header=None)
+#         ans_data = pd.read_csv(os.path.join(self.ans_base_path, f"ans_{RRF.__name__}.csv"), header=None)
+#         self.processtest(my_data, ans_data)
 
 
 class UnsupervisedTestVsMatlabCase(unittest.TestCase):

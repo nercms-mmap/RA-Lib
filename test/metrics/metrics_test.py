@@ -42,6 +42,13 @@ class MetricsTestCase(unittest.TestCase):
         csv_rank = self.eval.eval_rank(self.csv_data, self.csv_rel, 1)
         self.assertEqual(csv_rank, mat_rank)
 
+    def test_recall(self):
+        mat_rank = self.eval.eval_recall(self.mat_data_file, self.mat_rel_file,
+                                         get_first_key(self.mat_data_file),
+                                         get_first_key(self.mat_rel_file), InputType.RANK, 10)
+        csv_rank = self.eval.eval_recall(self.csv_data, self.csv_rel, 10)
+        self.assertEqual(csv_rank, mat_rank)
+
 
 def get_first_key(file_path):
     mat_data = loadmat(file_path)
