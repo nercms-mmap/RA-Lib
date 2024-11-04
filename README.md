@@ -9,17 +9,17 @@ If you want to add your own algorithm to improve the benchmarking system, please
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Comb family-NIST SP'94-CCE4EF" alt="" />
-  <img src="https://img.shields.io/badge/MC1--4-WWW'01-AED5E6" alt="" />
-  <img src="https://img.shields.io/badge/BordaCount-SIGIR'01-90C4DC" alt="" />
-  <img src="https://img.shields.io/badge/Dowdall-IPSR'02-71B5D3" alt="" />
+  <img src="https://img.shields.io/badge/Comb family-NIST SP'94-143240" alt="" />
+  <img src="https://img.shields.io/badge/MC1--4-WWW'01-1E4A5E" alt="" />
+  <img src="https://img.shields.io/badge/BordaCount-SIGIR'01-27627D" alt="" />
+  <img src="https://img.shields.io/badge/Dowdall-IPSR'02-317A9B" alt="" />
   <img src="https://img.shields.io/badge/Median-SIMOD'03-53A4C9" alt="" />
   <img src="https://img.shields.io/badge/RRF-SIMOD'09-53A4C9" alt="" />
-  <img src="https://img.shields.io/badge/iRANK-JIST'10-317A9B" alt="" />
-  <img src="https://img.shields.io/badge/Mean-PMLR'11-27627D" alt="" />
-  <img src="https://img.shields.io/badge/HPA-ECIR'20-1E4A5E" alt="" />
-  <img src="https://img.shields.io/badge/PostNDCG-ECIR'20-1E4A5E" alt="" />
-  <img src="https://img.shields.io/badge/ER-OMEGA'20-8A352E" alt="" />
+  <img src="https://img.shields.io/badge/iRANK-JIST'10-71B5D3" alt="" />
+  <img src="https://img.shields.io/badge/Mean-PMLR'11-90C4DC" alt="" />
+  <img src="https://img.shields.io/badge/HPA-ECIR'20-AED5E6" alt="" />
+  <img src="https://img.shields.io/badge/PostNDCG-ECIR'20-AED5E6" alt="" />
+  <img src="https://img.shields.io/badge/ER-OMEGA'20-CCE4EF" alt="" />
   <img src="https://img.shields.io/badge/Mork--H-EJOR'20-C9C780" alt="" />
   <img src="https://img.shields.io/badge/CG-JORS'21-37939A" alt="" />
   <img src="https://img.shields.io/badge/DIBRA-LSA'22-D2D6F5" alt="" />
