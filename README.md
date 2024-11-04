@@ -68,23 +68,24 @@ If you want to add your own algorithm to improve the benchmarking system, please
                 <li>$\textrm{HPA}$ <a href="#HPA&postNDCG">[9]</li>
                 <li>$\textrm{PostNDCG}$ <a href="#HPA&postNDCG">[9]</li>
                 <li>$\textrm{ER}$ <a href="#ER">[10]</li>
-                <li>$\textrm{Mork-H}$ <a href="#Mork-H">[11]</li>
-                <li>$\textrm{CG}$ <a href="#CG">[12]</li>
-                <li>$\textrm{DIBRA}$ <a href="#DIBRA">[13]</li>
+                <li>$\textrm{Mork-H}$ <a href="#Mork-H">[40]</li>
+                <li>$\textrm{CG}$ <a href="#CG">[11]</li>
+                <li>$\textrm{DIBRA}$ <a href="#DIBRA">[12]</li>
+                <li>$\textrm{Borda-Score}$ <a href="#borda_score">[21]</li>
         </td>
         <td>
             <ul>
-                <li>$\textrm{wBorda}$ <a href="#wBorda">[14]</li>
-                <li>$\textrm{CRF}$ <a href="#CRF">[15]</li>
-                <li>$\textrm{CSRA}$ <a href="#CSRA">[16]</li>
-                <li>$\textrm{AggRankDE}$ <a href="#AggRankDe">[17]</li>
-                <li>$\textrm{IRA}_\textrm{R}$ <a href="#IRA">[18]</li>
-                <li>$\textrm{IRA}_\textrm{S}$ <a href="#IRA">[18]</li>
-                <li>$\textrm{QI-IRA}$ <a href="#QIIRA">[19]</li>
+                <li>$\textrm{wBorda}$ <a href="#wBorda">[13]</li>
+                <li>$\textrm{CRF}$ <a href="#CRF">[14]</li>
+                <li>$\textrm{CSRA}$ <a href="#CSRA">[15]</li>
+                <li>$\textrm{AggRankDE}$ <a href="#AggRankDe">[16]</li>
+                <li>$\textrm{IRA}_\textrm{R}$ <a href="#IRA">[17]</li>
+                <li>$\textrm{IRA}_\textrm{S}$ <a href="#IRA">[17]</li>
+                <li>$\textrm{QI-IRA}$ <a href="#QIIRA">[18]</li>
         </td>
         <td>
             <ul>
-                <li>$\textrm{SSRA}$ <a href="#semi">[20]</li>
+                <li>$\textrm{SSRA}$ <a href="#semi">[19]</li>
         </td>
     </tbody>
 </table>
@@ -159,6 +160,7 @@ References
 
 <a id="semi">[[20]](https://dl.acm.org/doi/abs/10.1145/1458082.1458315) Chen, S., Wang, F., Song, Y., & Zhang, C. (2008, October). Semi-supervised ranking aggregation. In Proceedings of the 17th ACM conference on Information and knowledge management (pp. 1427-1428).</a>
 
+<a id="borda_score">[[21]]([https://www.sciencedirect.com/science/article/abs/pii/S0377221719307039](https://ojs.aaai.org/index.php/AAAI/article/view/25685/25457)) Boehmer, Niclas, Robert Bredereck, and Dominik Peters. "Rank aggregation using scoring rules." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37. No. 5. 2023. </a>
  ## Contacts
 
  If you encounter any problems, you can contact us via email 2021302111226@whu.edu.cn
