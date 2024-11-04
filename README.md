@@ -93,12 +93,92 @@ If you want to add your own algorithm to improve the benchmarking system, please
 # Directory Structure
 ```
 │  README.md
-│  plot.py
-| 
-├─results
-│  ├─re-ID.csv
-│  ├─social choice.csv
-│      
+│  
+├─datasets
+│  ├─FLAGR
+│  ├─ice-cream
+│  ├─MovieLens 1M
+│  ├─MQ2008-agg
+│  ├─NSCLC
+│  ├─Re-ID
+│  └─World University Ranking 2022
+│
+├─examples
+|  ├─matlab_run_examples.m
+|  ├─py_run_examples.ipynb
+│
+└─src
+│   ├─__init__.py
+│   ├─requirements.txt
+│   ├─ramatlab
+│   │   ├─common
+│   │   |  BordaCount.m
+│   │   |  CG.m
+│   │   |  CombANZ.m
+│   │   |  CombMAX.m
+│   │   |  CombMED.m
+│   │   |  CombMIN.m
+│   │   |  CombMNZ.m
+│   │   |  CombSUM.m
+│   │   |  Condorcet.m
+│   │   |  DIBRA.m
+│   │   |  Dowdall.m
+│   │   |  EnsembleRanking.m
+│   │   |  ER.m
+│   │   |  HPA.m
+│   │   |  hpa_func.m
+│   │   |  ice-cream.mat
+│   │   |  iRank.m
+│   │   |  Matrix-ice-cream.mat
+│   │   |  Mean.m
+│   │   |  Median.m
+│   │   |  PostNDCG.m
+│   │   |  RRF.m
+│   │   |  unsupervised RA methods.ipynb
+│   │   ├─evaluaion
+│   │   |  Evaluation.m
+│   └─rapython
+│           BordaCount.py
+│           CG.py
+│           CombANZ.py
+│           CombMAX.py
+│           CombMED.py
+│           CombMIN.py
+│           CombMNZ.py
+│           CombSUM.py
+│           Comb_Family.py
+│           Dowdall.py
+│           evaluate.py
+│           MarkovChain.py
+│           Mean.py
+│           Medium.py
+│           preprocess.py
+│           RRF.py
+│           run_algorithm.py
+│           scorefunc.py
+│           unsupervised RA methods.ipynb
+│
+├─supervised
+│  ├─matlab
+│  │  │  compute_AP.m
+│  │  │  evaluation.m
+│  │  │  m_QT_IRA.m
+│  │  │  m_Rank_based_IRA.m
+│  │  │  m_Score_based_IRA.m
+│  │  │  QT_IRA.m
+│  │  │  Rank_based_IRA.m
+│  │  │  Score_based_IRA.m
+│  │  │  
+│  │  └─CSRA
+│  │          
+│  └─python
+│          AggRankDE.py
+│          CRF.py
+│          Evaluation.py
+│          WeightedBorda.py
+│          
+├─semi-supervised
+│      SSRA.py
 ```
 
 Demo
