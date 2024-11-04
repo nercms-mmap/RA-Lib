@@ -1,4 +1,4 @@
-# RA-Lib
+![image](https://github.com/user-attachments/assets/4ca896f2-1aeb-4567-98ee-f1929c653744)# RA-Lib
 RA-Lib is a benchmarking environment for Rank Aggregation (RA) algorithms. This website contains the current benchmarking results, which have 21 unsupervised RA methods, 7 supervised RA methods and 1 semi-supervised RA methods, these algorithms were tested on our preprocessed datasets. These datasets cover the areas of person re-identification (re-ID), recommendation system, bioinformatics and social choice. The code of tested methods includes both classical and state-of-the-art RA methods that can be funded in https://github.com/nercms-mmap. As well as having all the experimental details and settings on this website. 
 
 If you want to add your own algorithm to improve the benchmarking system, please send a package of your algorithm code and a link to the published paper to waii2022@whu.edu.cn.
@@ -9,16 +9,16 @@ If you want to add your own algorithm to improve the benchmarking system, please
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Comb family-NIST SP'94-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/MC1--4-WWW'01-F7A957" alt="" />
-  <img src="https://img.shields.io/badge/BordaCount-SIGIR'01-FFD06E" alt="" />
-  <img src="https://img.shields.io/badge/Dowdall-IPSR'02-FAE2C1" alt="" />
-  <img src="https://img.shields.io/badge/Median-SIMOD'03-1F456F" alt="" />
-  <img src="https://img.shields.io/badge/RRF-SIMOD'09-1F456F" alt="" />
-  <img src="https://img.shields.io/badge/iRANK-JIST'10-5C3C0D" alt="" />
-  <img src="https://img.shields.io/badge/Mean-PMLR'11-C79DC9" alt="" />
-  <img src="https://img.shields.io/badge/HPA-ECIR'20-6BBC47" alt="" />
-  <img src="https://img.shields.io/badge/PostNDCG-ECIR'20-6BBC47" alt="" />
+  <img src="https://img.shields.io/badge/Comb family-NIST SP'94-CCE4EF" alt="" />
+  <img src="https://img.shields.io/badge/MC1--4-WWW'01-AED5E6" alt="" />
+  <img src="https://img.shields.io/badge/BordaCount-SIGIR'01-90C4DC" alt="" />
+  <img src="https://img.shields.io/badge/Dowdall-IPSR'02-71B5D3" alt="" />
+  <img src="https://img.shields.io/badge/Median-SIMOD'03-53A4C9" alt="" />
+  <img src="https://img.shields.io/badge/RRF-SIMOD'09-53A4C9" alt="" />
+  <img src="https://img.shields.io/badge/iRANK-JIST'10-317A9B" alt="" />
+  <img src="https://img.shields.io/badge/Mean-PMLR'11-27627D" alt="" />
+  <img src="https://img.shields.io/badge/HPA-ECIR'20-1E4A5E" alt="" />
+  <img src="https://img.shields.io/badge/PostNDCG-ECIR'20-1E4A5E" alt="" />
   <img src="https://img.shields.io/badge/ER-OMEGA'20-8A352E" alt="" />
   <img src="https://img.shields.io/badge/Mork--H-EJOR'20-C9C780" alt="" />
   <img src="https://img.shields.io/badge/CG-JORS'21-37939A" alt="" />
