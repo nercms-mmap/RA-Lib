@@ -9,7 +9,7 @@ If you want to add your own algorithm to improve the benchmarking system, please
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Comb family-NIST SP'94-143240" alt="" />  
+  <img src="https://img.shields.io/badge/Comb*-NIST SP'94-143240" alt="" />  
   <img src="https://img.shields.io/badge/MC1--4-WWW'01-1E4A5E" alt="" /> 
   <img src="https://img.shields.io/badge/wBorada-WWW'12-1E4A5E" alt="" />  
   <img src="https://img.shields.io/badge/BordaCount-SIGIR'01-27627D" alt="" />  
