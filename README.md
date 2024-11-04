@@ -25,7 +25,7 @@ If you want to add your own algorithm to improve the benchmarking system, please
   <img src="https://img.shields.io/badge/DIBRA-LSA'22-E5AB99" alt="" />
   <img src="https://img.shields.io/badge/Borda--Score-AAAI'23-DD9179" alt="" />
   <img src="https://img.shields.io/badge/wBorada-WWW'12-C69191" alt="" />
-  <img src="https://img.shields.io/badge/CRF-CIKM'13-ABDCE0" alt="" />
+  <img src="https://img.shields.io/badge/CRF-CIKM'13-C69191" alt="" />
   <img src="https://img.shields.io/badge/CSRA-ICASSP'20-1F4527" alt="" />
   <img src="https://img.shields.io/badge/AggRankDE-Electronics'22-F8C9C9" alt="" />
   <img src="https://img.shields.io/badge/IRA-BMVC'22-5AB682" alt="" />
