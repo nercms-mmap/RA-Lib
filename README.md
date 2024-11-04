@@ -23,12 +23,12 @@ If you want to add your own algorithm to improve the benchmarking system, please
   <img src="https://img.shields.io/badge/Mork--H-EJOR'20-F5DFD8" alt="" />
   <img src="https://img.shields.io/badge/CG-JORS'21-EDC5B9" alt="" />
   <img src="https://img.shields.io/badge/DIBRA-LSA'22-E5AB99" alt="" />
-  <img src="https://img.shields.io/badge/Borda--Score-AAAI'23-DD9179" alt="" />
   <img src="https://img.shields.io/badge/wBorada-WWW'12-C69191" alt="" />
   <img src="https://img.shields.io/badge/CRF-CIKM'13-B97777" alt="" />
   <img src="https://img.shields.io/badge/CSRA-ICASSP'20-AB5D5D" alt="" />
   <img src="https://img.shields.io/badge/AggRankDE-Electronics'22-C25759" alt="" />
   <img src="https://img.shields.io/badge/IRA-BMVC'22-B14144" alt="" />
+  <img src="https://img.shields.io/badge/Borda--Score-AAAI'23-E76254" alt="" />
   <img src="https://img.shields.io/badge/QI--IRA-AAAI'24-E76254" alt="" />
   <img src="https://img.shields.io/badge/SSRA-CIKM'08-ABDCE0" alt="" />
 </p>
