@@ -1,6 +1,7 @@
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/ec6ca5c3-32dc-46af-9fad-738c0d167e5d" width="600"/>
+  <img src="https://github.com/user-attachments/assets/ec6ca5c3-32dc-46af-9fad-738c0d167e5d" width="1000"/>
 </div>
+
 # RA-Lib
 RA-Lib is a benchmarking environment for Rank Aggregation (RA) algorithms. This website contains the current benchmarking results, which have 21 unsupervised RA methods, 7 supervised RA methods and 1 semi-supervised RA methods, these algorithms were tested on our preprocessed datasets. These datasets cover the areas of person re-identification (re-ID), recommendation system, bioinformatics and social choice. The code of tested methods includes both classical and state-of-the-art RA methods that can be funded in https://github.com/nercms-mmap. As well as having all the experimental details and settings on this website. 
 
