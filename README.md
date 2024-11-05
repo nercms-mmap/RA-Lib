@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/ec6ca5c3-32dc-46af-9fad-738c0d167e5d" width="1000"/>
+  <img src="https://github.com/user-attachments/assets/0b103d62-e6ef-440d-a908-2eaadaaf55d4" width="500"/>
 </div>
 
 # RA-Lib
