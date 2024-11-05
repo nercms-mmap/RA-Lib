@@ -123,6 +123,19 @@ If you want to add your own algorithm to improve the benchmarking system, please
 │   ├─requirements.txt
 │   ├─ramatlab
 │   │   ├─common
+│   │   |  IRAType.m
+│   │   |  InputType.m
+│   │   |  McType.m
+│   │   ├─semi
+│   │   |  SSRA.m
+│   │   ├─supervised
+│   │   |  AggRankDE.m
+│   │   |  CRF.m
+│   │   |  IRA.m
+│   │   |  QI_IRA.m
+│   │   |  WeightedBorda.m
+│   │   ├─unsupervised
+│   │   |  bordascore.m
 │   │   |  BordaCount.m
 │   │   |  CG.m
 │   │   |  CombANZ.m
@@ -131,21 +144,17 @@ If you want to add your own algorithm to improve the benchmarking system, please
 │   │   |  CombMIN.m
 │   │   |  CombMNZ.m
 │   │   |  CombSUM.m
-│   │   |  Condorcet.m
 │   │   |  DIBRA.m
 │   │   |  Dowdall.m
-│   │   |  EnsembleRanking.m
 │   │   |  ER.m
 │   │   |  HPA.m
-│   │   |  hpa_func.m
-│   │   |  ice-cream.mat
 │   │   |  iRank.m
-│   │   |  Matrix-ice-cream.mat
+│   │   |  markovchainmethod.m
+│   │   |  mork_heuristic_maximum.m
 │   │   |  Mean.m
 │   │   |  Median.m
 │   │   |  PostNDCG.m
 │   │   |  RRF.m
-│   │   |  unsupervised RA methods.ipynb
 │   │   ├─evaluaion
 │   │   |  Evaluation.m
 │   └─rapython
