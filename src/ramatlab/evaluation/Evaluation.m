@@ -21,7 +21,7 @@ classdef Evaluation
             %   input_type (string): Specifies the format of data_list (e.g., 'score' or 'rank')
             % Returns:
             %   recall (double): Calculated recall score
-            recall = obj.evaluationInstance.compute_recall(data_list, rel_list, int32(topk), input_type);
+            recall = obj.evaluationInstance.compute_recall(data_list, rel_list, py.int(topk), input_type);
         end
         
         function precision = computePrecision(obj, score_list, rel_list, topk, input_type)
@@ -33,7 +33,7 @@ classdef Evaluation
             %   input_type (string): Specifies the format of score_list (e.g., 'score')
             % Returns:
             %   precision (double): Calculated precision score
-            precision = obj.evaluationInstance.compute_precision(score_list, rel_list, int32(topk), input_type);
+            precision = obj.evaluationInstance.compute_precision(score_list, rel_list, py.int(topk), input_type);
         end
 
         function rank = computeRank(obj, list_data, rel_list, topk, input_type)
@@ -45,7 +45,7 @@ classdef Evaluation
             %   input_type (string): Specifies the format of list_data (e.g., 'rank')
             % Returns:
             %   rank (double): Calculated ranking score
-            rank = obj.evaluationInstance.compute_rank(list_data, rel_list, int32(topk), input_type);
+            rank = obj.evaluationInstance.compute_rank(list_data, rel_list, py.int(topk), input_type);
         end
 
         function ap = computeAveragePrecision(obj, score_list, rel_list, topk, input_type)
@@ -57,7 +57,7 @@ classdef Evaluation
             %   input_type (string): Format of input list (e.g., 'score')
             % Returns:
             %   ap (double): Computed average precision score
-            ap = obj.evaluationInstance.compute_average_precision(score_list, rel_list, int32(topk), input_type);
+            ap = obj.evaluationInstance.compute_average_precision(score_list, rel_list, py.int(topk), input_type);
         end
 
         function map = evalMeanAveragePrecisionDF(obj, test_data, rel_data, topk)
@@ -68,7 +68,7 @@ classdef Evaluation
             %   topk (int): Number of top items to consider in the evaluation
             % Returns:
             %   map (double): Computed mean average precision
-            map = obj.evaluationInstance.eval_mean_average_precision(test_data, rel_data, int32(topk));
+            map = obj.evaluationInstance.eval_mean_average_precision(test_data, rel_data, py.int(topk));
         end
 
         function map = evalMeanAveragePrecisionMAT(obj, test_path, rel_path, test_data_name, test_rel_name, data_type, topk)
@@ -82,7 +82,7 @@ classdef Evaluation
             %   topk (int): Number of top items to consider
             % Returns:
             %   map (double): Computed mean average precision
-            map = obj.evaluationInstance.eval_mean_average_precision(test_path, rel_path, test_data_name, test_rel_name, data_type, int32(topk));
+            map = obj.evaluationInstance.eval_mean_average_precision(test_path, rel_path, test_data_name, test_rel_name, data_type, py.int(topk));
         end
 
         function rank = evalRankDF(obj, test_data, rel_data, topk)
@@ -93,7 +93,7 @@ classdef Evaluation
             %   topk (int): Number of top items to consider in evaluation
             % Returns:
             %   rank (double): Computed rank score
-            rank = obj.evaluationInstance.eval_rank(test_data, rel_data, int32(topk));
+            rank = obj.evaluationInstance.eval_rank(test_data, rel_data, py.int(topk));
         end
 
         function rank = evalRankMAT(obj, test_path, rel_path, test_data_name, test_rel_name, data_type, topk)
@@ -107,7 +107,7 @@ classdef Evaluation
             %   topk (int): Number of top items to consider in evaluation
             % Returns:
             %   rank (double): Computed rank score
-            rank = obj.evaluationInstance.eval_rank(test_path, rel_path, test_data_name, test_rel_name, data_type, int32(topk));
+            rank = obj.evaluationInstance.eval_rank(test_path, rel_path, test_data_name, test_rel_name, data_type, py.int(topk));
         end
 
         function recall = evalRecallDF(obj, test_data, rel_data, topk)
@@ -118,7 +118,7 @@ classdef Evaluation
             %   topk (int): Number of top items to consider
             % Returns:
             %   recall (double): Computed recall score
-            recall = obj.evaluationInstance.eval_recall(test_data, rel_data, int32(topk));
+            recall = obj.evaluationInstance.eval_recall(test_data, rel_data, py.int(topk));
         end
 
         function recall = evalRecallMAT(obj, test_path, rel_path, test_data_name, test_rel_name, data_type, topk)
@@ -132,7 +132,7 @@ classdef Evaluation
             %   topk (int): Number of top items to consider
             % Returns:
             %   recall (double): Computed recall score
-            recall = obj.evaluationInstance.eval_recall(test_path, rel_path, test_data_name, test_rel_name, data_type, int32(topk));
+            recall = obj.evaluationInstance.eval_recall(test_path, rel_path, test_data_name, test_rel_name, data_type, py.int(topk));
         end
 
         function precision = evalPrecisionDF(obj, test_data, rel_data, topk)
@@ -143,7 +143,7 @@ classdef Evaluation
             %   topk (int): Number of top items to consider
             % Returns:
             %   precision (double): Computed precision score
-            precision = obj.evaluationInstance.eval_precision(test_data, rel_data, int32(topk));
+            precision = obj.evaluationInstance.eval_precision(test_data, rel_data, py.int(topk));
         end
 
         function dcg = computeDCG(obj, rank_list, rel_list, topk)
@@ -154,7 +154,7 @@ classdef Evaluation
             %   topk (int): Number of top items to consider
             % Returns:
             %   dcg (double): Computed DCG score
-            dcg = obj.evaluationInstance.compute_dcg(rank_list, rel_list, int32(topk));
+            dcg = obj.evaluationInstance.compute_dcg(rank_list, rel_list, py.int(topk));
         end
 
         function ndcg = computeNDCG(obj, list_data, rel_list, topk, input_type)
@@ -166,7 +166,7 @@ classdef Evaluation
             %   input_type (string): Data format (e.g., 'rank')
             % Returns:
             %   ndcg (double): Computed NDCG score
-            ndcg = obj.evaluationInstance.compute_ndcg(list_data, rel_list, int32(topk), input_type);
+            ndcg = obj.evaluationInstance.compute_ndcg(list_data, rel_list, py.int(topk), input_type);
         end
 
         function ndcg = evalNDCGDF(obj, test_data, rel_data, topk)
@@ -177,7 +177,7 @@ classdef Evaluation
             %   topk (int): Number of top items to consider
             % Returns:
             %   ndcg (double): Computed NDCG score
-            ndcg = obj.evaluationInstance.eval_ndcg(test_data, rel_data, int32(topk));
+            ndcg = obj.evaluationInstance.eval_ndcg(test_data, rel_data, py.int(topk));
         end
 
         function ndcg = evalNDCGMAT(obj, test_path, rel_path, test_data_name, test_rel_name, data_type, topk)
@@ -191,7 +191,7 @@ classdef Evaluation
             %   topk (int): Number of top items to consider
             % Returns:
             %   ndcg (double): Computed NDCG score
-            ndcg = obj.evaluationInstance.eval_ndcg(test_path, rel_path, test_data_name, test_rel_name, data_type, int32(topk));
+            ndcg = obj.evaluationInstance.eval_ndcg(test_path, rel_path, test_data_name, test_rel_name, data_type, py.int(topk));
         end
     end
 end
