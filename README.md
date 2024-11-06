@@ -1,42 +1,47 @@
-# Agg-Benchmarks
-Agg-Benchmarks is a benchmarking environment for Rank Aggregation (RA) algorithms. This website contains the current benchmarking results, which have 21 unsupervised RA methods, 7 supervised RA methods and 1 semi-supervised RA methods, these algorithms were tested on our preprocessed datasets. These datasets cover the areas of person re-identification (re-ID), recommendation system, bioinformatics and social choice. The code of tested methods includes both classical and state-of-the-art RA methods that can be funded in https://github.com/nercms-mmap. As well as having all the experimental details and settings on this website. 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/b850694a-2e2a-4709-8aa0-84f05d4b6038" width="500"/>
+</div>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.x.x-brightgreen" alt=""/>
+  <img src="https://img.shields.io/badge/matlab->2017-brightgreen" alt=""/>
+  <img src="https://img.shields.io/badge/License-1.0.0-brightgreen" alt=""/>
+</p>
+
+----------------------------------------
+
+RA-Lib is a benchmarking environment for Rank Aggregation (RA) algorithms. This website contains the current benchmarking results, which have 21 unsupervised RA methods, 7 supervised RA methods and 1 semi-supervised RA methods, these algorithms were tested on our preprocessed datasets. These datasets cover the areas of person re-identification (re-ID), recommendation system, bioinformatics and social choice. The code of tested methods includes both classical and state-of-the-art RA methods that can be funded in https://github.com/nercms-mmap. As well as having all the experimental details and settings on this website. 
 
 If you want to add your own algorithm to improve the benchmarking system, please send a package of your algorithm code and a link to the published paper to waii2022@whu.edu.cn.
 
+
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1746fbf3-4004-4b99-860b-3f8ecf48c4e1" width="1000">
+  <img src="https://github.com/user-attachments/assets/2484bc74-4b5c-4d51-96c2-1e16d3941025" width="1000">
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/CombMIN-NIST SP'94-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/CombMAX-NIST SP'94-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/CombSUM-NIST SP'94-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/CombANZ-NIST SP'94-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/CombMNZ-NIST SP'94-528FAC" alt="" />
-  <img src="https://img.shields.io/badge/MC1-WWW'01-F7A957" alt="" />
-  <img src="https://img.shields.io/badge/MC2-WWW'01-F7A957" alt="" />
-  <img src="https://img.shields.io/badge/MC3-WWW'01-F7A957" alt="" />
-  <img src="https://img.shields.io/badge/MC4-WWW'01-F7A957" alt="" />
-  <img src="https://img.shields.io/badge/BordaCount-SIGIR'01-FFD06E" alt="" />
-  <img src="https://img.shields.io/badge/Dowdall-IPSR'02-FAE2C1" alt="" />
-  <img src="https://img.shields.io/badge/Median-SIMOD'03-1F456F" alt="" />
-  <img src="https://img.shields.io/badge/RRF-SIMOD'09-1F456F" alt="" />
-  <img src="https://img.shields.io/badge/iRANK-JIST'10-5C3C0D" alt="" />
-  <img src="https://img.shields.io/badge/Mean-PMLR'11-C79DC9" alt="" />
-  <img src="https://img.shields.io/badge/HPA-ECIR'20-6BBC47" alt="" />
-  <img src="https://img.shields.io/badge/PostNDCG-ECIR'20-6BBC47" alt="" />
-  <img src="https://img.shields.io/badge/ER-OMEGA'20-8A352E" alt="" />
-  <img src="https://img.shields.io/badge/Mork--H-EJOR'20-C9C780" alt="" />
-  <img src="https://img.shields.io/badge/CG-JORS'21-37939A" alt="" />
-  <img src="https://img.shields.io/badge/DIBRA-LSA'22-D2D6F5" alt="" />
-  <img src="https://img.shields.io/badge/Borda--Score-AAAI'23-E76254" alt="" />
-  <img src="https://img.shields.io/badge/wBorada-WWW'12-F7A957" alt="" />
-  <img src="https://img.shields.io/badge/CRF-CIKM'13-ABDCE0" alt="" />
-  <img src="https://img.shields.io/badge/CSRA-ICASSP'20-1F4527" alt="" />
-  <img src="https://img.shields.io/badge/AggRankDE-Electronics'22-F8C9C9" alt="" />
-  <img src="https://img.shields.io/badge/IRA-BMVC'22-5AB682" alt="" />
-  <img src="https://img.shields.io/badge/QI--IRA-AAAI'24-E76254" alt="" />
-  <img src="https://img.shields.io/badge/SSRA-CIKM'08-ABDCE0" alt="" />
+  <img src="https://img.shields.io/badge/Comb*-NIST SP'94-143240" alt="" />  
+  <img src="https://img.shields.io/badge/MC1--4-WWW'01-1E4A5E" alt="" /> 
+  <img src="https://img.shields.io/badge/wBorada-WWW'12-1E4A5E" alt="" />  
+  <img src="https://img.shields.io/badge/BordaCount-SIGIR'01-27627D" alt="" />  
+  <img src="https://img.shields.io/badge/Dowdall-IPSR'02-317A9B" alt="" />  
+  <img src="https://img.shields.io/badge/Median-SIMOD'03-53A4C9" alt="" />  
+  <img src="https://img.shields.io/badge/RRF-SIMOD'09-53A4C9" alt="" />  
+  <img src="https://img.shields.io/badge/iRANK-JIST'10-71B5D3" alt="" /> 
+  <img src="https://img.shields.io/badge/Mean-PMLR'11-90C4DC" alt="" />  
+  <img src="https://img.shields.io/badge/HPA-ECIR'20-AED5E6" alt="" />  
+  <img src="https://img.shields.io/badge/PostNDCG-ECIR'20-AED5E6" alt="" />  
+  <img src="https://img.shields.io/badge/ER-OMEGA'20-CCE4EF" alt="" />  
+  <img src="https://img.shields.io/badge/Mork--H-EJOR'20-F5DFD8" alt="" />  
+  <img src="https://img.shields.io/badge/CG-JORS'21-EDC5B9" alt="" />  
+  <img src="https://img.shields.io/badge/DIBRA-LSA'22-E5AB99" alt="" />  
+  <img src="https://img.shields.io/badge/SSRA-CIKM'08-C69191" alt="" />
+  <img src="https://img.shields.io/badge/CRF-CIKM'13-C69191" alt="" />  
+  <img src="https://img.shields.io/badge/CSRA-ICASSP'20-B97777" alt="" />  
+  <img src="https://img.shields.io/badge/AggRankDE-Electronics'22-AB5D5D" alt="" />  
+  <img src="https://img.shields.io/badge/IRA-BMVC'22-C25759" alt="" />  
+  <img src="https://img.shields.io/badge/Borda--Score-AAAI'23-B14144" alt="" />  
+  <img src="https://img.shields.io/badge/QI--IRA-AAAI'24-B14144" alt="" />  
 </p>
 
 
@@ -74,23 +79,24 @@ If you want to add your own algorithm to improve the benchmarking system, please
                 <li>$\textrm{HPA}$ <a href="#HPA&postNDCG">[9]</li>
                 <li>$\textrm{PostNDCG}$ <a href="#HPA&postNDCG">[9]</li>
                 <li>$\textrm{ER}$ <a href="#ER">[10]</li>
-                <li>$\textrm{Mork-H}$ <a href="#Mork-H">[11]</li>
-                <li>$\textrm{CG}$ <a href="#CG">[12]</li>
-                <li>$\textrm{DIBRA}$ <a href="#DIBRA">[13]</li>
+                <li>$\textrm{Mork-H}$ <a href="#Mork-H">[40]</li>
+                <li>$\textrm{CG}$ <a href="#CG">[11]</li>
+                <li>$\textrm{DIBRA}$ <a href="#DIBRA">[12]</li>
+                <li>$\textrm{Borda-Score}$ <a href="#borda_score">[21]</li>
         </td>
         <td>
             <ul>
-                <li>$\textrm{wBorda}$ <a href="#wBorda">[14]</li>
-                <li>$\textrm{CRF}$ <a href="#CRF">[15]</li>
-                <li>$\textrm{CSRA}$ <a href="#CSRA">[16]</li>
-                <li>$\textrm{AggRankDE}$ <a href="#AggRankDe">[17]</li>
-                <li>$\textrm{IRA}_\textrm{R}$ <a href="#IRA">[18]</li>
-                <li>$\textrm{IRA}_\textrm{S}$ <a href="#IRA">[18]</li>
-                <li>$\textrm{QI-IRA}$ <a href="#QIIRA">[19]</li>
+                <li>$\textrm{wBorda}$ <a href="#wBorda">[13]</li>
+                <li>$\textrm{CRF}$ <a href="#CRF">[14]</li>
+                <li>$\textrm{CSRA}$ <a href="#CSRA">[15]</li>
+                <li>$\textrm{AggRankDE}$ <a href="#AggRankDe">[16]</li>
+                <li>$\textrm{IRA}_\textrm{R}$ <a href="#IRA">[17]</li>
+                <li>$\textrm{IRA}_\textrm{S}$ <a href="#IRA">[17]</li>
+                <li>$\textrm{QI-IRA}$ <a href="#QIIRA">[18]</li>
         </td>
         <td>
             <ul>
-                <li>$\textrm{SSRA}$ <a href="#semi">[20]</li>
+                <li>$\textrm{SSRA}$ <a href="#semi">[19]</li>
         </td>
     </tbody>
 </table>
@@ -98,12 +104,101 @@ If you want to add your own algorithm to improve the benchmarking system, please
 # Directory Structure
 ```
 │  README.md
-│  plot.py
-| 
-├─results
-│  ├─re-ID.csv
-│  ├─social choice.csv
-│      
+│  
+├─datasets
+│  ├─FLAGR
+│  ├─ice-cream
+│  ├─MovieLens 1M
+│  ├─MQ2008-agg
+│  ├─NSCLC
+│  ├─Re-ID
+│  └─World University Ranking 2022
+│
+├─examples
+|  ├─matlab_run_examples.m
+|  ├─py_run_examples.ipynb
+│
+└─src
+│   ├─__init__.py
+│   ├─requirements.txt
+│   ├─ramatlab
+│   │   ├─common
+│   │   |  IRAType.m
+│   │   |  InputType.m
+│   │   |  McType.m
+│   │   ├─semi
+│   │   |  SSRA.m
+│   │   ├─supervised
+│   │   |  AggRankDE.m
+│   │   |  CRF.m
+│   │   |  IRA.m
+│   │   |  QI_IRA.m
+│   │   |  WeightedBorda.m
+│   │   ├─unsupervised
+│   │   |  bordascore.m
+│   │   |  BordaCount.m
+│   │   |  CG.m
+│   │   |  CombANZ.m
+│   │   |  CombMAX.m
+│   │   |  CombMED.m
+│   │   |  CombMIN.m
+│   │   |  CombMNZ.m
+│   │   |  CombSUM.m
+│   │   |  DIBRA.m
+│   │   |  Dowdall.m
+│   │   |  ER.m
+│   │   |  HPA.m
+│   │   |  iRank.m
+│   │   |  markovchainmethod.m
+│   │   |  mork_heuristic_maximum.m
+│   │   |  Mean.m
+│   │   |  Median.m
+│   │   |  PostNDCG.m
+│   │   |  RRF.m
+│   │   ├─evaluaion
+│   │   |  Evaluation.m
+│   └─rapython
+│           BordaCount.py
+│           CG.py
+│           CombANZ.py
+│           CombMAX.py
+│           CombMED.py
+│           CombMIN.py
+│           CombMNZ.py
+│           CombSUM.py
+│           Comb_Family.py
+│           Dowdall.py
+│           evaluate.py
+│           MarkovChain.py
+│           Mean.py
+│           Medium.py
+│           preprocess.py
+│           RRF.py
+│           run_algorithm.py
+│           scorefunc.py
+│           unsupervised RA methods.ipynb
+│
+├─supervised
+│  ├─matlab
+│  │  │  compute_AP.m
+│  │  │  evaluation.m
+│  │  │  m_QT_IRA.m
+│  │  │  m_Rank_based_IRA.m
+│  │  │  m_Score_based_IRA.m
+│  │  │  QT_IRA.m
+│  │  │  Rank_based_IRA.m
+│  │  │  Score_based_IRA.m
+│  │  │  
+│  │  └─CSRA
+│  │          
+│  └─python
+│          AggRankDE.py
+│          CRF.py
+│          Evaluation.py
+│          WeightedBorda.py
+│          
+├─semi-supervised
+│      SSRA.py
 ```
 
 Demo
@@ -165,6 +260,7 @@ References
 
 <a id="semi">[[20]](https://dl.acm.org/doi/abs/10.1145/1458082.1458315) Chen, S., Wang, F., Song, Y., & Zhang, C. (2008, October). Semi-supervised ranking aggregation. In Proceedings of the 17th ACM conference on Information and knowledge management (pp. 1427-1428).</a>
 
+<a id="borda_score">[[21]]([https://www.sciencedirect.com/science/article/abs/pii/S0377221719307039](https://ojs.aaai.org/index.php/AAAI/article/view/25685/25457)) Boehmer, Niclas, Robert Bredereck, and Dominik Peters. "Rank aggregation using scoring rules." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37. No. 5. 2023. </a>
  ## Contacts
 
  If you encounter any problems, you can contact us via email 2021302111226@whu.edu.cn
