@@ -246,7 +246,7 @@ Demo
 =======
 
 
-CUHK03 (labeled)
+4-re-id
 -----------------
 ![捕获](https://github.com/user-attachments/assets/3c888fc7-7294-4664-9286-3285d22bdd97)
 
