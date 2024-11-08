@@ -248,7 +248,8 @@ Demo
 
 CUHK03 (labeled)
 -----------------
-![image](https://github.com/user-attachments/assets/847600af-8c25-47ad-8151-3a603803a056)
+![捕获](https://github.com/user-attachments/assets/3c888fc7-7294-4664-9286-3285d22bdd97)
+
 
 Running
 =======
