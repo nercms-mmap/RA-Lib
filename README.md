@@ -179,46 +179,26 @@ If you want to add your own algorithm to improve the benchmarking system, please
 │   │   |  QI_IRA.m
 │   │   |  WeightedBorda.m
 │   │   ├─unsupervised
-│   │   |  bordascore.m
-│   │   |  BordaCount.m
-│   │   |  CG.m
-│   │   |  CombANZ.m
-│   │   |  CombMAX.m
-│   │   |  CombMED.m
-│   │   |  CombMIN.m
-│   │   |  CombMNZ.m
-│   │   |  CombSUM.m
-│   │   |  DIBRA.m
-│   │   |  Dowdall.m
-│   │   |  ER.m
-│   │   |  HPA.m
-│   │   |  iRank.m
-│   │   |  markovchainmethod.m
-│   │   |  mork_heuristic_maximum.m
-│   │   |  Mean.m
-│   │   |  Median.m
-│   │   |  PostNDCG.m
-│   │   |  RRF.m
-│           BordaCount.py
-│           CG.py
-│           CombANZ.py
-│           CombMAX.py
-│           CombMED.py
-│           CombMIN.py
-│           CombMNZ.py
-│           CombSUM.py
-│           Comb_Family.py
-│           Dowdall.py
-│           evaluate.py
-│           MarkovChain.py
-│           Mean.py
-│           Medium.py
-│           preprocess.py
-│           RRF.py
-│           run_algorithm.py
-│           scorefunc.py
-│           unsupervised RA methods.ipynb
-│
+│   │   |  bordascore.py
+│   │   |  BordaCount.py
+│   │   |  CG.py
+│   │   |  CombANZ.py
+│   │   |  CombMAX.py
+│   │   |  CombMED.py
+│   │   |  CombMIN.py
+│   │   |  CombMNZ.py
+│   │   |  CombSUM.py
+│   │   |  DIBRA.py
+│   │   |  Dowdall.py
+│   │   |  ER.py
+│   │   |  HPA.py
+│   │   |  iRank.py
+│   │   |  markovchainmethod.py
+│   │   |  mork_heuristic_maximum.py
+│   │   |  Mean.py
+│   │   |  Median.py
+│   │   |  PostNDCG.py
+│   │   |  RRF.py
 ├─supervised
 │  ├─matlab
 │  │  │  compute_AP.m
