@@ -26,9 +26,12 @@ def irank_agg(sim):
     itemnum = sim.shape[2]
 
     ranklist = np.argsort(-sim, axis=2)
-    rank = np.argsort(ranklist, axis=2)
+    rank = np.argsort(ranklist, axis=2) + 1
 
-    topk = itemnum
+    if itemnum < 10:
+        topk = itemnum
+    else:
+        topk = 10
     superviserank = np.zeros((rankernum - 1, querynum, itemnum))
 
     for iteration in range(3):
@@ -39,7 +42,7 @@ def irank_agg(sim):
             elif i == rankernum - 1:
                 superviserank = rank[0:rankernum, :, :]
             else:
-                superviserank[:i, :, :] = rank[:i, :, :]
+                superviserank[0:i, :, :] = rank[0:i, :, :]
                 superviserank[i:rankernum, :, :] = rank[i + 1:rankernum + 1, :, :]
 
             dscore = 1.0 / superviserank
@@ -47,6 +50,7 @@ def irank_agg(sim):
             dscoretotal = np.sum(dscore, axis=0)
             # print(dscoretotal.shape)
             sresultlist = np.argsort(-dscoretotal, axis=1)
+
             sresultlist = sresultlist.reshape(querynum, itemnum)
 
             for k in range(querynum):
@@ -55,7 +59,7 @@ def irank_agg(sim):
 
         sim = newsim
         ranklist = np.argsort(-sim, axis=2)
-        rank = np.argsort(ranklist, axis=2)
+        rank = np.argsort(ranklist, axis=2) + 1
 
     finalsim = np.sum(sim, axis=0)
     # print(finalsim.shape)
@@ -89,3 +93,9 @@ def irank(input_file_path, output_file_path, input_type=InputType.SCORE):
     df, unique_queries = csv_load(input_file_path, input_type)
     numpy_data, queries_mapping_dict = df_to_numpy(df, input_type)
     save_as_csv(output_file_path, irank_agg(numpy_data), queries_mapping_dict)
+
+
+if __name__ == '__main__':
+    input_file_loc = r"D:\LocalGit\Agg-Benchmarks\test\full_lists\data\simulation_test.csv"
+    output_file_loc = "irank.csv"
+    irank(input_file_loc, output_file_loc, InputType.RANK)

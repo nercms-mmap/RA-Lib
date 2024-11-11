@@ -236,8 +236,10 @@ class UnsupervisedTestVsMatlabCase(unittest.TestCase):
         self.processtest(ans_file_path, test_data, InputType.RANK)
 
     def test_irank(self):
+        from src.rapython.unsupervised import irank
+        irank(self.input_file_path, "my_results\\my_irank.csv", InputType.RANK)
         ans_file_path = "..\\full_lists\\ans\\result-simulation-dataset-iRANK.mat"
-        test_data = pd.read_csv("..\\full_lists\\results\\irank.csv", header=None)
+        test_data = pd.read_csv("my_results\\my_irank.csv", header=None)
         self.processtest(ans_file_path, test_data, InputType.SCORE)
 
     def test_mean(self):
@@ -286,8 +288,10 @@ class UnsupervisedTestVsMatlabCase(unittest.TestCase):
         self.processtest(ans_file_path, test_data, InputType.SCORE)
 
     def test_dibra(self):
+        from src.rapython.unsupervised import dibra
+        dibra(self.input_file_path, "my_results\\my_dibra.csv", InputType.RANK)
         ans_file_path = "..\\full_lists\\ans\\result-simulation-dataset-DIBRA.mat"
-        test_data = pd.read_csv("..\\full_lists\\results\\dibra.csv", header=None)
+        test_data = pd.read_csv("my_results\\my_dibra.csv", header=None)
         self.processtest(ans_file_path, test_data, InputType.SCORE)
 
     def test_median(self):

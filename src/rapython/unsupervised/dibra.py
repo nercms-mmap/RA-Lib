@@ -37,7 +37,7 @@ def dibra_agg(data, topk=10):
             l_list[i, :] += (data[j, i, :] * w0[i, j])
 
     origin_ranklist = np.argsort(-l_list, axis=1)
-    origin_rank = np.argsort(origin_ranklist, axis=1)
+    origin_rank = np.argsort(origin_ranklist, axis=1) + 1
 
     for q in range(querynum):
         now_l_rank = origin_rank[q, :]
@@ -74,7 +74,7 @@ def dibra_agg(data, topk=10):
                 pre_w[r] = now_w[r]
 
             now_l = np.argsort(-new_l)
-            now_l_rank = np.argsort(now_l)
+            now_l_rank = np.argsort(now_l) + 1
 
         new_w[q, :] = now_w
 

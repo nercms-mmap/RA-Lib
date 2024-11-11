@@ -34,6 +34,7 @@ from functools import cmp_to_key
 
 import numpy as np
 
+from multipledispatch import dispatch
 from src.rapython.common.constant import InputType
 from src.rapython.datatools import *
 
@@ -234,6 +235,7 @@ def score_ordering(m, points, tiebreaking):
     return [x for _, x in sorted(to_be_sorted, key=cmp_to_key(compare))], tie
 
 
+@dispatch(str, str)
 def borda_score(input_file_path, output_file_path):
     """
     Calculate the Borda scores for items based on rankings provided by voters and write the results to a CSV file.
@@ -247,6 +249,35 @@ def borda_score(input_file_path, output_file_path):
     """
     df, unique_queries = csv_load(input_file_path, InputType.RANK)
     # Create an empty DataFrame to store the results
+    result = []
+    for query in unique_queries:
+        query_data = df[df['Query'] == query]
+        int_to_item_map, _, _, _, input_lists = wtf_map(query_data)
+
+        full_input_lists, _ = partial_to_full(input_lists)
+
+        # Call the function to get ranking information
+        rank, _ = score_ordering(full_input_lists.shape[1], borda(full_input_lists).tolist(),
+                                 list(np.random.permutation(full_input_lists.shape[1])))
+
+        for i in range(len(rank)):
+            item_code = int_to_item_map[rank[i]]
+            item_rank = i + 1
+            new_row = [query, item_code, item_rank]
+            result.append(new_row)
+    save_as_csv(output_file_path, result)
+
+
+@dispatch(str, str, str)
+def borda_score(input_file_path, output_file_path, loader):
+    if loader == 'csv':
+        df, unique_queries = csv_load(input_file_path, InputType.RANK)
+    elif loader == 'xlsx':
+        print("Not implemented yet.")
+        df, unique_queries = csv_load(input_file_path, InputType.RANK)
+    else:
+        raise NotImplementedError("The specified loader is not supported.")
+
     result = []
     for query in unique_queries:
         query_data = df[df['Query'] == query]

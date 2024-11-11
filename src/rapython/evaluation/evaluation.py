@@ -214,6 +214,12 @@ class Evaluation:
                 ap += p_k / total_r
         return ap
 
+    @dispatch(str, str, int, str)
+    def eval_mean_average_precision(self, test_data_loc, rel_data_loc, topk, loader):
+        if loader == 'csv':
+            test_data, rel_data, _ = csv_load(test_data_loc, rel_data_loc, InputType.RANK)
+            return self.eval_mean_average_precision(test_data, rel_data, topk)
+
     @dispatch(pd.DataFrame, pd.DataFrame, int)
     def eval_mean_average_precision(self, test_data, rel_data, topk):
         """
@@ -272,6 +278,12 @@ class Evaluation:
 
         return sum_ap / test_data.shape[0]
 
+    @dispatch(str, str, int, str)
+    def eval_rank(self, test_data_loc, rel_data_loc, topk, loader):
+        if loader == 'csv':
+            test_data, rel_data, _ = csv_load(test_data_loc, rel_data_loc, InputType.RANK)
+            return self.eval_rank(test_data, rel_data, topk)
+
     @dispatch(str, str, str, str, InputType, int)
     def eval_rank(self, test_path, rel_path, test_data_name, test_rel_name, data_type, topk):
         """
@@ -326,6 +338,12 @@ class Evaluation:
             sum_r += self.compute_rank(ra_list, rel_list, topk, InputType.RANK)
 
         return sum_r / len(unique_queries)
+
+    @dispatch(str, str, int, str)
+    def eval_recall(self, test_data_loc, rel_data_loc, topk, loader):
+        if loader == 'csv':
+            test_data, rel_data, _ = csv_load(test_data_loc, rel_data_loc, InputType.RANK)
+            return self.eval_recall(test_data, rel_data, topk)
 
     @dispatch(pd.DataFrame, pd.DataFrame, int)
     def eval_recall(self, test_data, rel_data, topk):
@@ -409,6 +427,12 @@ class Evaluation:
             sum_r += self.compute_recall(test_data[query, :], rel_data[query, :], topk, data_type)
 
         return sum_r / test_data.shape[0]
+
+    @dispatch(str, str, int, str)
+    def eval_precision(self, test_data_loc, rel_data_loc, topk, loader):
+        if loader == 'csv':
+            test_data, rel_data, _ = csv_load(test_data_loc, rel_data_loc, InputType.RANK)
+            return self.eval_precision(test_data, rel_data, topk)
 
     @dispatch(pd.DataFrame, pd.DataFrame, int)
     def eval_precision(self, test_data, rel_data, topk):
@@ -506,6 +530,12 @@ class Evaluation:
             return 0
         else:
             return dcg / idcg
+
+    @dispatch(str, str, int, str)
+    def eval_ndcg(self, test_data_loc, rel_data_loc, topk, loader):
+        if loader == 'csv':
+            test_data, rel_data, _ = csv_load(test_data_loc, rel_data_loc, InputType.RANK)
+            return self.eval_ndcg(test_data, rel_data, topk)
 
     @dispatch(pd.DataFrame, pd.DataFrame, object)
     def eval_ndcg(self, test_data, rel_data, topk=None):

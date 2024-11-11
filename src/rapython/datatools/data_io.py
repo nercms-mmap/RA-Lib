@@ -112,6 +112,7 @@ def csv_load(input_file_path, input_rel_path, input_type):
     --------
     tuple
         A tuple containing:
+
         - input_data (pd.DataFrame): DataFrame with columns ['Query', 'Voter Name', 'Item Code', 'Item Rank/Score'].
           Depending on `input_type`, the fourth column will be labeled 'Item Rank' or 'Item Score'.
         - input_rel_data (pd.DataFrame): DataFrame with columns ['Query', '0', 'Item Code', 'Relevance'] containing
