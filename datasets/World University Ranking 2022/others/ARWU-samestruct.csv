@@ -1,0 +1,338 @@
+University Name,No,Country,Group
+Massachusetts Institute of Technology,4,United States,North American
+University of Oxford,7,British,European
+Stanford University,2,United States,North American
+University of Cambridge,3,British,European
+Harvard University,1,United States,North American
+California Institute of Technology,9,United States,North American
+Imperial College London,25,British,European
+Swiss Federal Institute of Technology Zurich,21,Switzerland,European
+University College London,17,British,European
+University of Chicago,10,United States,North American
+National University of Singapore,75,Singapore,Asia/Oceania
+Nanyang Technological University,81,Singapore,Asia/Oceania
+University of Pennsylvania,15,United States,North American
+Swiss Federal Institute of Technology in Lausanne,91,Switzerland,European
+Yale University,11,United States,North American
+University of Edinburgh,38,British,European
+Tsinghua University,28,China,Asia/Oceania
+Peking University,45,China,Asia/Oceania
+Columbia University,8,United States,North American
+Princeton University,6,United States,North American
+Cornell University,12,United States,North American
+University of Hong Kong,101,"HongKong, China",Asia/Oceania
+University of Tokyo,24,Japan,Asia/Oceania
+"University of Michigan, Ann Arbor",26,United States,North American
+Johns Hopkins University,16,United States,North American
+University of Toronto,22,Canada,North American
+McGill University,67,Canada,North American
+Australian National University,76,Australia,Asia/Oceania
+University of Manchester,35,British,European
+Northwestern University,34,United States,North American
+Fudan University,77,China,Asia/Oceania
+"University of California, Berkeley",5,United States,North American
+Kyoto University,37,Japan,Asia/Oceania
+Hong Kong University of Science and Technology,201,"HongKong, China",Asia/Oceania
+King's College London,47,British,European
+Seoul National University,101,South Korea,Asia/Oceania
+University of Melbourne,33,Australia,Asia/Oceania
+University of Sydney,69,Australia,Asia/Oceania
+Chinese University of Hong Kong,101,"HongKong, China",Asia/Oceania
+"University of California, Los Angeles",14,United States,North American
+Korea Advanced Institute of Science and Technology,201,South Korea,Asia/Oceania
+New York University,27,United States,North American
+University of New South Wales,65,Australia,Asia/Oceania
+Paris Sciences & Lettres-PSL University,38,France,European
+Zhejiang University,52,China,Asia/Oceania
+University of British Columbia,42,Canada,North American
+University of Queensland,51,Australia,Asia/Oceania
+"University of California, San Diego",18,United States,North American
+Institut Polytechnique de Paris,201,France,European
+London School of Economics and Political Science,151,British,European
+Shanghai Jiao Tong University,59,China,Asia/Oceania
+Technical University of Munich,52,Germany,European
+Duke University,32,United States,North American
+Carnegie Mellon University,97,United States,North American
+City University of Hong Kong,151,"HongKong, China",Asia/Oceania
+University of Amsterdam,101,The Netherlands,European
+Tokyo Institute of Technology,101,Japan,Asia/Oceania
+Delft University of Technology,151,The Netherlands,European
+Monash University,80,Australia,Asia/Oceania
+Brown University,101,United States,North American
+University of Warwick,101,British,European
+University of Bristol,78,British,European
+Ruprecht Karls University Heidelberg,201,Germany,European
+University of Munich,48,Germany,European
+Universiti Malaya,201,Malaysia,Asia/Oceania
+Hong Kong Polytechnic University,151,"HongKong, China",Asia/Oceania
+"University of Texas, Austin",41,United States,North American
+National Taiwan University,201,"Taiwan, China",Asia/Oceania
+Universidad de Buenos Aires,201,Argentina,other
+KU Leuven,87,Belgium,European
+University of Zurich,54,Switzerland,European
+Sorbonne University,35,France,European
+University of Glasgow,151,British,European
+Korea University,201,South Korea,Asia/Oceania
+Osaka University,151,Japan,Asia/Oceania
+"University of Wisconsin, Madison",31,United States,North American
+University of Southampton,151,British,European
+Lomonosov Moscow State University,201,Russia,European
+University of Copenhagen,30,Denmark,European
+Yonsei University,201,South Korea,Asia/Oceania
+Pohang University of Science and Technology,201,South Korea,Asia/Oceania
+Durham University,201,British,European
+Tohoku University,151,Japan,Asia/Oceania
+"University of Illinois, Urbana-Champaign",55,United States,North American
+University of Auckland,201,New Zealand,Asia/Oceania
+University of Washington,19,United States,North American
+Universite Paris Saclay,13,France,European
+Lund University,151,Sweden,European
+Georgia Institute of Technology,101,United States,North American
+KTH Royal Institute of Technology,201,Sweden,European
+University of Birmingham,101,British,European
+University of St Andrews,201,British,European
+University of Leeds,101,British,European
+University of Western Australia,96,Australia,Asia/Oceania
+Rice University,101,United States,North American
+University of Sheffield,101,British,European
+Pennsylvania State University,101,United States,North American
+Sungkyunkwan University,201,South Korea,Asia/Oceania
+University of Science and Technology of China,63,China,Asia/Oceania
+Technical University of Denmark,151,Denmark,European
+"University of North Carolina, Chapel Hill",29,United States,North American
+"Trinity College Dublin, University of Dublin",201,Ireland,European
+University of Oslo,61,Norway,European
+University of Nottingham,101,British,European
+University of Helsinki,82,Finland,European
+Universidad Nacional Autonoma de Mexico,201,Mexico,North American
+University of Geneva,60,Switzerland,European
+Washington University in St Louis,23,United States,North American
+University of Adelaide,101,Australia,Asia/Oceania
+King Abdulaziz University,101,Saudi Arabia,Asia/Oceania
+Utrecht University,50,The Netherlands,European
+Universite de Montreal,201,Canada,North American
+Aalto University,201,Finland,European
+Boston University,95,United States,North American
+Leiden University,83,The Netherlands,European
+University of Southern California,61,United States,North American
+Purdue University,86,United States,North American
+Queen Mary University of London,201,British,European
+Nagoya University,84,Japan,Asia/Oceania
+University of Bern,101,Switzerland,European
+Ohio State University,101,United States,North American
+Chalmers University of Technology,201,Sweden,European
+Universidade de Sao Paulo,201,Brazil,European
+Wageningen University & Research,101,The Netherlands,European
+Uppsala University,78,Sweden,European
+Eindhoven University of Technology,201,The Netherlands,European
+University of Alberta,101,Canada,North American
+Freie Universitaet Berlin,201,Germany,European
+Humboldt University of Berlin,201,Germany,European
+University of Groningen,64,The Netherlands,European
+Ecole Normale Superieure de Lyon,201,France,European
+Nanjing University,101,China,Asia/Oceania
+Lancaster University,201,British,European
+University of Technology Sydney,201,Australia,Asia/Oceania
+Newcastle University,201,British,European
+Pontificia Universidad Catolica de Chile,201,Chile,European
+Karlsruhe Institute of Technology,201,Germany,European
+Kyushu University,201,Japan,Asia/Oceania
+University of Basel,87,Switzerland,European
+"University of California, Davis",100,United States,North American
+McMaster University,92,Canada,North American
+Ghent University,71,Belgium,European
+Politecnico di Milano,201,Italy,European
+Universiti Putra Malaysia,201,Malaysia,Asia/Oceania
+Universiti Kebangsaan Malaysia,201,Malaysia,Asia/Oceania
+Hokkaido University,151,Japan,Asia/Oceania
+"University of California, Santa Barbara",57,United States,North American
+Universiti Sains Malaysia,201,Malaysia,Asia/Oceania
+Stockholm University,74,Sweden,European
+University of Exeter,151,British,European
+University of Waterloo,151,Canada,North American
+Cardiff University,151,British,European
+University of Vienna,151,Austria,European
+University of York,201,British,European
+University of Rochester,151,United States,North American
+Aarhus University,71,Denmark,European
+Hanyang University,201,South Korea,Asia/Oceania
+Michigan State University,101,United States,North American
+"University of Maryland, College Park",56,United States,North American
+Technical University of Berlin,201,Germany,European
+Emory University,101,United States,North American
+Case Western Reserve University,101,United States,North American
+Monterrey Institute of Technology and Higher Education,201,Mexico,North American
+King Fahd University of Petroleum & Minerals,201,Saudi Arabia,Asia/Oceania
+University of Pittsburgh,101,United States,North American
+RWTH Aachen University,201,Germany,European
+University of Bologna,201,Italy,European
+University of Bath,201,British,European
+Texas A&M University,151,United States,North American
+Universitat de Barcelona,201,Spain,European
+Western University,201,Canada,North American
+Sapienza University of Rome,151,Italy,European
+Albert-Ludwigs-Universitaet Freiburg,201,Germany,European
+University College Dublin,201,Ireland,European
+University of Florida,97,United States,North American
+Al-Farabi Kazakh National University,201,Kazakhstan,Asia/Oceania
+University of Lausanne,101,Switzerland,European
+Eberhard Karls University of Tubingen,201,Germany,European
+Indian Institute of Technology Bombay,201,India,Asia/Oceania
+Erasmus University Rotterdam,101,The Netherlands,European
+National Tsing Hua University,201,"Taiwan, China",Asia/Oceania
+Technische Universitat Wien,201,Austria,European
+University of Gothenburg,101,Sweden,European
+Khalifa University,201,The United Arab Emirates,Asia/Oceania
+Universidad de Chile,201,Chile,European
+Indian Institute of Technology Delhi,201,India,Asia/Oceania
+Indian Institute of Science,201,India,Asia/Oceania
+"University of Minnesota, Twin Cities",40,United States,North American
+Universite Catholique de Louvain,201,Belgium,European
+University of Liverpool,101,British,European
+University of Twente,201,The Netherlands,European
+Dartmouth College,201,United States,North American
+Universiti Teknologi Malaysia,201,Malaysia,Asia/Oceania
+University of Wollongong,201,Australia,Asia/Oceania
+Curtin University,201,Australia,Asia/Oceania
+Dresden University of Technology,201,Germany,European
+University of Otago,201,New Zealand,Asia/Oceania
+"University of Newcastle, Australia",201,Australia,Asia/Oceania
+Hebrew University of Jerusalem,90,Israel,Asia/Oceania
+University of Bergen,201,Norway,European
+Macquarie University,201,Australia,Asia/Oceania
+"University of California, San Francisco",20,United States,North American
+Karolinska Institute,42,Sweden,European
+Rockefeller University,42,United States,North American
+"University of Colorado, Boulder",46,United States,North American
+"University of Texas Southwestern Medical Center, Dallas",48,United States,North American
+Heidelberg University,57,Germany,European
+Vanderbilt University,65,United States,North American
+University of Texas M. D. Anderson Cancer Center,67,United States,North American
+"University of California, Irvine",70,United States,North American
+Universite de Paris,73,France,European
+University of Bonn,84,Germany,European
+Sun Yat-sen University,89,China,Asia/Oceania
+Weizmann Institute of Science,92,Israel,Asia/Oceania
+Technion-Israel Institute of Technology,94,Israel,Asia/Oceania
+University of Aix-Marseille,101,France,European
+Arizona State University,101,United States,North American
+Huazhong University of Science and Technology,101,China,Asia/Oceania
+"Icahn School of Medicine, Mount Sinai",101,United States,North American
+"Indiana University, Bloomington",101,United States,North American
+King Saud University,101,Saudi Arabia,Asia/Oceania
+Mayo Clinic Alix School of Medicine,101,United States,North American
+Norwegian University of Science and Technology,101,Norway,European
+Radboud University Nijmegen,101,The Netherlands,European
+"Rutgers, State University of New Jersey",101,United States,North American
+Universite Grenoble Alpes,101,France,European
+Universite libre de Bruxelles,101,Belgium,European
+University of Arizona,101,United States,North American
+University of Freiburg,101,Germany,European
+University of Goettingen,101,Germany,European
+University of Montreal,101,Canada,North American
+University of Sao Paulo,101,Brazil,other
+University of Strasbourg,101,France,European
+University of Utah,101,United States,North American
+Vrije Universiteit Amsterdam,101,The Netherlands,European
+Xi'an Jiaotong University,101,China,Asia/Oceania
+Baylor College of Medicine,151,United States,North American
+Beijing Institute of Technology,151,China,Asia/Oceania
+Catholic University of Louvain,151,Belgium,European
+Central South University,151,China,Asia/Oceania
+GoeUniversity Frankfurt,151,Germany,European
+Harbin Institute of Technology,151,China,Asia/Oceania
+Jilin University,151,China,Asia/Oceania
+Northwestern Polytechnical University,151,China,Asia/Oceania
+Shandong University,151,China,Asia/Oceania
+Sichuan University,151,China,Asia/Oceania
+Soochow University,151,China,Asia/Oceania
+South China University of Technology,151,China,Asia/Oceania
+Southeast University,151,China,Asia/Oceania
+Tel Aviv University,151,Israel,Asia/Oceania
+University of Calgary,151,Canada,North American
+Tianjin University,151,China,Asia/Oceania
+Tongji University,151,China,Asia/Oceania
+Tufts University,151,United States,North American
+University of Barcelona,151,Spain,European
+"University of California, Santa Cruz",151,United States,North American
+University of Cologne,151,Germany,European
+University of Electronic Science and Technology of China,151,China,Asia/Oceania
+University of Milan,151,Italy,European
+University of Montpellier,151,France,European
+University of Muenster,151,Germany,European
+University of Padova,151,Italy,European
+University of Pisa,151,Italy,European
+University of Sussex,151,British,European
+University of Tuebingen,151,Germany,European
+University of Virginia,151,United States,North American
+Wuhan University,151,China,Asia/Oceania
+University of Washington Seattle,201,United States,North American
+Sorbonne Universite,201,France,European
+University of New South Wales Sydney,201,Australia,Asia/Oceania
+Karolinska Institutet,201,Sweden,European
+Sapienza University Rome,201,Italy,European
+University of Padua,201,Italy,European
+Universite de Montpellier,201,France,European
+Rutgers State University New Brunswick,201,United States,North American
+Universidade de Lisboa,201,Portugal,European
+Suzhou University,201,China,Asia/Oceania
+Autonomous University of Barcelona,201,Spain,European
+University of Hamburg,201,Germany,European
+University of Ottawa,201,Canada,North American
+Beihang University,201,China,Asia/Oceania
+Charite Medical University of Berlin,201,Germany,European
+Dalian University of Technology,201,China,Asia/Oceania
+University of Naples Federico II,201,Italy,European
+University of Erlangen Nuremberg,201,Germany,European
+Universidade do Porto,201,Portugal,European
+Xiamen University,201,China,Asia/Oceania
+"University of Alabama, Birmingham",201,United States,North American
+Queen Mary University London,201,Britain,European
+Maastricht University,201,Netherlands,European
+Chongqing University,201,China,Asia/Oceania
+University of Turin,201,Italy,European
+Universite Toulouse III,201,France,European
+North Carolina State University,201,United States,North American
+Charles University Prague,201,Czech Republic,European
+Hunan University,201,China,Asia/Oceania
+University of Gottingen,201,Germany,European
+University of Iowa,201,United States,North American
+Universite de Bordeaux,201,France,European
+UNSW Sydney,201,Australia,Asia/Oceania
+"Purdue University, West Lafayette",201,United States,North American
+Penn State,201,United States,North American
+Georgetown University,201,United States,North American
+University of Antwerp,201,Belgium,European
+University of Mannheim,201,Germany,European
+Ulm University,201,Germany,European
+Pompeu Fabra University,201,Spain,European
+University of Aberdeen,201,British,European
+Southern University of Science and Technology,201,China,Asia/Oceania
+University of Wurzburg,201,Germany,European
+Bielefeld University,201,Germany,European
+Northeastern University,201,United States,North American
+University of Canberra,201,Australia,Asia/Oceania
+Ulsan National Institute of Science and Technology,201,South Korea,Asia/Oceania
+University of East Anglia,201,British,European
+University of Cape Town,201,South Africa,other
+University of Notre Dame,201,United States,North American
+University of Leicester,201,British,European
+Queensland University of Technology,201,Australia,Asia/Oceania
+Medical University of Graz,201,Austria,European
+University of Hohenheim,201,Germany,European
+Scuola Normale Superiore di Pisa,201,Italy,European
+Catholic University of Leuven,201,Belgium,European
+"Ohio State University, Columbus",201,United States,North American
+Boston Universiy,201,United States,North American
+King Abdullah University of Science & Technology,201,Saudi Arabia,Asia/Oceania
+London School of Hygiene & Tropical Medicine,201,British,European
+"University of Massachusetts, Amherst",201,United States,North American
+Oregon Health & Science University,201,United States,North American
+University of Chinese Academy of Sciences,201,China,Asia/Oceania
+University Catholique of Louvain,201,Belgium,European
+"University of California, Riverside",201,United States,North American
+University of Colorado Anschutz Medical Campus,201,United States,North American
+University of Cincinnati,201,United States,North American
+"Stony Brook University, SUNY",201,United States,North American
+University of Lisbon,201,Portugal,European
+University of Witwatersrand,201,South Africa,other
