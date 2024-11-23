@@ -103,123 +103,119 @@ If you want to add your own algorithm to improve the benchmarking system, please
 
 # Directory Structure
 ```
+│  .gitignore
 │  README.md
+│ 
 │  
 ├─datasets
-│  ├─FLAGR
 │  ├─ice-cream
-│  ├─MovieLens 1M
-│  ├─MQ2008-agg
-│  ├─NSCLC
-│  ├─Re-ID
-│  └─World University Ranking 2022
-│
+│  ├─MovieLens1M  
+│  ├─MQ2008-agg      
+│  ├─NSCLC  
+│  ├─Re-ID     
+│  └─World University Ranking 2022 
 ├─examples
-|  ├─matlab_run_examples.m
-|  ├─py_run_examples.ipynb
-│
-└─src
-│   ├─__init__.py
-│   ├─requirements.txt
-│   ├─ramatlab
-│   │   ├─common
-│   │   |  IRAType.m
-│   │   |  InputType.m
-│   │   |  McType.m
-│   │   ├─semi
-│   │   |  SSRA.m
-│   │   ├─supervised
-│   │   |  AggRankDE.m
-│   │   |  CRF.m
-│   │   |  IRA.m
-│   │   |  QI_IRA.m
-│   │   |  WeightedBorda.m
-│   │   ├─unsupervised
-│   │   |  bordascore.m
-│   │   |  BordaCount.m
-│   │   |  CG.m
-│   │   |  CombANZ.m
-│   │   |  CombMAX.m
-│   │   |  CombMED.m
-│   │   |  CombMIN.m
-│   │   |  CombMNZ.m
-│   │   |  CombSUM.m
-│   │   |  DIBRA.m
-│   │   |  Dowdall.m
-│   │   |  ER.m
-│   │   |  HPA.m
-│   │   |  iRank.m
-│   │   |  markovchainmethod.m
-│   │   |  mork_heuristic_maximum.m
-│   │   |  Mean.m
-│   │   |  Median.m
-│   │   |  PostNDCG.m
-│   │   |  RRF.m
-│   │   ├─evaluaion
-│   │   |  Evaluation.m
-│   └─rapython
-│   │   ├─common
-│   │   |  __init__.py
-│   │   |  constant.py
-│   │   |  params.py
-│   │   ├─datatools
-│   │   |  __init__.py
-│   │   |  data_class.py
-│   │   |  data_io.py
-│   │   |  data_process.py
-│   │   ├─evaluation
-│   │   |  __init__.py
-│   │   |  evaluation.py
-│   │   ├─semi
-│   │   |  SSRA.m
-│   │   ├─supervised
-│   │   |  AggRankDE.m
-│   │   |  CRF.m
-│   │   |  IRA.m
-│   │   |  QI_IRA.m
-│   │   |  WeightedBorda.m
-│   │   ├─unsupervised
-│   │   |  bordascore.py
-│   │   |  BordaCount.py
-│   │   |  CG.py
-│   │   |  CombANZ.py
-│   │   |  CombMAX.py
-│   │   |  CombMED.py
-│   │   |  CombMIN.py
-│   │   |  CombMNZ.py
-│   │   |  CombSUM.py
-│   │   |  DIBRA.py
-│   │   |  Dowdall.py
-│   │   |  ER.py
-│   │   |  HPA.py
-│   │   |  iRank.py
-│   │   |  markovchainmethod.py
-│   │   |  mork_heuristic_maximum.py
-│   │   |  Mean.py
-│   │   |  Median.py
-│   │   |  PostNDCG.py
-│   │   |  RRF.py
-├─supervised
-│  ├─matlab
-│  │  │  compute_AP.m
-│  │  │  evaluation.m
-│  │  │  m_QT_IRA.m
-│  │  │  m_Rank_based_IRA.m
-│  │  │  m_Score_based_IRA.m
-│  │  │  QT_IRA.m
-│  │  │  Rank_based_IRA.m
-│  │  │  Score_based_IRA.m
-│  │  │  
-│  │  └─CSRA
+│      matlab_run_examples.m
+│      py_run_examples.ipynb
+├─results
+├─src
+│  │  requirements.txt
+│  │  __init__.py
+│  │  
+│  ├─ramatlab
+│  │  ├─common
+│  │  │      InputType.m
+│  │  │      IRAType.m
+│  │  │      McType.m
+│  │  │      
+│  │  ├─semi
+│  │  │      SSRA.m
+│  │  │      
+│  │  ├─supervised
+│  │  │      AggRankDE.m
+│  │  │      CRF.m
+│  │  │      IRA.m
+│  │  │      QI_IRA.m
+│  │  │      WeightedBorda.m
+│  │  │      
+│  │  └─unsupervised
+│  │          bordacount.m
+│  │          borda_score.m
+│  │          cg.m
+│  │          combanz.m
+│  │          combmax.m
+│  │          combmed.m
+│  │          combmin.m
+│  │          combmnz.m
+│  │          combsum.m
+│  │          dibra.m
+│  │          dowdall.m
+│  │          er.m
+│  │          hpa.m
+│  │          irank.m
+│  │          markovchainmethod.m
+│  │          mean.m
+│  │          median.m
+│  │          mork_heuristic_maximum.m
+│  │          postndcg.m
+│  │          rrf.m
 │  │          
-│  └─python
-│          AggRankDE.py
-│          CRF.py
-│          Evaluation.py
-│          WeightedBorda.py
-│          
-├─semi-supervised
-│      SSRA.py
+│  └─rapython
+│      │  __init__.py
+│      │  
+│      ├─common
+│      │      constant.py
+│      │      params.py
+│      │      __init__.py
+│      │      
+│      ├─datatools
+│      │      data_class.py
+│      │      data_io.py
+│      │      data_process.py
+│      │      __init__.py
+│      │      
+│      ├─evaluation
+│      │      evaluation.py
+│      │      __init__.py
+│      │      
+│      ├─semi
+│      │      ssra.py
+│      │      __init__.py
+│      │      
+│      ├─supervised
+│      │  │  aggrankde.py
+│      │  │  crf.py
+│      │  │  ira.py
+│      │  │  qi_ira.py
+│      │  │  weighted_borda.py
+│      │  │  __init__.py
+│      │  └─CSRA
+│      │          
+│      └─unsupervised
+│              bordacount.py
+│              borda_score.py
+│              cg.py
+│              combanz.py
+│              combmax.py
+│              combmed.py
+│              combmin.py
+│              combmnz.py
+│              combsum.py
+│              dibra.py
+│              dowdall.py
+│              er.py
+│              hpa.py
+│              irank.py
+│              markovchain.py
+│              mean.py
+│              median.py
+│              mork_heuristic_maximum.py
+│              postndcg.py
+│              rrf.py
+│              scorefunc.py
+│              __init__.py
+│              
+└─test
 ```
 
 Demo
