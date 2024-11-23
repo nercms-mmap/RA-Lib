@@ -33,56 +33,6 @@ function matlab_run_examples()
 
 
     call_ira_methods(input_file_path, output_base_path, input_rel_path);
-
-    call_evaluation();
-end
-
-
-function call_evaluation()
-    pandas = py.importlib.import_module('pandas');
-    folder_path = fullfile('results');
-
-    % Retrieve all .csv files in the folder
-    csv_files = dir(fullfile(folder_path, '*.csv'));
-            
-    % Load the relevance score file
-
-    rel_df = pandas.read_csv('..\\test\\full_lists\\data\\simulation_test_rel.csv', pyargs('header', py.None));
-
-    % Initialize an empty table to store evaluation results
-    results_df = table([], [], [], [], 'VariableNames', {'FileName', 'mAP@10', 'NDCG@10', 'Rank@1'});
-    
-    % Create an instance of the Evaluation class
-    evaluation = Evaluation();
-    
-     for i = 1:length(csv_files)
-
-        file_path = fullfile(csv_files(i).folder, csv_files(i).name);
-        [~, file_name, ~] = fileparts(csv_files(i).name);
-    
-
-        result_df = pandas.read_csv(file_path, pyargs('header', py.None));
-
-
-        % Calculate evaluation metrics
-        map_at_10 = evaluation.evalMeanAveragePrecisionDF(result_df, rel_df, 10);
-        ndcg_at_10 = evaluation.evalNDCGDF(result_df, rel_df, 10);
-        rank_at_1 = evaluation.evalRankDF(result_df, rel_df, 1);
-    
-        % Display evaluation results
-        fprintf('%s: mAP@10: %f, NDCG@10: %f, Rank@1: %f\n', file_name, map_at_10, ndcg_at_10, rank_at_1);
-    
-        % Add the evaluation results as a new row to the table
-        new_row = {file_name, map_at_10, ndcg_at_10, rank_at_1};
-        results_df = [results_df; new_row];
-    end
-    
-    % Write the evaluation results to an Excel file
-    output_excel_path = fullfile('results', 'evaluation_results.xlsx');
-    writetable(results_df, output_excel_path, 'Sheet', 1);
-    
-    fprintf('Evaluation results have been written to %s\n', output_excel_path);
-
 end
 
 
