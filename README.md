@@ -276,7 +276,7 @@ References
 
 <a id="semi">[[19]](https://dl.acm.org/doi/abs/10.1145/1458082.1458315) Chen, S., Wang, F., Song, Y., & Zhang, C. (2008, October). Semi-supervised ranking aggregation. In Proceedings of the 17th ACM conference on Information and knowledge management (pp. 1427-1428).</a>
 
-<a id="borda_score">[[41]]([https://www.sciencedirect.com/science/article/abs/pii/S0377221719307039](https://ojs.aaai.org/index.php/AAAI/article/view/25685/25457)) Boehmer, Niclas, Robert Bredereck, and Dominik Peters. "Rank aggregation using scoring rules." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37. No. 5. 2023. </a>
+<a id="borda_score">[[20]]([https://www.sciencedirect.com/science/article/abs/pii/S0377221719307039](https://ojs.aaai.org/index.php/AAAI/article/view/25685/25457) Boehmer, Niclas, Robert Bredereck, and Dominik Peters. "Rank aggregation using scoring rules." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37. No. 5. 2023. </a>
  ## Contacts
 
  If you encounter any problems, you can contact us via email 2021302111226@whu.edu.cn
