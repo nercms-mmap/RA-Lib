@@ -270,13 +270,17 @@ References
 
 <a id="AggRankDe">[[16]](https://www.mdpi.com/2079-9292/11/3/369) Bałchanowski, M., & Boryczka, U. (2022). Aggregation of Rankings Using Metaheuristics in Recommendation Systems. Electronics, 11(3), 369.</a>
 
-<a id="IRA">[[17]](https://bmvc2022.mpi-inf.mpg.de/0386.pdf) Huang, J., Liang, C., Zhang, Y., Wang, Z., & Zhang, C. (2022). Ranking Aggregation with Interactive Feedback for Collaborative Person Re-identification.</a>
+<a id="RankNet">[[17]](https://dl.acm.org/doi/abs/10.1145/1102351.1102363) Burges, C., Shaked, T., Renshaw, E., Lazier, A., Deeds, M., Hamilton, N., & Hullender, G. (2005). Learning to rank using gradient descent. In Proceedings of the 22nd International Conference on Machine Learning (pp. 89–96).</a>
 
-<a id="QIIRA">[[18]](https://aaai.org/wp-content/uploads/2024/01/AAAI_Main-Track_2024-01-04.pdf) Hu, C., Zhang, H., Liang, C., & Huang, H. (2024). QI-IRA: Quantum-inspired interactive ranking aggregation for person re-identification. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 38, pp. 1-9).</a>
+<a id="ListNet">[[18]](https://dl.acm.org/doi/abs/10.1145/1273496.1273513) Cao, Z., Qin, T., Liu, T.-Y., Tsai, M.-F., & Li, H. (2007). Learning to rank: from pairwise approach to listwise approach. In Proceedings of the 24th International Conference on Machine Learning (pp. 129–136).</a>
 
-<a id="semi">[[19]](https://dl.acm.org/doi/abs/10.1145/1458082.1458315) Chen, S., Wang, F., Song, Y., & Zhang, C. (2008, October). Semi-supervised ranking aggregation. In Proceedings of the 17th ACM conference on Information and knowledge management (pp. 1427-1428).</a>
+<a id="IRA">[[19]](https://bmvc2022.mpi-inf.mpg.de/0386.pdf) Huang, J., Liang, C., Zhang, Y., Wang, Z., & Zhang, C. (2022). Ranking Aggregation with Interactive Feedback for Collaborative Person Re-identification.</a>
 
-<a id="borda_score">[[20]](https://ojs.aaai.org/index.php/AAAI/article/view/25685/25457) Boehmer, Niclas, Robert Bredereck, and Dominik Peters. "Rank aggregation using scoring rules." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37. No. 5. 2023. </a>
+<a id="QIIRA">[[20]](https://aaai.org/wp-content/uploads/2024/01/AAAI_Main-Track_2024-01-04.pdf) Hu, C., Zhang, H., Liang, C., & Huang, H. (2024). QI-IRA: Quantum-inspired interactive ranking aggregation for person re-identification. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 38, pp. 1-9).</a>
+
+<a id="semi">[[21]](https://dl.acm.org/doi/abs/10.1145/1458082.1458315) Chen, S., Wang, F., Song, Y., & Zhang, C. (2008, October). Semi-supervised ranking aggregation. In Proceedings of the 17th ACM conference on Information and knowledge management (pp. 1427-1428).</a>
+
+<a id="borda_score">[[22]](https://ojs.aaai.org/index.php/AAAI/article/view/25685/25457) Boehmer, Niclas, Robert Bredereck, and Dominik Peters. "Rank aggregation using scoring rules." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37. No. 5. 2023. </a>
  ## Contacts
 
  If you encounter any problems, you can contact us via email 2021302111226@whu.edu.cn
