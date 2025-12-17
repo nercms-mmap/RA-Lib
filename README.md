@@ -82,7 +82,7 @@ If you want to add your own algorithm to improve the benchmarking system, please
                 <li>$\textrm{Mork-H}$ <a href="#Mork-H">[40]</li>
                 <li>$\textrm{CG}$ <a href="#CG">[11]</li>
                 <li>$\textrm{DIBRA}$ <a href="#DIBRA">[12]</li>
-                <li>$\textrm{Borda-Score}$ <a href="#borda_score">[20]</li>
+                <li>$\textrm{Borda-Score}$ <a href="#borda_score">[22]</li>
         </td>
         <td>
             <ul>
@@ -90,13 +90,15 @@ If you want to add your own algorithm to improve the benchmarking system, please
                 <li>$\textrm{CRF}$ <a href="#CRF">[14]</li>
                 <li>$\textrm{CSRA}$ <a href="#CSRA">[15]</li>
                 <li>$\textrm{AggRankDE}$ <a href="#AggRankDe">[16]</li>
-                <li>$\textrm{IRA}_\textrm{R}$ <a href="#IRA">[17]</li>
-                <li>$\textrm{IRA}_\textrm{S}$ <a href="#IRA">[17]</li>
-                <li>$\textrm{QI-IRA}$ <a href="#QIIRA">[18]</li>
+                <li>$\textrm{RankNet}$ <a href="#RankNet">[17]</li>
+                <li>$\textrm{ListNet}$ <a href="#ListNet">[18]</li>
+                <li>$\textrm{IRA}_\textrm{R}$ <a href="#IRA">[19]</li>
+                <li>$\textrm{IRA}_\textrm{S}$ <a href="#IRA">[19]</li>
+                <li>$\textrm{QI-IRA}$ <a href="#QIIRA">[20]</li>
         </td>
         <td>
             <ul>
-                <li>$\textrm{SSRA}$ <a href="#semi">[19]</li>
+                <li>$\textrm{SSRA}$ <a href="#semi">[21]</li>
         </td>
     </tbody>
 </table>
