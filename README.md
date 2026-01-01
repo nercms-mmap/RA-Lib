@@ -10,7 +10,7 @@
 
 ----------------------------------------
 
-RA-Lib is a benchmarking environment for Rank Aggregation (RA) algorithms. This website contains the current benchmarking results, which have 21 unsupervised RA methods, 7 supervised RA methods and 1 semi-supervised RA methods, these algorithms were tested on our preprocessed datasets. These datasets cover the areas of person re-identification (re-ID), recommendation system, bioinformatics and social choice. The code of tested methods includes both classical and state-of-the-art RA methods that can be funded in https://github.com/nercms-mmap. As well as having all the experimental details and settings on this website. 
+RA-Lib is a benchmarking environment for Rank Aggregation (RA) algorithms. This website contains the current benchmarking results, which have 21 unsupervised RA methods, 9 supervised RA methods and 1 semi-supervised RA methods, these algorithms were tested on our preprocessed datasets. These datasets cover the areas of person re-identification (re-ID), recommendation system, bioinformatics and social choice. The code of tested methods includes both classical and state-of-the-art RA methods that can be funded in https://github.com/nercms-mmap. As well as having all the experimental details and settings on this website. 
 
 If you want to add your own algorithm to improve the benchmarking system, please send a package of your algorithm code and a link to the published paper to waii2022@whu.edu.cn.
 
@@ -36,6 +36,8 @@ If you want to add your own algorithm to improve the benchmarking system, please
   <img src="https://img.shields.io/badge/CG-JORS'21-EDC5B9" alt="" />  
   <img src="https://img.shields.io/badge/DIBRA-LSA'22-E5AB99" alt="" />  
   <img src="https://img.shields.io/badge/SSRA-CIKM'08-C69191" alt="" />
+  <img src="https://img.shields.io/badge/RankNet-ICML'05-C69191" alt="" /> 
+  <img src="https://img.shields.io/badge/ListNet-ICML'07-C69191" alt="" /> 
   <img src="https://img.shields.io/badge/CRF-CIKM'13-C69191" alt="" />  
   <img src="https://img.shields.io/badge/CSRA-ICASSP'20-B97777" alt="" />  
   <img src="https://img.shields.io/badge/AggRankDE-Electronics'22-AB5D5D" alt="" />  
