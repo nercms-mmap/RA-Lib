@@ -20,158 +20,49 @@ __all__ = ['ListNet']
 
 class ListNet:
     """
-    A class to implement the ListNet algorithm for learning-to-rank tasks.
+    ListNet algorithm for learning to rank using listwise comparisons.
     
-    Hyperparameters:
-    ---------------
-    hidden_units : list, optional
-        The structure of hidden layers in the neural network.
-        Defaults to [10] (consistent with RankNet).
-
+    This class implements the ListNet algorithm which learns a ranking function
+    by minimizing the cross-entropy loss between the predicted and true score
+    distributions (softmax over scores).
+    
+    Parameters
+    ----------
+    hidden_units : list of int, optional
+        List of hidden layer sizes in the neural network. Default is [10].
     learning_rate : float, optional
-        Learning rate for optimization.
-
+        Learning rate for Adam optimizer. Default is 0.001.
     epochs_per_query : int, optional
-        Number of training epochs for each query.
-
+        Number of training epochs for each query. Default is 10.
     eps : float, optional
-        Epsilon value for numerical stability in loss computation.
-        Defaults to 1e-10.
+        Small constant for numerical stability. Default is 1e-10.
     """
-
-    def __init__(self, hidden_units=None, learning_rate=0.001, epochs_per_query=10, eps=1e-10):
+    
+    def __init__(self, 
+                 hidden_units=[10], 
+                 learning_rate=0.001, 
+                 epochs_per_query=10,
+                 eps=1e-10):
         """
-        Initializes the ListNet instance with specified parameters.
-
-        Parameters:
-        -----------
-        hidden_units : list, optional
-            List specifying the number of units in each hidden layer.
-            Defaults to [10].
-
-        learning_rate : float, optional
-            Learning rate for the Adam optimizer. Defaults to 0.001.
-
-        epochs_per_query : int, optional
-            Number of training epochs for each query. Defaults to 10.
-
-        eps : float, optional
-            Small value to prevent numerical instability. Defaults to 1e-10.
+        Initialize ListNet with hyperparameters.
         """
-        if hidden_units is None:
-            hidden_units = [10]
         self.hidden_units = hidden_units
         self.learning_rate = learning_rate
         self.epochs_per_query = epochs_per_query
         self.eps = eps
-        self.model = None
-        self.optimizer = None
-
-        # Define attributes consistent with other models in the project
+        
+        # Storage for trained models
+        self.query_models = {}
+        self.average_model_state = None
+        self.average_model = None
+        
+        # Mappings
         self.voter_name_mapping = None
+        self.voter_name_reverse_mapping = None
         self.voter_num = None
         self.query_mapping = None
-
-    @staticmethod
-    def _partial_to_full(rank_base_data_matrix):
-        """
-        Converts a rank base data matrix with potential missing values
-        into a full list format.
-
-        Parameters:
-        -----------
-        rank_base_data_matrix : numpy.ndarray
-            A 2D numpy array of shape (voter_num, item_num) containing
-            rankings, where missing values are represented by NaN.
-
-        Returns:
-        --------
-        numpy.ndarray
-            A modified rank base data matrix in full list format.
-        """
-        num_voters = rank_base_data_matrix.shape[0]
-
-        for k in range(num_voters):
-            if np.isnan(rank_base_data_matrix[k]).all():
-                rank_base_data_matrix[k] = np.nan_to_num(rank_base_data_matrix[k], 
-                                                         nan=rank_base_data_matrix.shape[1])
-            else:
-                max_rank = np.nanmax(rank_base_data_matrix[k])
-                rank_base_data_matrix[k] = np.nan_to_num(rank_base_data_matrix[k], 
-                                                         nan=max_rank + 1)
-
-        return rank_base_data_matrix
-
-    def _convert_to_matrix(self, base_data, rel_data=None):
-        """
-        Converts the provided base data into matrices suitable for ListNet.
-
-        Parameters:
-        -----------
-        base_data : pandas.DataFrame
-            A DataFrame containing the base data.
-
-        rel_data : pandas.DataFrame, optional
-            A DataFrame containing relevance data.
-
-        Returns:
-        --------
-        tuple
-            - score_base_data_matrix : numpy.ndarray
-              A 2D numpy array storing Borda scores.
-            - rel_data_matrix : numpy.ndarray or None
-              A 1D numpy array storing relevance scores if rel_data is provided.
-            - item_mapping : dict
-              A mapping of item codes to indices.
-        """
-        unique_items = base_data['Item Code'].unique()
-        item_num = len(unique_items)
-        item_mapping = {name: i for i, name in enumerate(unique_items)}
-        rank_base_data_matrix = np.full((self.voter_num, item_num), np.nan)
-
-        for _, row in base_data.iterrows():
-            voter_name = row['Voter Name']
-            item_code = row['Item Code']
-            item_rank = row['Item Rank']
-
-            voter_index = self.voter_name_mapping[voter_name]
-            item_index = item_mapping[item_code]
-            rank_base_data_matrix[voter_index, item_index] = item_rank
-
-        rank_base_data_matrix = self._partial_to_full(rank_base_data_matrix)
-        
-        # Convert ranks to Borda scores
-        score_base_data_matrix = np.empty((self.voter_num, item_num))
-        for k in range(self.voter_num):
-            for i in range(item_num):
-                score_base_data_matrix[k, i] = item_num - rank_base_data_matrix[k, i]
-
-        if rel_data is None:
-            return score_base_data_matrix, item_mapping
-        else:
-            rel_data_matrix = np.zeros(item_num)
-            for _, row in rel_data.iterrows():
-                item_code = row['Item Code']
-                item_relevance = row['Relevance']
-                item_index = item_mapping[item_code]
-                rel_data_matrix[item_index] = item_relevance
-
-            return score_base_data_matrix, rel_data_matrix, item_mapping
-
+    
     def _build_model(self, input_dim):
-        """
-        Constructs the ListNet scoring network.
-
-        Parameters:
-        -----------
-        input_dim : int
-            Dimension of input features.
-
-        Returns:
-        --------
-        torch.nn.Sequential
-            The constructed neural network model.
-        """
         layers = []
         prev_dim = input_dim
         for units in self.hidden_units:
@@ -180,140 +71,266 @@ class ListNet:
             prev_dim = units
         layers.append(nn.Linear(prev_dim, 1))
         return nn.Sequential(*layers)
-
+    
     @staticmethod
     def _listnet_loss(y_pred, y_true, eps=1e-10):
         """
-        Computes the ListNet loss.
-
-        Parameters:
-        -----------
+        Calculate ListNet loss (listwise cross-entropy).
+        
+        The loss computes the cross-entropy between the softmax distributions
+        of predicted scores and true relevance scores.
+        
+        Parameters
+        ----------
         y_pred : torch.Tensor
-            Predicted scores from the model, shape [batch_size, slate_length].
-
+            Predicted scores of shape (batch_size, num_items).
         y_true : torch.Tensor
-            True relevance scores, shape [batch_size, slate_length].
-
+            True relevance scores of shape (batch_size, num_items).
         eps : float, optional
-            Small value for numerical stability.
-
-        Returns:
-        --------
+            Small constant for numerical stability.
+            
+        Returns
+        -------
         torch.Tensor
-            Computed loss value.
+            Mean loss value.
         """
+        y_pred = y_pred.clone()
+        y_true = y_true.clone()
+        
         preds_smax = F.softmax(y_pred, dim=1)
         true_smax = F.softmax(y_true, dim=1)
-
-        preds_smax = preds_smax + eps
+        
+        preds_smax = torch.clamp(preds_smax, min=eps, max=1.0 - eps)
         preds_log = torch.log(preds_smax)
-
+        
         loss = -torch.sum(true_smax * preds_log, dim=1)
         return torch.mean(loss)
-
-    def train(self, train_file_path, train_rel_path):
+    
+    @staticmethod
+    def _handle_partial_list(rank_matrix):
         """
-        Trains the ListNet model using the provided training data.
-
-        Parameters:
-        -----------
+        Handle partial lists by assigning the maximum rank + 1 to unrated items.
+        
+        Parameters
+        ----------
+        rank_matrix : numpy.ndarray
+            Rank matrix with NaN for missing rankings.
+            
+        Returns
+        -------
+        numpy.ndarray
+            Rank matrix with all NaN values replaced.
+        """
+        item_num = rank_matrix.shape[0]
+        for k in range(rank_matrix.shape[1]):
+            if np.isnan(rank_matrix[:, k]).all():
+                rank_matrix[:, k] = item_num
+            else:
+                max_rank = np.nanmax(rank_matrix[:, k])
+                rank_matrix[:, k] = np.nan_to_num(rank_matrix[:, k], nan=max_rank + 1)
+        return rank_matrix
+    
+    def _ranks_to_features(self, rank_matrix):
+        features = 1.0 / (rank_matrix + 1e-6)
+        features = np.nan_to_num(features, nan=0.0, posinf=1.0, neginf=0.0)
+        return features.astype(np.float32)
+    
+    @staticmethod
+    def _preprocess_relevances(rel_vector):
+        """
+        Preprocess relevance labels for listwise loss.
+        
+        Converts relevance labels to positive values for softmax calculation.
+        
+        Parameters
+        ----------
+        rel_vector : numpy.ndarray
+            Relevance labels (can be negative or zero).
+            
+        Returns
+        -------
+        numpy.ndarray
+            Transformed relevance labels (all positive).
+        """
+        # Transform: -1 → 1, 0 → 2, 1 → 3
+        transformed = rel_vector + 2
+        return transformed.astype(np.float32)
+    
+    def _build_rank_matrix(self, base_data, item_mapping, item_num):
+        """
+        Build the raw rank matrix from base data.
+        
+        Parameters
+        ----------
+        base_data : pandas.DataFrame
+            Base data for a single query.
+        item_mapping : dict
+            Mapping from item code to item index.
+        item_num : int
+            Number of unique items.
+            
+        Returns
+        -------
+        numpy.ndarray
+            Rank matrix of shape (item_num, voter_num), with NaN for missing rankings.
+        """
+        rank_matrix = np.full((item_num, self.voter_num), np.nan)
+        
+        for _, row in base_data.iterrows():
+            voter_name = row['Voter Name']
+            item_code = row['Item Code']
+            item_rank = row['Item Rank']
+            
+            voter_idx = self.voter_name_mapping[voter_name]
+            item_idx = item_mapping[item_code]
+            rank_matrix[item_idx, voter_idx] = item_rank
+        
+        return rank_matrix
+    
+    def train(self, train_file_path, train_rel_path, input_type):
+        """
+        Train the ListNet model using listwise learning to rank.
+        
+        Parameters
+        ----------
         train_file_path : str
-            The file path to the training base data.
-
+            File path to the training base data.
         train_rel_path : str
-            The file path to the relevance data.
-
-        Returns:
-        --------
+            File path to the relevance data.
+        input_type : InputType
+            Specifies the format of the input data. Must be InputType.RANK.
+            
+        Returns
+        -------
         None
         """
-        # Load data using project's standard method
+        input_type = InputType.check_input_type(input_type)
+        
         train_base_data, train_rel_data, unique_queries = csv_load(
-            train_file_path, train_rel_path, InputType.RANK
+            train_file_path, train_rel_path, input_type
         )
         
         train_base_data.columns = ['Query', 'Voter Name', 'Item Code', 'Item Rank']
         train_rel_data.columns = ['Query', '0', 'Item Code', 'Relevance']
-
         unique_voter_names = train_base_data['Voter Name'].unique()
         self.voter_num = len(unique_voter_names)
         self.voter_name_mapping = {name: i for i, name in enumerate(unique_voter_names)}
+        self.voter_name_reverse_mapping = {i: name for i, name in enumerate(unique_voter_names)}
         self.query_mapping = {name: i for i, name in enumerate(unique_queries)}
-
-        # Build model
-        input_dim = self.voter_num
-        self.model = self._build_model(input_dim)
-        self.optimizer = optim.Adam(self.model.parameters(), lr=self.learning_rate)
-
-        # Train for each query
-        for query in tqdm(unique_queries):
+        
+        successful_queries = 0
+        for query in tqdm(unique_queries, desc="Training queries"):
             base_data = train_base_data[train_base_data['Query'] == query]
             rel_data = train_rel_data[train_rel_data['Query'] == query]
-
-            # Convert to matrix format
-            score_matrix, rel_vector, item_mapping = self._convert_to_matrix(base_data, rel_data)
             
-            # Scale relevance scores
-            rel_vector = np.nan_to_num(rel_vector, nan=0.0)
-            rel_vector = rel_vector * 5.0
-
-            # Prepare tensors for ListNet
-            feature_matrix = score_matrix.T
+            unique_items = base_data['Item Code'].unique()
+            item_num = len(unique_items)
+            item_mapping = {name: i for i, name in enumerate(unique_items)}
+            
+            rank_matrix = self._build_rank_matrix(base_data, item_mapping, item_num)
+            rank_matrix = self._handle_partial_list(rank_matrix)
+            
+            rel_vector = np.zeros(item_num)
+            for _, row in rel_data.iterrows():
+                item_code = row['Item Code']
+                item_relevance = row['Relevance']
+                if item_code in item_mapping:
+                    item_idx = item_mapping[item_code]
+                    rel_vector[item_idx] = item_relevance
+            
+            feature_matrix = self._ranks_to_features(rank_matrix)
+            rel_vector = self._preprocess_relevances(rel_vector)
             features = torch.FloatTensor(feature_matrix).unsqueeze(0)
             relevances = torch.FloatTensor(rel_vector).unsqueeze(0)
-
-            # Training loop for this query
-            self.model.train()
-            for _ in range(self.epochs_per_query):
-                self.optimizer.zero_grad()
-                
-                scores = self.model(features.squeeze(0))
+            
+            model = self._build_model(self.voter_num)
+            optimizer = optim.Adam(model.parameters(), lr=self.learning_rate)
+            
+            model.train()
+            for epoch in range(self.epochs_per_query):
+                optimizer.zero_grad()
+                scores = model(features.squeeze(0))
                 scores = scores.reshape(1, -1)
-
+                
                 loss = self._listnet_loss(scores, relevances, self.eps)
+                
                 loss.backward()
-                self.optimizer.step()
-
+                optimizer.step()
+            
+            query_id = self.query_mapping[query]
+            self.query_models[query_id] = {k: v.cpu().clone() for k, v in model.state_dict().items()}
+            successful_queries += 1
+        
+        if self.query_models:
+            first_model = next(iter(self.query_models.values()))
+            self.average_model_state = {}
+            for key in first_model:
+                self.average_model_state[key] = torch.zeros_like(first_model[key])
+            
+            for model_params in self.query_models.values():
+                for key in model_params:
+                    self.average_model_state[key] += model_params[key]
+            
+            for key in self.average_model_state:
+                self.average_model_state[key] /= len(self.query_models)
+            
+            print(f"Successfully trained {successful_queries} out of {len(unique_queries)} queries")
+    
     def test(self, test_file_path, test_output_path, using_average_w=True):
         """
-        Tests the ListNet model on the provided test data.
-
-        Parameters:
-        -----------
+        Test the model and generate rankings for test data.
+        
+        Parameters
+        ----------
         test_file_path : str
-            The file path to the test data.
-
+            File path to the test data.
         test_output_path : str
-            The file path where the output CSV file will be saved.
-
+            File path where the output CSV will be written.
         using_average_w : bool, optional
-            Kept for interface consistency (not used in ListNet).
-            Defaults to True.
-
-        Returns:
-        --------
+            Whether to use the average model across queries. Default is True.
+            
+        Returns
+        -------
         None
         """
         test_data, unique_test_queries = csv_load(test_file_path, InputType.RANK)
         test_data.columns = ['Query', 'Voter Name', 'Item Code', 'Item Rank']
-
-        self.model.eval()
+        
         with open(test_output_path, 'w', newline='') as file:
             writer = csv.writer(file)
             
-            for query in tqdm(unique_test_queries):
+            for query in tqdm(unique_test_queries, desc="Testing"):
                 query_data = test_data[test_data['Query'] == query]
                 
-                # Convert to matrix format
-                score_matrix, item_mapping = self._convert_to_matrix(query_data)
-                feature_matrix = score_matrix.T
-
-                # Predict scores
+                unique_items = query_data['Item Code'].unique()
+                item_num = len(unique_items)
+                item_mapping = {name: i for i, name in enumerate(unique_items)}
+                item_code_reverse = {v: k for k, v in item_mapping.items()}
+                
+                rank_matrix = self._build_rank_matrix(query_data, item_mapping, item_num)
+                rank_matrix = self._handle_partial_list(rank_matrix)
+                
+                feature_matrix = self._ranks_to_features(rank_matrix)
+                
+                if using_average_w or query not in self.query_mapping:
+                    if self.average_model is None and self.average_model_state is not None:
+                        self.average_model = self._build_model(self.voter_num)
+                        self.average_model.load_state_dict(self.average_model_state)
+                    model = self.average_model
+                else:
+                    query_id = self.query_mapping[query]
+                    model = self._build_model(self.voter_num)
+                    model.load_state_dict(self.query_models[query_id])
+                
+                model.eval()
                 with torch.no_grad():
                     features = torch.FloatTensor(feature_matrix)
-                    scores = self.model(features).squeeze().numpy()
+                    scores = model(features).squeeze().numpy()
+                
+                ranked_indices = np.argsort(scores)[::-1]
+                for rank, item_idx in enumerate(ranked_indices, start=1):
+                    writer.writerow([query, item_code_reverse[item_idx], rank])
 
-                # Generate rankings
                 ranked_indices = np.argsort(scores)[::-1]
                 item_code_reverse_mapping = {v: k for k, v in item_mapping.items()}
                 
