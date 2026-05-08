@@ -262,7 +262,7 @@ References
 
 <a id="ER">[[10]](https://www.sciencedirect.com/science/article/pii/S0305048319308448) Mohammadi, M., & Rezaei, J. (2020). Ensemble ranking: Aggregation of rankings produced by different multi-criteria decision-making methods. Omega, 96, 102254.</a>
 
-<a id="Mork-H">[[11]] Azzini, I., and Munda, G. "A new approach for identifying the Kemeny median ranking." European Journal of Operational Research. Vol. 281. No. 2. 2020. </a>
+<a id="Mork-H">[[11]](https://www.sciencedirect.com/science/article/pii/S0377221719307039) Azzini, I., and Munda, G. (2020). A new approach for identifying the Kemeny median ranking. European Journal of Operational Research. Vol. 281. No. 2. 2020. </a>
 
 <a id="CG">[[12]](https://www.tandfonline.com/doi/abs/10.1080/01605682.2019.1657365) Xiao, Y., Deng, H. Z., Lu, X., & Wu, J. (2021). Graph-based rank aggregation method for high-dimensional and partial rankings. Journal of the Operational Research Society, 72(1), 227-236.</a>
 
