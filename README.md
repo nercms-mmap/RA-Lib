@@ -21,8 +21,7 @@ If you want to add your own algorithm to improve the benchmarking system, please
 
 <p align="center">
   <img src="https://img.shields.io/badge/Comb*-NIST SP'94-143240" alt="" />  
-  <img src="https://img.shields.io/badge/MC1--4-WWW'01-1E4A5E" alt="" /> 
-  <img src="https://img.shields.io/badge/wBorada-WWW'12-1E4A5E" alt="" />  
+  <img src="https://img.shields.io/badge/MC1--4-WWW'01-1E4A5E" alt="" />  
   <img src="https://img.shields.io/badge/BordaCount-SIGIR'01-27627D" alt="" />  
   <img src="https://img.shields.io/badge/Dowdall-IPSR'02-317A9B" alt="" />  
   <img src="https://img.shields.io/badge/Median-SIMOD'03-53A4C9" alt="" />  
@@ -35,15 +34,16 @@ If you want to add your own algorithm to improve the benchmarking system, please
   <img src="https://img.shields.io/badge/Mork--H-EJOR'20-F5DFD8" alt="" />  
   <img src="https://img.shields.io/badge/CG-JORS'21-EDC5B9" alt="" />  
   <img src="https://img.shields.io/badge/DIBRA-LSA'22-E5AB99" alt="" />  
-  <img src="https://img.shields.io/badge/SSRA-CIKM'08-C69191" alt="" />
   <img src="https://img.shields.io/badge/RankNet-ICML'05-C69191" alt="" /> 
   <img src="https://img.shields.io/badge/ListNet-ICML'07-C69191" alt="" /> 
+  <img src="https://img.shields.io/badge/wBorada-WWW'12-1E4A5E" alt="" /> 
   <img src="https://img.shields.io/badge/CRF-CIKM'13-C69191" alt="" />  
   <img src="https://img.shields.io/badge/CSRA-ICASSP'20-B97777" alt="" />  
   <img src="https://img.shields.io/badge/AggRankDE-Electronics'22-AB5D5D" alt="" />  
   <img src="https://img.shields.io/badge/IRA-BMVC'22-C25759" alt="" />  
   <img src="https://img.shields.io/badge/Borda--Score-AAAI'23-B14144" alt="" />  
   <img src="https://img.shields.io/badge/QI--IRA-AAAI'24-B14144" alt="" />  
+  <img src="https://img.shields.io/badge/SSRA-CIKM'08-C69191" alt="" />
 </p>
 
 
@@ -88,12 +88,12 @@ If you want to add your own algorithm to improve the benchmarking system, please
         </td>
         <td>
             <ul>
-                <li>$\textrm{wBorda}$ <a href="#wBorda">[15]</li>
-                <li>$\textrm{CRF}$ <a href="#CRF">[16]</li>
-                <li>$\textrm{CSRA}$ <a href="#CSRA">[17]</li>
-                <li>$\textrm{AggRankDE}$ <a href="#AggRankDe">[18]</li>
-                <li>$\textrm{RankNet}$ <a href="#RankNet">[19]</li>
-                <li>$\textrm{ListNet}$ <a href="#ListNet">[20]</li>
+                <li>$\textrm{RankNet}$ <a href="#RankNet">[15]</li>
+                <li>$\textrm{ListNet}$ <a href="#ListNet">[16]</li>
+                <li>$\textrm{wBorda}$ <a href="#wBorda">[17]</li>
+                <li>$\textrm{CRF}$ <a href="#CRF">[18]</li>
+                <li>$\textrm{CSRA}$ <a href="#CSRA">[19]</li>
+                <li>$\textrm{AggRankDE}$ <a href="#AggRankDe">[20]</li>
                 <li>$\textrm{IRA}_\textrm{R}$ <a href="#IRA">[21]</li>
                 <li>$\textrm{IRA}_\textrm{S}$ <a href="#IRA">[21]</li>
                 <li>$\textrm{QI-IRA}$ <a href="#QIIRA">[22]</li>
@@ -272,17 +272,17 @@ References
 
 <a id="borda_score">[[14]](https://ojs.aaai.org/index.php/AAAI/article/view/25685/25457) Boehmer, Niclas, Robert Bredereck, and Dominik Peters. "Rank aggregation using scoring rules." Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37. No. 5. 2023. </a>
 
-<a id="wBorda">[[15]](https://ieeexplore.ieee.org/abstract/document/6495123) Pujari, M., & Kanawati, R. (2012, November). Link prediction in complex networks by supervised rank aggregation. In 2012 IEEE 24th International Conference on Tools with Artificial Intelligence (Vol. 1, pp. 782-789). IEEE.</a>
+<a id="RankNet">[[15]](https://dl.acm.org/doi/abs/10.1145/1102351.1102363) Burges, C., Shaked, T., Renshaw, E., Lazier, A., Deeds, M., Hamilton, N., & Hullender, G. (2005). Learning to rank using gradient descent. In Proceedings of the 22nd International Conference on Machine Learning (pp. 89–96).</a>
 
-<a id="CRF">[[16]](https://www.jmlr.org/papers/volume15/volkovs14a/volkovs14a.pdf) Volkovs, M. N., & Zemel, R. S. (2014). New learning methods for supervised and unsupervised preference aggregation. The Journal of Machine Learning Research, 15(1), 1135-1176.</a>
+<a id="ListNet">[[16]](https://dl.acm.org/doi/abs/10.1145/1273496.1273513) Cao, Z., Qin, T., Liu, T.-Y., Tsai, M.-F., & Li, H. (2007). Learning to rank: from pairwise approach to listwise approach. In Proceedings of the 24th International Conference on Machine Learning (pp. 129–136).</a>
 
-<a id="CSRA">[[17]](https://ieeexplore.ieee.org/abstract/document/9053496) Yu, Y., Liang, C., Ruan, W., & Jiang, L. (2020, May). Crowdsourcing-Based Ranking Aggregation for Person Re-Identification. In ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 1933-1937). IEEE.</a>
+<a id="wBorda">[[17]](https://ieeexplore.ieee.org/abstract/document/6495123) Pujari, M., & Kanawati, R. (2012, November). Link prediction in complex networks by supervised rank aggregation. In 2012 IEEE 24th International Conference on Tools with Artificial Intelligence (Vol. 1, pp. 782-789). IEEE.</a>
 
-<a id="AggRankDe">[[18]](https://www.mdpi.com/2079-9292/11/3/369) Bałchanowski, M., & Boryczka, U. (2022). Aggregation of Rankings Using Metaheuristics in Recommendation Systems. Electronics, 11(3), 369.</a>
+<a id="CRF">[[18]](https://www.jmlr.org/papers/volume15/volkovs14a/volkovs14a.pdf) Volkovs, M. N., & Zemel, R. S. (2014). New learning methods for supervised and unsupervised preference aggregation. The Journal of Machine Learning Research, 15(1), 1135-1176.</a>
 
-<a id="RankNet">[[19]](https://dl.acm.org/doi/abs/10.1145/1102351.1102363) Burges, C., Shaked, T., Renshaw, E., Lazier, A., Deeds, M., Hamilton, N., & Hullender, G. (2005). Learning to rank using gradient descent. In Proceedings of the 22nd International Conference on Machine Learning (pp. 89–96).</a>
+<a id="CSRA">[[19]](https://ieeexplore.ieee.org/abstract/document/9053496) Yu, Y., Liang, C., Ruan, W., & Jiang, L. (2020, May). Crowdsourcing-Based Ranking Aggregation for Person Re-Identification. In ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 1933-1937). IEEE.</a>
 
-<a id="ListNet">[[20]](https://dl.acm.org/doi/abs/10.1145/1273496.1273513) Cao, Z., Qin, T., Liu, T.-Y., Tsai, M.-F., & Li, H. (2007). Learning to rank: from pairwise approach to listwise approach. In Proceedings of the 24th International Conference on Machine Learning (pp. 129–136).</a>
+<a id="AggRankDe">[[20]](https://www.mdpi.com/2079-9292/11/3/369) Bałchanowski, M., & Boryczka, U. (2022). Aggregation of Rankings Using Metaheuristics in Recommendation Systems. Electronics, 11(3), 369.</a>
 
 <a id="IRA">[[21]](https://bmvc2022.mpi-inf.mpg.de/0386.pdf) Huang, J., Liang, C., Zhang, Y., Wang, Z., & Zhang, C. (2022). Ranking Aggregation with Interactive Feedback for Collaborative Person Re-identification.</a>
 
